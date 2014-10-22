@@ -26,6 +26,15 @@ type
     N9: TMenuItem;
     N10: TMenuItem;
     N11: TMenuItem;
+    Nb1: TMenuItem;
+    N12: TMenuItem;
+    N13: TMenuItem;
+    N14: TMenuItem;
+    N15: TMenuItem;
+    N16: TMenuItem;
+    N17: TMenuItem;
+    N18: TMenuItem;
+    N19: TMenuItem;
     procedure N6Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
  
