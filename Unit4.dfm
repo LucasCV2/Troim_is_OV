@@ -66,7 +66,7 @@ object DataModule4: TDataModule4
   end
   object dolDataSource: TDataSource
     DataSet = dolFDTable1
-    Left = 200
+    Left = 208
     Top = 200
   end
   object dolFDTable1: TFDTable
@@ -79,12 +79,25 @@ object DataModule4: TDataModule4
   end
   object kartastw: TFDQuery
     Connection = FDConnection1
-    Left = 16
-    Top = 264
+    Left = 8
+    Top = 272
   end
   object kartastwdl: TFDQuery
     Connection = FDConnection1
-    Left = 64
+    Left = 72
     Top = 272
+  end
+  object tipprodstva: TFDTable
+    IndexFieldNames = 'id'
+    Connection = FDConnection1
+    UpdateOptions.UpdateTableName = 'asu.fam'
+    TableName = 'asu.fam'
+    Left = 184
+    Top = 288
+  end
+  object tiprodstvaSource: TDataSource
+    DataSet = tipprodstva
+    Left = 256
+    Top = 288
   end
 end

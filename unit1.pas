@@ -158,6 +158,8 @@ end;
 procedure Tspstuds.N9Click(Sender: TObject);
 begin
 newlkrod.show;
+newlkrod.fiol.Caption:=' '+spstuds.DBGrid1.Fields[1].AsString +' '+ spstuds.DBGrid1.Fields[2].AsString +' '+ spstuds.DBGrid1.Fields[3].AsString;
+newlkrod.nomer.Caption:= spstuds.DBGrid1.Fields[0].AsString;
 end;
 
 procedure Tspstuds.SpeedButton1Click(Sender: TObject);

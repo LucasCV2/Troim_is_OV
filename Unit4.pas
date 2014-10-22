@@ -25,6 +25,8 @@ type
     dolFDTable1: TFDTable;
     kartastw: TFDQuery;
     kartastwdl: TFDQuery;
+    tipprodstva: TFDTable;
+    tiprodstvaSource: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
 
   private
@@ -54,6 +56,7 @@ FDConnection1.open;
 fdquery15.Active:=True;
 specFDTable.Active:=True;
 dolFDTable1.Active:=True;
+tipprodstva.Active:=True;
 end;
 
 
