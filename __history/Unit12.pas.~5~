@@ -25,6 +25,8 @@ type
     FDQuery2: TFDQuery;
     FDQuery3: TFDQuery;
     FDQuery4: TFDQuery;
+    Label3: TLabel;
+    Label4: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure addspClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -65,9 +67,9 @@ procedure TTip_ocenok.Button2Click(Sender: TObject);
 begin
 FDQuery3.SQL.Clear;
 FDQuery3.SQL.Add ('UPDATE tip_ocenki SET name=:name WHERE id=:id');
-FDQuery3.ParamByName('name').AsString:=DBEdit1.Text;
-FDQuery3.ParamByName('id').AsString:=DBGrid1.Fields[0].AsString;
-FDQuery3.ExecSQL;
+
+Label4.Caption:=DBGrid1.Fields[0].AsString;
+DBEdit1.Text:=DBGrid1.Fields[1].AsString;
 FDQuery1.Refresh;
 end;
 

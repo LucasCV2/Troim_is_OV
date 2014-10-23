@@ -30,6 +30,19 @@ object Tip_ocenok: TTip_ocenok
     Height = 19
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1090#1080#1087#1072' '#1086#1094#1077#1085#1082#1080':'
   end
+  object Label3: TLabel
+    Left = 526
+    Top = 76
+    Width = 18
+    Height = 19
+    Caption = #8470
+  end
+  object Label4: TLabel
+    Left = 550
+    Top = 76
+    Width = 5
+    Height = 19
+  end
   object DBGrid1: TDBGrid
     AlignWithMargins = True
     Left = 8
