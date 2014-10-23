@@ -3,7 +3,7 @@ object kat_rod: Tkat_rod
   Top = 0
   BorderStyle = bsDialog
   Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1072' '#1082#1072#1090#1077#1075#1086#1088#1080#1080' '#1088#1086#1076#1089#1090#1074#1072
-  ClientHeight = 233
+  ClientHeight = 361
   ClientWidth = 879
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

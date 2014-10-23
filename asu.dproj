@@ -161,7 +161,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit14.pas">
-            <Form>Form14</Form>
+            <Form>dolgnost</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

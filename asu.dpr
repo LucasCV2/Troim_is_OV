@@ -14,7 +14,7 @@ uses
   Unit10 in 'Unit10.pas' {Redak},
   Unit11 in 'Unit11.pas' {kat_rod},
   Unit12 in 'Unit12.pas' {Tip_ocenok},
-  Unit14 in 'Unit14.pas' {Form14};
+  Unit14 in 'Unit14.pas' {dolgnost};
 
 {$R *.res}
 
@@ -33,6 +33,6 @@ begin
   Application.CreateForm(TRedak, Redak);
   Application.CreateForm(Tkat_rod, kat_rod);
   Application.CreateForm(TTip_ocenok, Tip_ocenok);
-  Application.CreateForm(TForm14, Form14);
+  Application.CreateForm(Tdolgnost, dolgnost);
   Application.Run;
 end.

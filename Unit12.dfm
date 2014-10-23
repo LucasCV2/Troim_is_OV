@@ -3,7 +3,7 @@ object Tip_ocenok: TTip_ocenok
   Top = 0
   BorderStyle = bsDialog
   Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1072' '#1090#1080#1087#1072' '#1086#1094#1077#1085#1082#1080
-  ClientHeight = 233
+  ClientHeight = 373
   ClientWidth = 867
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

@@ -40,6 +40,7 @@ type
     procedure N9Click(Sender: TObject);
     procedure Nb1Click(Sender: TObject);
     procedure N13Click(Sender: TObject);
+    procedure N12Click(Sender: TObject);
  
     { Private declarations }
   public
@@ -53,9 +54,14 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit12, Unit11;
+uses Unit1, Unit12, Unit11,Unit14;
 
 
+
+procedure Tmain.N12Click(Sender: TObject);
+begin
+dolgnost.show;
+end;
 
 procedure Tmain.N13Click(Sender: TObject);
 begin
