@@ -19,8 +19,12 @@ type
     FDTable1: TFDTable;
     FDQuery3: TFDQuery;
     Button2: TButton;
+    Label1: TLabel;
+    Button3: TButton;
+    Edit1: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     { Private declarations }
   public
     { Public declarations }
@@ -51,4 +55,8 @@ Redak.Label2.Caption:=DBGrid1.Fields[0].AsString;
 Redak.name.Text:=DBGrid1.Fields[1].AsString;
 end;
 
+procedure TSpecialnost.FormCreate(Sender: TObject);
+begin
+fdquery1.Active:=true;
+end;
 end.

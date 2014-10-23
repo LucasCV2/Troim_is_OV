@@ -14,7 +14,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    Edit1: TEdit;
+    name: TEdit;
     Button1: TButton;
     FDQuery1: TFDQuery;
     procedure Button1Click(Sender: TObject);
@@ -36,9 +36,9 @@ uses Unit9;
 procedure TRedak.Button1Click(Sender: TObject);
 begin
 FDQuery1.SQL.Clear;
-FDQuery1.SQL.Add ('UPDATE spec SET name=:neme WHERE id=:id');
-FDQuery1.ParamByName('name').AsString:=name.Text;
-FDQuery1.ParamByName('id').AsString:=Label2.Caption;
+FDQuery1.SQL.Add ('UPDATE spec SET name=:nàme WHERE id=:id');
+FDQuery1.ParamByName('name').Value:=Redak.name.Text;
+FDQuery1.ParamByName('id').AsString:=Redak.Label2.Caption;
 FDQuery1.ExecSQL;
 Specialnost.FDTable1.Refresh;
 end;
