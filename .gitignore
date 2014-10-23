@@ -44,3 +44,8 @@ Temporary Items
 
 *.ini
 Win32/Release/setting.ini
+Win32/Release/setting.ini
+Win32/Release/setting.ini
+Unit9.dfm
+asu.identcache
+asu.dproj.local

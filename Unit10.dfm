@@ -55,7 +55,7 @@ object Redak: TRedak
   end
   object name: TEdit
     Left = 88
-    Top = 30
+    Top = 33
     Width = 337
     Height = 27
     TabOrder = 0
