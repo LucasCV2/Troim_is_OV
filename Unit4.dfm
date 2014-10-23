@@ -6,8 +6,12 @@ object DataModule4: TDataModule4
   object FDConnection1: TFDConnection
     Params.Strings = (
       'CharacterSet=cp1251'
-      'Server='
+      'Server=localhost'
+      'Database=asu'
+      'User_Name=root'
+      'Password=1234567890'
       'DriverID=MySQL')
+    Connected = True
     LoginPrompt = False
     Left = 28
     Top = 9
@@ -70,6 +74,7 @@ object DataModule4: TDataModule4
     Top = 200
   end
   object dolFDTable1: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDConnection1
     UpdateOptions.UpdateTableName = 'asu.dolgnost'

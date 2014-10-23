@@ -145,7 +145,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit9.pas">
-            <Form>Form9</Form>
+            <Form>Specialnost</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit10.pas">
+            <Form>Redak</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
