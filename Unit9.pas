@@ -24,6 +24,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure addspClick(Sender: TObject);
 
     { Private declarations }
   public
@@ -39,13 +40,23 @@ uses Unit10;
 
 {$R *.dfm}
 
+procedure TSpecialnost.addspClick(Sender: TObject);
+begin
+FDQuery3.SQL.Clear;
+FDQuery3.SQL.Add ('INSERT INTO spec (name) VALUES (:name)');
+FDQuery3.ParamByName('name').AsString:=Edit1.Text;
+FDQuery3.ExecSQL;
+FDQuery1.Refresh;
+Edit1.Clear;
+end;
+
 procedure TSpecialnost.Button1Click(Sender: TObject);
 begin
 FDQuery2.SQL.Clear;
 FDQuery2.SQL.Add ('DELETE FROM spec  WHERE id=:id');
 FDQuery2.ParamByName('id').AsString:=DBGrid1.Fields[0].AsString;
 FDQuery2.ExecSQL;
-
+FDQuery1.Refresh;
 end;
 
 procedure TSpecialnost.Button2Click(Sender: TObject);

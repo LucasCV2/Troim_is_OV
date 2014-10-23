@@ -31,7 +31,7 @@ object Redak: TRedak
   object Label2: TLabel
     Left = 32
     Top = 8
-    Width = 50
+    Width = 5
     Height = 19
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
