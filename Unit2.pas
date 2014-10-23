@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Intf, FireDAC.Phys, FireDAC.Phys.IBBase, FireDAC.UI.Intf,
   FireDAC.VCLUI.Login, FireDAC.Comp.UI, FireDAC.Stan.Option, FireDAC.Stan.Error,
   FireDAC.Phys.Intf, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys.MySQL,
-  Data.DB, FireDAC.Comp.Client;
+  Data.DB, FireDAC.Comp.Client, Unit9;
 
 type
   Tmain = class(TForm)
@@ -37,6 +37,7 @@ type
     N19: TMenuItem;
     procedure N6Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
+    procedure N9Click(Sender: TObject);
  
     { Private declarations }
   public
@@ -62,6 +63,11 @@ end;
 procedure Tmain.N7Click(Sender: TObject);
 begin
 spstuds.show;
+end;
+
+procedure Tmain.N9Click(Sender: TObject);
+begin
+Specialnost.show;
 end;
 
 end.
