@@ -12,7 +12,7 @@ uses
   Unit8 in 'Unit8.pas' {newlkrod},
   Unit9 in 'Unit9.pas' {Specialnost},
   Unit10 in 'Unit10.pas' {Redak},
-  Unit11 in 'Unit11.pas' {Form11},
+  Unit11 in 'Unit11.pas' {kat_rod},
   Unit12 in 'Unit12.pas' {Tip_ocenok},
   Unit14 in 'Unit14.pas' {Form14};
 
@@ -31,7 +31,7 @@ begin
   Application.CreateForm(Tnewlkrod, newlkrod);
   Application.CreateForm(TSpecialnost, Specialnost);
   Application.CreateForm(TRedak, Redak);
-  Application.CreateForm(TForm11, Form11);
+  Application.CreateForm(Tkat_rod, kat_rod);
   Application.CreateForm(TTip_ocenok, Tip_ocenok);
   Application.CreateForm(TForm14, Form14);
   Application.Run;

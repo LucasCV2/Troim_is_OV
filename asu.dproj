@@ -153,7 +153,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit11.pas">
-            <Form>Form11</Form>
+            <Form>kat_rod</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit12.pas">

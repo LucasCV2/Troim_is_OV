@@ -1,9 +1,9 @@
-object Form11: TForm11
+object kat_rod: Tkat_rod
   Left = 0
   Top = 0
   BorderStyle = bsDialog
   Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1072' '#1082#1072#1090#1077#1075#1086#1088#1080#1080' '#1088#1086#1076#1089#1090#1074#1072
-  ClientHeight = 246
+  ClientHeight = 233
   ClientWidth = 879
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,6 +13,7 @@ object Form11: TForm11
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 19
   object Label1: TLabel
@@ -35,6 +36,7 @@ object Form11: TForm11
     Top = 8
     Width = 497
     Height = 215
+    DataSource = DataSource1
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ReadOnly = True
     TabOrder = 0
@@ -65,6 +67,7 @@ object Form11: TForm11
     Height = 33
     Caption = #1059#1076#1072#1083#1080#1090#1100
     TabOrder = 1
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 701
@@ -73,6 +76,7 @@ object Form11: TForm11
     Height = 33
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100
     TabOrder = 2
+    OnClick = Button2Click
   end
   object Edit1: TEdit
     Left = 526
@@ -88,12 +92,42 @@ object Form11: TForm11
     Height = 29
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100
     TabOrder = 4
+    OnClick = addspClick
   end
   object DBEdit1: TDBEdit
     Left = 526
     Top = 144
     Width = 311
     Height = 27
+    DataField = 'name'
+    DataSource = DataSource1
     TabOrder = 5
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 24
+    Top = 240
+  end
+  object FDQuery1: TFDQuery
+    Connection = DataModule4.FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM asu.fam;')
+    Left = 88
+    Top = 240
+  end
+  object FDQuery2: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 152
+    Top = 240
+  end
+  object FDQuery3: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 216
+    Top = 240
+  end
+  object FDQuery4: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 272
+    Top = 240
   end
 end
