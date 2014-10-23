@@ -93,7 +93,6 @@ object Specialnost: TSpecialnost
     Top = 184
   end
   object FDQuery1: TFDQuery
-    Active = True
     Connection = DataModule4.FDConnection1
     SQL.Strings = (
       'SELECT * FROM asu.spec;')
