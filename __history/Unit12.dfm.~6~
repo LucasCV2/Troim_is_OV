@@ -13,7 +13,6 @@ object Tip_ocenok: TTip_ocenok
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 19
   object Label1: TLabel
@@ -123,6 +122,7 @@ object Tip_ocenok: TTip_ocenok
     Top = 240
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = DataModule4.FDConnection1
     SQL.Strings = (
       'SELECT * FROM asu.tip_ocenki;')

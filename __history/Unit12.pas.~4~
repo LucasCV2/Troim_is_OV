@@ -30,7 +30,6 @@ type
     procedure Button1Click(Sender: TObject);
     procedure addspClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,11 +70,6 @@ FDQuery3.SQL.Add ('UPDATE tip_ocenki SET name=:name WHERE id=:id');
 Label4.Caption:=DBGrid1.Fields[0].AsString;
 DBEdit1.Text:=DBGrid1.Fields[1].AsString;
 FDQuery1.Refresh;
-end;
-
-procedure TTip_ocenok.FormCreate(Sender: TObject);
-begin
-FDQuery1.Active:=true;
 end;
 
 end.
