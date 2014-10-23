@@ -54,8 +54,8 @@ object Specialnost: TSpecialnost
       end>
   end
   object Button1: TButton
-    Left = 511
-    Top = 125
+    Left = 526
+    Top = 127
     Width = 139
     Height = 33
     Caption = #1059#1076#1072#1083#1080#1090#1100
@@ -63,8 +63,8 @@ object Specialnost: TSpecialnost
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 511
-    Top = 70
+    Left = 526
+    Top = 72
     Width = 139
     Height = 33
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100
