@@ -55,7 +55,7 @@ object Specialnost: TSpecialnost
   end
   object Button1: TButton
     Left = 511
-    Top = 118
+    Top = 125
     Width = 139
     Height = 33
     Caption = #1059#1076#1072#1083#1080#1090#1100
@@ -71,22 +71,21 @@ object Specialnost: TSpecialnost
     TabOrder = 2
     OnClick = Button2Click
   end
-  object Button3: TButton
-    Left = 672
-    Top = 70
-    Width = 149
-    Height = 33
-    Caption = #1044#1086#1073#1072#1074#1080#1090#1100
-    TabOrder = 3
-    OnClick = Button2Click
-  end
   object Edit1: TEdit
     Left = 526
     Top = 30
     Width = 311
     Height = 27
-    TabOrder = 4
+    TabOrder = 3
     Text = ' name'
+  end
+  object addsp: TButton
+    Left = 680
+    Top = 72
+    Width = 137
+    Height = 29
+    Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+    TabOrder = 4
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
@@ -97,25 +96,17 @@ object Specialnost: TSpecialnost
     Connection = DataModule4.FDConnection1
     SQL.Strings = (
       'SELECT * FROM asu.spec;')
-    Left = 656
+    Left = 608
     Top = 184
   end
   object FDQuery2: TFDQuery
     Connection = DataModule4.FDConnection1
-    Left = 720
-    Top = 184
-  end
-  object FDTable1: TFDTable
-    IndexFieldNames = 'id;id'
-    Connection = DataModule4.FDConnection1
-    UpdateOptions.UpdateTableName = 'asu.spec'
-    TableName = 'asu.spec'
-    Left = 600
+    Left = 672
     Top = 184
   end
   object FDQuery3: TFDQuery
     Connection = DataModule4.FDConnection1
-    Left = 784
+    Left = 728
     Top = 184
   end
 end

@@ -70,6 +70,7 @@ object Redak: TRedak
     OnClick = Button1Click
   end
   object FDQuery1: TFDQuery
+    Connection = DataModule4.FDConnection1
     Left = 264
     Top = 64
   end

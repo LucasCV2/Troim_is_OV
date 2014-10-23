@@ -36,11 +36,12 @@ uses Unit9;
 procedure TRedak.Button1Click(Sender: TObject);
 begin
 FDQuery1.SQL.Clear;
-FDQuery1.SQL.Add ('UPDATE spec SET name=:nàme WHERE id=:id');
+FDQuery1.SQL.Add ('UPDATE spec SET name=:name WHERE id=:id');
 FDQuery1.ParamByName('name').Value:=Redak.name.Text;
 FDQuery1.ParamByName('id').AsString:=Redak.Label2.Caption;
 FDQuery1.ExecSQL;
-Specialnost.FDTable1.Refresh;
+Specialnost.fdquery1.Refresh;
+Redak.Close;
 end;
 
 end.

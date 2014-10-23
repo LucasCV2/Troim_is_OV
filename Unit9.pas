@@ -16,15 +16,15 @@ type
     FDQuery1: TFDQuery;
     Button1: TButton;
     FDQuery2: TFDQuery;
-    FDTable1: TFDTable;
     FDQuery3: TFDQuery;
     Button2: TButton;
     Label1: TLabel;
-    Button3: TButton;
     Edit1: TEdit;
+    addsp: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+
     { Private declarations }
   public
     { Public declarations }
@@ -45,7 +45,7 @@ FDQuery2.SQL.Clear;
 FDQuery2.SQL.Add ('DELETE FROM spec  WHERE id=:id');
 FDQuery2.ParamByName('id').AsString:=DBGrid1.Fields[0].AsString;
 FDQuery2.ExecSQL;
-FDTable1.Refresh;
+
 end;
 
 procedure TSpecialnost.Button2Click(Sender: TObject);
@@ -59,4 +59,5 @@ procedure TSpecialnost.FormCreate(Sender: TObject);
 begin
 fdquery1.Active:=true;
 end;
+
 end.
