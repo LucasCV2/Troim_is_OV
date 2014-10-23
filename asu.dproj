@@ -157,7 +157,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit12.pas">
-            <Form>Form13</Form>
+            <Form>Tip_ocenok</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit14.pas">

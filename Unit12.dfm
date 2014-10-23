@@ -1,9 +1,9 @@
-object Form13: TForm13
+object Tip_ocenok: TTip_ocenok
   Left = 0
   Top = 0
   BorderStyle = bsDialog
   Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1072' '#1090#1080#1087#1072' '#1086#1094#1077#1085#1082#1080
-  ClientHeight = 254
+  ClientHeight = 290
   ClientWidth = 867
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -29,12 +29,26 @@ object Form13: TForm13
     Height = 19
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1090#1080#1087#1072' '#1086#1094#1077#1085#1082#1080':'
   end
+  object Label3: TLabel
+    Left = 526
+    Top = 76
+    Width = 18
+    Height = 19
+    Caption = #8470
+  end
+  object Label4: TLabel
+    Left = 550
+    Top = 76
+    Width = 5
+    Height = 19
+  end
   object DBGrid1: TDBGrid
     AlignWithMargins = True
     Left = 8
     Top = 8
     Width = 497
     Height = 215
+    DataSource = DataSource1
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ReadOnly = True
     TabOrder = 0
@@ -65,6 +79,7 @@ object Form13: TForm13
     Height = 33
     Caption = #1059#1076#1072#1083#1080#1090#1100
     TabOrder = 1
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 701
@@ -73,6 +88,7 @@ object Form13: TForm13
     Height = 33
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100
     TabOrder = 2
+    OnClick = Button2Click
   end
   object Edit1: TEdit
     Left = 526
@@ -88,12 +104,44 @@ object Form13: TForm13
     Height = 29
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100
     TabOrder = 4
+    OnClick = addspClick
   end
   object DBEdit1: TDBEdit
+    AlignWithMargins = True
     Left = 526
     Top = 144
     Width = 311
     Height = 27
+    DataField = 'name'
+    DataSource = DataSource1
     TabOrder = 5
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 24
+    Top = 240
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = DataModule4.FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM asu.tip_ocenki;')
+    Left = 88
+    Top = 240
+  end
+  object FDQuery2: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 144
+    Top = 240
+  end
+  object FDQuery3: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 200
+    Top = 240
+  end
+  object FDQuery4: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 256
+    Top = 240
   end
 end

@@ -38,6 +38,7 @@ type
     procedure N6Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
     procedure N9Click(Sender: TObject);
+    procedure Nb1Click(Sender: TObject);
  
     { Private declarations }
   public
@@ -51,7 +52,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1;
+uses Unit1, Unit12;
 
 
 
@@ -68,6 +69,11 @@ end;
 procedure Tmain.N9Click(Sender: TObject);
 begin
 Specialnost.show;
+end;
+
+procedure Tmain.Nb1Click(Sender: TObject);
+begin
+Tip_ocenok.show;
 end;
 
 end.

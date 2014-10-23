@@ -13,7 +13,7 @@ uses
   Unit9 in 'Unit9.pas' {Specialnost},
   Unit10 in 'Unit10.pas' {Redak},
   Unit11 in 'Unit11.pas' {Form11},
-  Unit12 in 'Unit12.pas' {Form13},
+  Unit12 in 'Unit12.pas' {Tip_ocenok},
   Unit14 in 'Unit14.pas' {Form14};
 
 {$R *.res}
@@ -32,7 +32,7 @@ begin
   Application.CreateForm(TSpecialnost, Specialnost);
   Application.CreateForm(TRedak, Redak);
   Application.CreateForm(TForm11, Form11);
-  Application.CreateForm(TForm13, Form13);
+  Application.CreateForm(TTip_ocenok, Tip_ocenok);
   Application.CreateForm(TForm14, Form14);
   Application.Run;
 end.
