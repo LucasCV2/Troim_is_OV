@@ -41,3 +41,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+*.ini
+Win32/Release/setting.ini
