@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Vcl.StdCtrls, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls,
+  Vcl.Mask;
 
 type
   Tgroup = class(TForm)
@@ -24,6 +25,7 @@ type
     addsp: TButton;
     DBLookupComboBox1: TDBLookupComboBox;
     DataSource2: TDataSource;
+    Label2: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure addspClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -44,8 +46,9 @@ implementation
 procedure Tgroup.addspClick(Sender: TObject);
 begin
 FDQuery3.SQL.Clear;
-FDQuery3.SQL.Add ('INSERT INTO groups (name) VALUES (:name)');
+FDQuery3.SQL.Add ('INSERT INTO groups (name,sp_id) VALUES (:name,:sp_id)');
 FDQuery3.ParamByName('name').AsString:=Edit1.Text;
+FDQuery3.ParamByName('sp_id').AsString:=DBLookupComboBox1.KeyValue;
 FDQuery3.ExecSQL;
 FDQuery1.Refresh;
 Edit1.Clear;
@@ -62,13 +65,14 @@ end;
 
 procedure Tgroup.DBLookupComboBox1Click(Sender: TObject);
 begin
-FDquery4.SQL.Clear;
-FDquery4.SQL.Add ('select * from groups WHERE sp_id= :in2 ');
-FDQuery4.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
-FDQuery4.Open;
-DBLookupComboBox1.ListSource:= DataSource1;
-DBLookupComboBox1.ListField:='name';
-DBLookupComboBox1.KeyField:='id';
+FDquery1.SQL.Clear;
+FDquery1.SQL.Add ('select * from groups WHERE sp_id= :in2 ');
+FDQuery1.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
+FDQuery1.Open;
+DataSource2.DataSet:=FDQuery1;
+//DBLookupComboBox1.ListSource:= DataSource1;
+//DBLookupComboBox1.ListField:='name';
+//DBLookupComboBox1.KeyField:='id';
 end;
 
 procedure Tgroup.FormCreate(Sender: TObject);
