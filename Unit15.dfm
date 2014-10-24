@@ -47,7 +47,7 @@ object uchplanst: Tuchplanst
     end
     object Label5: TLabel
       Left = 16
-      Top = 137
+      Top = 129
       Width = 132
       Height = 19
       Caption = #1050#1086#1086#1085#1077#1094' '#1080#1079#1091#1095#1077#1085#1080#1103':'
@@ -255,7 +255,7 @@ object uchplanst: Tuchplanst
       Left = 83
       Top = 25
       Width = 422
-      Height = 24
+      Height = 27
       TabOrder = 0
       TextHint = #1053#1072#1079#1074#1072#1085#1080#1077' '#1076#1080#1089#1094#1080#1087#1083#1080#1085#1099
     end
@@ -286,7 +286,7 @@ object uchplanst: Tuchplanst
       Left = 83
       Top = 33
       Width = 422
-      Height = 24
+      Height = 27
       TabOrder = 0
       TextHint = #1053#1072#1079#1074#1072#1085#1080#1077' '#1076#1080#1089#1094#1080#1087#1083#1080#1085#1099
     end
