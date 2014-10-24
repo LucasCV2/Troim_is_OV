@@ -41,6 +41,7 @@ type
     procedure Nb1Click(Sender: TObject);
     procedure N13Click(Sender: TObject);
     procedure N12Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
  
     { Private declarations }
   public
@@ -54,7 +55,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit12, Unit11,Unit14;
+uses Unit1, Unit12, Unit11,Unit14,Unit13;
 
 
 
@@ -76,6 +77,11 @@ end;
 procedure Tmain.N7Click(Sender: TObject);
 begin
 spstuds.show;
+end;
+
+procedure Tmain.N8Click(Sender: TObject);
+begin
+group.show;
 end;
 
 procedure Tmain.N9Click(Sender: TObject);

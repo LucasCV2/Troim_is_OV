@@ -42469,6 +42469,7 @@ object main: Tmain
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
       object N8: TMenuItem
         Caption = #1043#1088#1091#1087#1087#1099
+        OnClick = N8Click
       end
       object N9: TMenuItem
         Caption = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1080

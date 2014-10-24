@@ -1,0 +1,55 @@
+unit Unit13;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Vcl.StdCtrls, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls;
+
+type
+  Tgroup = class(TForm)
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    FDQuery1: TFDQuery;
+    FDQuery2: TFDQuery;
+    FDQuery3: TFDQuery;
+    FDQuery4: TFDQuery;
+    Label1: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Edit1: TEdit;
+    addsp: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure addspClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  group: Tgroup;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tgroup.addspClick(Sender: TObject);
+begin
+FDQuery3.SQL.Clear;
+FDQuery3.SQL.Add ('INSERT INTO groups (name) VALUES (:name)');
+FDQuery3.ParamByName('name').AsString:=Edit1.Text;
+FDQuery3.ExecSQL;
+FDQuery1.Refresh;
+Edit1.Clear;
+end;
+
+procedure Tgroup.FormCreate(Sender: TObject);
+begin
+FDQuery1.Active:=true;
+end;
+
+end.
