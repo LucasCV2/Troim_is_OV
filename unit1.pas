@@ -38,8 +38,7 @@ type
     DBLookupComboBox2: TDBLookupComboBox;
     Edit1: TEdit;
     Button1: TButton;
-    procedure SpeedButton1Click(Sender: TObject);
-    procedure SpeedButton3Click(Sender: TObject);
+  
     procedure DBGrid1DblClick(Sender: TObject);
     procedure N6Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
@@ -167,18 +166,6 @@ newlkrod.fiol.Caption:=' '+spstuds.DBGrid1.Fields[1].AsString +' '+ spstuds.DBGr
 newlkrod.nomer.Caption:= spstuds.DBGrid1.Fields[0].AsString;
 end;
 
-procedure Tspstuds.SpeedButton1Click(Sender: TObject);
-begin
-addstuds.show;
-end;
 
-procedure Tspstuds.SpeedButton3Click(Sender: TObject);
-begin
-DataModule4.del_stbutton.Close;
-DataModule4.del_stbutton.SQL.Text:= 'DELETE from studs WHERE id='+DBGrid1.Fields[0].DisplayText+'';
-DataModule4.del_stbutton.ExecSQL;
-DataModule4.FDQuery15.Refresh;
-
-end;
 
 end.
