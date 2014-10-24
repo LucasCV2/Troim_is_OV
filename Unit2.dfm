@@ -15,6 +15,7 @@ object main: Tmain
   OldCreateOrder = False
   Position = poDesktopCenter
   Visible = True
+  WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 19
   object Image1: TImage
@@ -42489,6 +42490,7 @@ object main: Tmain
       end
       object N19: TMenuItem
         Caption = #1059#1095#1077#1073#1085#1099#1081' '#1087#1083#1072#1085
+        OnClick = N19Click
       end
     end
     object N5: TMenuItem

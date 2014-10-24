@@ -168,6 +168,10 @@
             <Form>group</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Unit15.pas">
+            <Form>uchplanst</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

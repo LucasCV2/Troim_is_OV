@@ -154,8 +154,8 @@ object spstuds: Tspstuds
     end
   end
   object PopupMenu1: TPopupMenu
-    Left = 792
-    Top = 304
+    Left = 744
+    Top = 328
     object N2: TMenuItem
       Caption = #1051#1080#1095#1085#1072#1103' '#1082#1072#1088#1090#1072
       object N5: TMenuItem
