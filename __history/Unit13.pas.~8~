@@ -26,12 +26,10 @@ type
     DBLookupComboBox1: TDBLookupComboBox;
     DataSource2: TDataSource;
     Label2: TLabel;
-    FDQuery5: TFDQuery;
     procedure FormCreate(Sender: TObject);
     procedure addspClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure DBLookupComboBox1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,16 +54,6 @@ FDQuery1.Refresh;
 Edit1.Clear;
 end;
 
-procedure Tgroup.Button2Click(Sender: TObject);
-begin
-FDQuery5.SQL.Clear;
-FDQuery5.SQL.Add ('UPDATE groups SET name=:name WHERE id=:id');
-FDQuery5.ParamByName('name').AsString:=Edit1.Text;
-FDQuery5.ParamByName('id').AsString:=DBGrid1.Fields[0].AsString;
-FDQuery5.ExecSQL;
-FDQuery1.Refresh;
-end;
-
 procedure Tgroup.Button1Click(Sender: TObject);
 begin
 FDQuery2.SQL.Clear;
@@ -82,6 +70,9 @@ FDquery1.SQL.Add ('select * from groups WHERE sp_id= :in2 ');
 FDQuery1.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
 FDQuery1.Open;
 DataSource2.DataSet:=FDQuery1;
+//DBLookupComboBox1.ListSource:= DataSource1;
+//DBLookupComboBox1.ListField:='name';
+//DBLookupComboBox1.KeyField:='id';
 end;
 
 procedure Tgroup.FormCreate(Sender: TObject);
