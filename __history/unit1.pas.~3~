@@ -11,12 +11,14 @@ uses
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Phys.MySQL, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
   FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.VCLUI.Wait,
-  FireDAC.Comp.UI, FireDAC.Phys.IBBase, Unit4, Vcl.Menus, Vcl.StdCtrls;
+  FireDAC.Comp.UI, FireDAC.Phys.IBBase, Unit4, Vcl.Menus;
 
 type
   Tspstuds = class(TForm)
     Panel1: TPanel;
     Panel2: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton3: TSpeedButton;
     DBGrid1: TDBGrid;
     PopupMenu1: TPopupMenu;
     N2: TMenuItem;
@@ -31,13 +33,6 @@ type
     N10: TMenuItem;
     N11: TMenuItem;
     N12: TMenuItem;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
-    DBLookupComboBox2: TDBLookupComboBox;
-    Edit1: TEdit;
-    Button1: TButton;
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);

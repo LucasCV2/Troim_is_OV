@@ -1,17 +1,11 @@
 ﻿[]
-Coordinates=278,1,84,33
+Coordinates=49,160,84,33
 
 [Panel1]
 Coordinates=87,1,47,51
 
 [Panel2]
 Coordinates=68,70,47,51
-
-[SpeedButton1]
-Coordinates=49,160,84,33
-
-[SpeedButton3]
-Coordinates=278,53,84,33
 
 [addstuds.DataSource2]
 Coordinates=178,53,125,105

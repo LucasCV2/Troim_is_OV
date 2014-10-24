@@ -1,11 +1,10 @@
 object spstuds: Tspstuds
   Left = 0
   Top = 0
-  Hint = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1100
   BorderStyle = bsDialog
   Caption = #1057#1087#1080#1089#1086#1082' '#1089#1090#1091#1076#1077#1085#1090#1086#1074
   ClientHeight = 376
-  ClientWidth = 792
+  ClientWidth = 839
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,13 +18,12 @@ object spstuds: Tspstuds
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 792
+    Width = 839
     Height = 65
     Align = alTop
     TabOrder = 0
     ExplicitLeft = -1
     ExplicitTop = -5
-    ExplicitWidth = 839
     object Label1: TLabel
       Left = 8
       Top = 8
@@ -52,7 +50,6 @@ object spstuds: Tspstuds
       Top = 32
       Width = 225
       Height = 27
-      Hint = #1042#1099#1073#1086#1088' '#1089#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1080
       TabOrder = 0
     end
     object DBLookupComboBox2: TDBLookupComboBox
@@ -63,22 +60,16 @@ object spstuds: Tspstuds
       TabOrder = 1
     end
     object Edit1: TEdit
-      Left = 552
-      Top = 5
-      Width = 233
-      Height = 24
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
+      Left = 496
+      Top = 32
+      Width = 193
+      Height = 27
       TabOrder = 2
-      TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1092#1072#1084#1080#1083#1080#1102', '#1080#1084#1103' '#1080#1083#1080' '#1086#1090#1095#1077#1089#1090#1074#1086
+      TextHint = #1055#1086#1080#1089#1082' '#1087#1086' '#1092#1072#1084#1080#1083#1080', '#1080#1084#1077#1085#1080' '#1080#1083#1080' '#1086#1090#1095#1077#1089#1090#1074#1091
     end
     object Button1: TButton
-      Left = 696
-      Top = 33
+      Left = 711
+      Top = 32
       Width = 89
       Height = 27
       Caption = #1055#1086#1080#1089#1082
@@ -88,18 +79,17 @@ object spstuds: Tspstuds
   object Panel2: TPanel
     Left = 0
     Top = 65
-    Width = 792
+    Width = 839
     Height = 311
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
     ExplicitTop = 41
-    ExplicitWidth = 839
     ExplicitHeight = 335
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
-      Width = 790
+      Width = 837
       Height = 309
       Align = alClient
       Color = clBtnFace

@@ -1,106 +1,57 @@
 object spstuds: Tspstuds
   Left = 0
   Top = 0
-  Hint = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1100
-  BorderStyle = bsDialog
+  BorderStyle = bsSingle
   Caption = #1057#1087#1080#1089#1086#1082' '#1089#1090#1091#1076#1077#1085#1090#1086#1074
   ClientHeight = 376
-  ClientWidth = 792
+  ClientWidth = 839
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -16
-  Font.Name = 'Tahoma'
+  Font.Name = 'System'
   Font.Style = []
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poDesktopCenter
   PixelsPerInch = 96
-  TextHeight = 19
+  TextHeight = 16
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 792
-    Height = 65
+    Width = 839
+    Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = -1
-    ExplicitTop = -5
-    ExplicitWidth = 839
-    object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 117
-      Height = 19
-      Caption = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1100':'
+    object SpeedButton1: TSpeedButton
+      Left = 0
+      Top = 0
+      Width = 145
+      Height = 36
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072
+      OnClick = SpeedButton1Click
     end
-    object Label2: TLabel
-      Left = 247
-      Top = 8
-      Width = 57
-      Height = 19
-      Caption = #1043#1088#1091#1087#1087#1072':'
-    end
-    object Label3: TLabel
-      Left = 496
-      Top = 8
-      Width = 50
-      Height = 19
-      Caption = #1055#1086#1080#1089#1082':'
-    end
-    object DBLookupComboBox1: TDBLookupComboBox
-      Left = 8
-      Top = 32
-      Width = 225
-      Height = 27
-      Hint = #1042#1099#1073#1086#1088' '#1089#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1080
-      TabOrder = 0
-    end
-    object DBLookupComboBox2: TDBLookupComboBox
-      Left = 247
-      Top = 32
-      Width = 225
-      Height = 27
-      TabOrder = 1
-    end
-    object Edit1: TEdit
-      Left = 552
-      Top = 5
-      Width = 233
-      Height = 24
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-      TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1092#1072#1084#1080#1083#1080#1102', '#1080#1084#1103' '#1080#1083#1080' '#1086#1090#1095#1077#1089#1090#1074#1086
-    end
-    object Button1: TButton
-      Left = 696
-      Top = 33
-      Width = 89
-      Height = 27
-      Caption = #1055#1086#1080#1089#1082
-      TabOrder = 3
+    object SpeedButton3: TSpeedButton
+      Left = 151
+      Top = 0
+      Width = 130
+      Height = 36
+      Caption = #1059#1076#1072#1083#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072
+      OnClick = SpeedButton3Click
     end
   end
   object Panel2: TPanel
     Left = 0
-    Top = 65
-    Width = 792
-    Height = 311
+    Top = 41
+    Width = 839
+    Height = 335
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
-    ExplicitTop = 41
-    ExplicitWidth = 839
-    ExplicitHeight = 335
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
-      Width = 790
-      Height = 309
+      Width = 837
+      Height = 333
       Align = alClient
       Color = clBtnFace
       DataSource = DataModule4.spstudsDataSource
@@ -110,7 +61,7 @@ object spstuds: Tspstuds
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -16
-      TitleFont.Name = 'Tahoma'
+      TitleFont.Name = 'System'
       TitleFont.Style = []
       Touch.ParentTabletOptions = False
       Touch.TabletOptions = [toPressAndHold]
