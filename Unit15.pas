@@ -42,6 +42,7 @@ type
     Button6: TButton;
     DBGrid2: TDBGrid;
     arhiv: TCheckBox;
+    arhiv_box: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
@@ -52,6 +53,7 @@ type
     procedure Button6Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure arhiv_boxClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,6 +68,20 @@ implementation
 {$R *.dfm}
 
 uses Unit4;
+
+procedure Tuchplanst.arhiv_boxClick(Sender: TObject);
+  begin
+DataModule4.Querydsp_uchp.SQL.Clear;
+DataModule4.Querydsp_uchp.SQL.Add ('select id,name,chasi,god_n from predmeti WHERE sp_id= :in3 and arhiv=:arhiv');
+DataModule4.Querydsp_uchp.ParamByName('in3').AsString:=DBLookupComboBox1.KeyValue;
+DataModule4.Querydsp_uchp.ParamByName('arhiv').AsBoolean:=arhiv_box.Checked;
+DataModule4.Querydsp_uchp.open;
+DataModule4.DataSourcedsp.DataSet:=DataModule4.Querydsp_uchp;
+DataModule4.DataSourcedspm_uchp.Enabled:=false;
+name_pr_red.Clear;
+chasi_red.Clear;
+arhiv.Checked:=false;
+ end;
 
 procedure Tuchplanst.Button1Click(Sender: TObject);
 begin
@@ -92,9 +108,11 @@ DataModule4.Queryinsdsp_ucp.ParamByName('arhiv').AsBoolean:=arhiv.Checked;
 DataModule4.Queryinsdsp_ucp.ParamByName('sp_id').AsString:=DBLookupComboBox1.KeyValue;
 DataModule4.Queryinsdsp_ucp.ParamByName('id').AsString:=DBGrid1.Fields[0].AsString;
 DataModule4.Queryinsdsp_ucp.ExecSQL;
+DataModule4.DataSourcedspm_uchp.Enabled:=false;
 DataModule4.Querydsp_uchp.Refresh;
 name_pr_red.Clear;
 chasi_red.Clear;
+arhiv.Checked:=false;
 end;
 
 procedure Tuchplanst.Button3Click(Sender: TObject);
@@ -153,6 +171,12 @@ DataModule4.DataSourcedspm_uchp.DataSet:=DataModule4.Querydspm_uchp;
 name_pr_red.Text:=DBGrid1.Fields[1].AsString;
 chasi_red.Text:=DBGrid1.Fields[2].AsString;
 gon_n_red.DateTime:=DBGrid1.Fields[3].AsDateTime;
+DataModule4.Queryarhiv.SQL.Clear;
+DataModule4.Queryarhiv.SQL.Add ('select arhiv from predmeti WHERE id= :in3 and arhiv=:arhiv');
+DataModule4.Queryarhiv.ParamByName('in3').AsString:=DBGrid1.Fields[0].AsString;
+DataModule4.Queryarhiv.ParamByName('arhiv').AsBoolean:=arhiv_box.Checked;
+DataModule4.Queryarhiv.open;
+arhiv.Checked:=DataModule4.Queryarhiv.fields[0].AsBoolean;
 end;
 
 procedure Tuchplanst.DBGrid2CellClick(Column: TColumn);
@@ -163,17 +187,26 @@ end;
 procedure Tuchplanst.DBLookupComboBox1Click(Sender: TObject);
 begin
 DataModule4.Querydsp_uchp.SQL.Clear;
-DataModule4.Querydsp_uchp.SQL.Add ('select id,name,chasi,god_n from predmeti WHERE sp_id= :in3 and arhiv=0');
+DataModule4.Querydsp_uchp.SQL.Add ('select id,name,chasi,god_n from predmeti WHERE sp_id= :in3 and arhiv=:arhiv');
 DataModule4.Querydsp_uchp.ParamByName('in3').AsString:=DBLookupComboBox1.KeyValue;
+DataModule4.Querydsp_uchp.ParamByName('arhiv').AsBoolean:=arhiv_box.Checked;
 DataModule4.Querydsp_uchp.open;
 DataModule4.DataSourcedsp.DataSet:=DataModule4.Querydsp_uchp;
 DataModule4.DataSourcedspm_uchp.Enabled:=false;
 end;
 
 procedure Tuchplanst.FormCreate(Sender: TObject);
+var arhiv:Boolean;
 begin
 datamodule4.Querysp_uchp.Active:=true;
-
+DBLookupComboBox1.KeyValue:=1;
+DataModule4.Querydsp_uchp.SQL.Clear;
+DataModule4.Querydsp_uchp.SQL.Add ('select id,name,chasi,god_n from predmeti WHERE sp_id= :in3 and arhiv=:arhiv');
+DataModule4.Querydsp_uchp.ParamByName('in3').AsString:=DBLookupComboBox1.KeyValue;
+DataModule4.Querydsp_uchp.ParamByName('arhiv').AsBoolean:=arhiv_box.Checked;
+DataModule4.Querydsp_uchp.open;
+DataModule4.DataSourcedsp.DataSet:=DataModule4.Querydsp_uchp;
+DataModule4.DataSourcedspm_uchp.Enabled:=false;
 end;
 
 end.
