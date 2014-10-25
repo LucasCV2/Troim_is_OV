@@ -29,6 +29,12 @@ type
     tiprodstvaSource: TDataSource;
     Querysp_uchp: TFDQuery;
     DataSourcesp_ucsp: TDataSource;
+    Querydsp_uchp: TFDQuery;
+    DataSourcedsp: TDataSource;
+    Querydspm_uchp: TFDQuery;
+    DataSourcedspm_uchp: TDataSource;
+    Queryinsdsp_ucp: TFDQuery;
+    Query_inst_mod_uchp: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
 
   private

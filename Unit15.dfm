@@ -1,12 +1,11 @@
 object uchplanst: Tuchplanst
   Left = 0
   Top = 0
-  AutoSize = True
   BorderStyle = bsDialog
   BorderWidth = 5
   Caption = #1059#1095#1077#1073#1085#1099#1081' '#1087#1083#1072#1085
-  ClientHeight = 656
-  ClientWidth = 867
+  ClientHeight = 698
+  ClientWidth = 1138
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,13 +14,14 @@ object uchplanst: Tuchplanst
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
+  ShowHint = True
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 19
   object GroupBox1: TGroupBox
-    Left = 344
-    Top = 0
-    Width = 523
+    Left = 8
+    Top = 295
+    Width = 617
     Height = 177
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1080#1089#1094#1080#1087#1083#1080#1085#1091':'
     TabOrder = 0
@@ -46,7 +46,7 @@ object uchplanst: Tuchplanst
       Height = 19
       Caption = #1053#1072#1095#1072#1083#1086' '#1080#1079#1091#1095#1077#1085#1080#1103':'
     end
-    object Edit1: TEdit
+    object name_pr: TEdit
       Left = 94
       Top = 25
       Width = 419
@@ -54,7 +54,7 @@ object uchplanst: Tuchplanst
       TabOrder = 0
       TextHint = #1053#1072#1079#1074#1072#1085#1080#1077' '#1076#1080#1089#1094#1080#1087#1083#1080#1085#1099
     end
-    object Edit2: TEdit
+    object chasi: TEdit
       Left = 160
       Top = 58
       Width = 193
@@ -62,9 +62,9 @@ object uchplanst: Tuchplanst
       TabOrder = 1
       TextHint = #1054#1073#1097#1077#1077' '#1082#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1095#1072#1089#1086#1074
     end
-    object DateTimePicker1: TDateTimePicker
+    object gon_n: TDateTimePicker
       Left = 154
-      Top = 96
+      Top = 91
       Width = 186
       Height = 27
       Date = 41936.893814108790000000
@@ -78,12 +78,13 @@ object uchplanst: Tuchplanst
       Height = 30
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
       TabOrder = 3
+      OnClick = Button1Click
     end
   end
   object GroupBox2: TGroupBox
-    Left = 344
-    Top = 183
-    Width = 523
+    Left = 8
+    Top = 464
+    Width = 617
     Height = 226
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1076#1080#1089#1094#1080#1087#1083#1080#1085#1091':'
     TabOrder = 1
@@ -108,21 +109,21 @@ object uchplanst: Tuchplanst
       Height = 19
       Caption = #1053#1072#1095#1072#1083#1086' '#1080#1079#1091#1095#1077#1085#1080#1103':'
     end
-    object Edit3: TEdit
+    object chasi_red: TEdit
       Left = 160
       Top = 71
       Width = 193
       Height = 27
       TabOrder = 0
     end
-    object Edit4: TEdit
+    object name_pr_red: TEdit
       Left = 94
       Top = 38
       Width = 419
       Height = 27
       TabOrder = 1
     end
-    object DateTimePicker3: TDateTimePicker
+    object gon_n_red: TDateTimePicker
       Left = 154
       Top = 109
       Width = 186
@@ -132,12 +133,13 @@ object uchplanst: Tuchplanst
       TabOrder = 2
     end
     object Button2: TButton
-      Left = 384
+      Left = 408
       Top = 175
       Width = 121
       Height = 33
       Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100
       TabOrder = 4
+      OnClick = Button2Click
     end
     object Button3: TButton
       Left = 304
@@ -148,12 +150,16 @@ object uchplanst: Tuchplanst
       ParentShowHint = False
       ShowHint = False
       TabOrder = 3
+      OnClick = Button3Click
     end
-    object CheckBox1: TCheckBox
+    object arhiv: TCheckBox
       Left = 16
       Top = 154
       Width = 177
       Height = 17
+      Hint = 
+        #1044#1080#1089#1094#1080#1087#1083#1080#1085#1072' '#1086#1090#1087#1072#1074#1083#1077#1085#1085#1072#1103' '#1074' '#1072#1088#1093#1080#1074' '#1085#1077' '#1086#1090#1086#1073#1088#1072#1078#1072#1077#1090#1089#1103' '#1074' '#1090#1072#1073#1083#1080#1094#1077' '#1089#1087#1077#1094#1080#1072#1083 +
+        #1100#1085#1086#1089#1090#1077#1081
       Caption = #1054#1090#1087#1088#1072#1074#1080#1090#1100' '#1074' '#1072#1088#1093#1080#1074
       TabOrder = 5
     end
@@ -161,8 +167,8 @@ object uchplanst: Tuchplanst
   object GroupBox3: TGroupBox
     Left = 0
     Top = 0
-    Width = 338
-    Height = 409
+    Width = 625
+    Height = 289
     Caption = #1044#1080#1089#1094#1080#1087#1083#1080#1085#1099':'
     TabOrder = 2
     object Label2: TLabel
@@ -175,124 +181,172 @@ object uchplanst: Tuchplanst
     object DBLookupComboBox1: TDBLookupComboBox
       Left = 3
       Top = 53
-      Width = 332
+      Width = 518
       Height = 27
       KeyField = 'id'
       ListField = 'name'
       ListSource = DataModule4.DataSourcesp_ucsp
       TabOrder = 0
+      OnClick = DBLookupComboBox1Click
     end
     object DBGrid1: TDBGrid
-      Left = 0
-      Top = 104
-      Width = 332
-      Height = 288
+      Left = 3
+      Top = 86
+      Width = 619
+      Height = 187
+      DataSource = DataModule4.DataSourcedsp
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      ReadOnly = True
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -16
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
+      OnCellClick = DBGrid1CellClick
       Columns = <
         item
           Expanded = False
+          FieldName = 'id'
+          Title.Caption = #8470
+          Width = 50
+          Visible = True
+        end
+        item
+          DropDownRows = 40
+          Expanded = False
+          FieldName = 'name'
+          Title.Caption = #1053#1072#1079#1074#1072#1085#1080#1077
+          Width = 300
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'chasi'
+          Title.Caption = #1063#1072#1089#1099
+          Width = 55
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'god_n'
+          Title.Caption = #1044#1072#1090#1072' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1103' '#1074' '#1041#1044
+          Width = 170
           Visible = True
         end>
     end
   end
   object GroupBox4: TGroupBox
-    Left = 0
-    Top = 415
-    Width = 338
-    Height = 241
+    Left = 631
+    Top = 0
+    Width = 498
+    Height = 377
     Caption = #1052#1086#1076#1091#1083#1080':'
     TabOrder = 3
     object DBGrid2: TDBGrid
-      Left = 0
-      Top = 32
-      Width = 329
-      Height = 206
+      Left = 3
+      Top = 28
+      Width = 478
+      Height = 333
+      DataSource = DataModule4.DataSourcedspm_uchp
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -16
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
+      OnCellClick = DBGrid2CellClick
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id'
+          Title.Caption = #8470
+          Width = 50
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'name'
+          Title.Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1084#1086#1076#1091#1083#1103
+          Width = 380
+          Visible = True
+        end>
     end
   end
   object GroupBox5: TGroupBox
-    Left = 344
-    Top = 415
-    Width = 523
-    Height = 114
+    Left = 631
+    Top = 383
+    Width = 500
+    Height = 146
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1084#1086#1076#1091#1083#1100':'
     TabOrder = 4
     object Label6: TLabel
-      Left = 3
-      Top = 28
+      Left = 11
+      Top = 44
       Width = 74
       Height = 19
       Caption = #1053#1072#1079#1074#1072#1085#1080#1077':'
     end
-    object Edit5: TEdit
-      Left = 83
-      Top = 33
-      Width = 422
-      Height = 24
+    object name_mod: TEdit
+      Left = 91
+      Top = 41
+      Width = 390
+      Height = 27
       TabOrder = 0
       TextHint = #1053#1072#1079#1074#1072#1085#1080#1077' '#1084#1086#1076#1091#1083#1103
     end
     object Button4: TButton
-      Left = 424
-      Top = 63
+      Left = 391
+      Top = 101
       Width = 83
       Height = 30
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100
       TabOrder = 1
+      OnClick = Button4Click
     end
   end
   object GroupBox6: TGroupBox
-    Left = 344
+    Left = 631
     Top = 535
-    Width = 523
-    Height = 121
+    Width = 500
+    Height = 155
     Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1084#1086#1076#1091#1083#1100':'
     TabOrder = 5
     object Label7: TLabel
-      Left = 3
-      Top = 36
+      Left = 19
+      Top = 44
       Width = 74
       Height = 19
       Caption = #1053#1072#1079#1074#1072#1085#1080#1077':'
     end
-    object Edit6: TEdit
-      Left = 83
-      Top = 33
-      Width = 422
-      Height = 24
+    object red_mod: TEdit
+      Left = 99
+      Top = 37
+      Width = 382
+      Height = 27
       TabOrder = 0
     end
     object Button5: TButton
-      Left = 384
-      Top = 71
+      Left = 352
+      Top = 86
       Width = 121
       Height = 33
       Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100
       TabOrder = 1
+      OnClick = Button5Click
     end
     object Button6: TButton
-      Left = 304
-      Top = 70
+      Left = 248
+      Top = 86
       Width = 74
       Height = 34
       Caption = #1059#1076#1072#1083#1080#1090#1100
       ParentShowHint = False
       ShowHint = False
       TabOrder = 2
+      OnClick = Button6Click
     end
   end
 end
