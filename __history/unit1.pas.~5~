@@ -38,9 +38,6 @@ type
     DBLookupComboBox2: TDBLookupComboBox;
     Edit1: TEdit;
     Button1: TButton;
-    DataSource1: TDataSource;
-    FDQuery1: TFDQuery;
-    FDQuery2: TFDQuery;
   
     procedure DBGrid1DblClick(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -49,7 +46,6 @@ type
     procedure N5Click(Sender: TObject);
     procedure N9Click(Sender: TObject);
     procedure N12Click(Sender: TObject);
-    procedure DBLookupComboBox1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -90,20 +86,6 @@ redstuds.gpComboBox2.ListSource:= DataModule4.redstfirds;
 redstuds.gpComboBox2.ListField:='name';
 redstuds.gpComboBox2.KeyField:='id';
 redstuds.gpComboBox2.KeyValue:=gpid;
-end;
-
-procedure Tspstuds.DBLookupComboBox1Click(Sender: TObject);
-begin
-
-FDquery1.SQL.Clear;
-FDquery1.SQL.Add ('select * from groups WHERE sp_id= :in2 ');
-FDQuery1.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
-FDQuery1.open;
-DBLookupComboBox2.ListSource:= DataSource1;
-DBLookupComboBox2.ListField:='name';
-DBLookupComboBox2.KeyField:='id';
-DataModule4.spstudsDataSource.DataSet:=FDQuery1;
-
 end;
 
 procedure Tspstuds.N12Click(Sender: TObject);

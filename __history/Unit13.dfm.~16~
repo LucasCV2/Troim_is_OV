@@ -3,8 +3,8 @@ object group: Tgroup
   Top = 0
   BorderStyle = bsDialog
   Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1072' '#1075#1088#1091#1087#1087
-  ClientHeight = 450
-  ClientWidth = 701
+  ClientHeight = 264
+  ClientWidth = 674
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -4,7 +4,7 @@ object spstuds: Tspstuds
   Hint = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1100
   BorderStyle = bsDialog
   Caption = #1057#1087#1080#1089#1086#1082' '#1089#1090#1091#1076#1077#1085#1090#1086#1074
-  ClientHeight = 390
+  ClientHeight = 376
   ClientWidth = 792
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -23,6 +23,9 @@ object spstuds: Tspstuds
     Height = 65
     Align = alTop
     TabOrder = 0
+    ExplicitLeft = -1
+    ExplicitTop = -5
+    ExplicitWidth = 839
     object Label1: TLabel
       Left = 8
       Top = 8
@@ -50,12 +53,7 @@ object spstuds: Tspstuds
       Width = 225
       Height = 27
       Hint = #1042#1099#1073#1086#1088' '#1089#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1080
-      ImeName = 'name'
-      KeyField = 'id'
-      ListField = 'name'
-      ListSource = DataModule4.sp_addDataSource
       TabOrder = 0
-      OnClick = DBLookupComboBox1Click
     end
     object DBLookupComboBox2: TDBLookupComboBox
       Left = 247
@@ -91,15 +89,18 @@ object spstuds: Tspstuds
     Left = 0
     Top = 65
     Width = 792
-    Height = 325
+    Height = 311
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
+    ExplicitTop = 41
+    ExplicitWidth = 839
+    ExplicitHeight = 335
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
       Width = 790
-      Height = 323
+      Height = 309
       Align = alClient
       Color = clBtnFace
       DataSource = DataModule4.spstudsDataSource
@@ -197,20 +198,5 @@ object spstuds: Tspstuds
       Caption = #1059#1076#1072#1083#1080#1090#1100' '#1089#1090#1091#1076#1077#1085#1090#1072
       OnClick = N7Click
     end
-  end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 480
-    Top = 313
-  end
-  object FDQuery1: TFDQuery
-    Connection = DataModule4.FDConnection1
-    Left = 560
-    Top = 313
-  end
-  object FDQuery2: TFDQuery
-    Connection = DataModule4.FDConnection1
-    Left = 624
-    Top = 313
   end
 end

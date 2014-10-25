@@ -10,7 +10,13 @@ uses
   Unit6 in 'Unit6.pas' {kartastud},
   Unit7 in 'Unit7.pas' {newlkst},
   Unit8 in 'Unit8.pas' {newlkrod},
-  Unit9 in 'Unit9.pas' {Form9};
+  Unit9 in 'Unit9.pas' {Specialnost},
+  Unit10 in 'Unit10.pas' {Redak},
+  Unit11 in 'Unit11.pas' {kat_rod},
+  Unit12 in 'Unit12.pas' {Tip_ocenok},
+  Unit14 in 'Unit14.pas' {dolgnost},
+  Unit13 in 'Unit13.pas' {group},
+  Unit15 in 'Unit15.pas' {uchplanst};
 
 {$R *.res}
 
@@ -25,6 +31,12 @@ begin
   Application.CreateForm(Tkartastud, kartastud);
   Application.CreateForm(Tnewlkst, newlkst);
   Application.CreateForm(Tnewlkrod, newlkrod);
-  Application.CreateForm(TForm9, Form9);
+  Application.CreateForm(TSpecialnost, Specialnost);
+  Application.CreateForm(TRedak, Redak);
+  Application.CreateForm(Tkat_rod, kat_rod);
+  Application.CreateForm(TTip_ocenok, Tip_ocenok);
+  Application.CreateForm(Tdolgnost, dolgnost);
+  Application.CreateForm(Tgroup, group);
+  Application.CreateForm(Tuchplanst, uchplanst);
   Application.Run;
 end.
