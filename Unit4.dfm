@@ -150,11 +150,4 @@ object DataModule4: TDataModule4
     Left = 648
     Top = 192
   end
-  object Queryarhiv: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      '')
-    Left = 536
-    Top = 248
-  end
 end

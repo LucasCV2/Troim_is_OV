@@ -165,7 +165,7 @@ object uchplanst: Tuchplanst
     end
   end
   object GroupBox3: TGroupBox
-    Left = 8
+    Left = 0
     Top = 0
     Width = 625
     Height = 289
@@ -181,7 +181,7 @@ object uchplanst: Tuchplanst
     object DBLookupComboBox1: TDBLookupComboBox
       Left = 3
       Top = 53
-      Width = 510
+      Width = 518
       Height = 27
       KeyField = 'id'
       ListField = 'name'
@@ -190,7 +190,7 @@ object uchplanst: Tuchplanst
       OnClick = DBLookupComboBox1Click
     end
     object DBGrid1: TDBGrid
-      Left = -2
+      Left = 3
       Top = 86
       Width = 619
       Height = 187
@@ -234,15 +234,6 @@ object uchplanst: Tuchplanst
           Width = 170
           Visible = True
         end>
-    end
-    object arhiv_box: TCheckBox
-      Left = 168
-      Top = 30
-      Width = 172
-      Height = 17
-      Caption = #1056#1072#1073#1086#1090#1072' '#1089' '#1072#1088#1093#1080#1074#1086#1084
-      TabOrder = 2
-      OnClick = arhiv_boxClick
     end
   end
   object GroupBox4: TGroupBox

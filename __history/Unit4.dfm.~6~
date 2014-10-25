@@ -79,12 +79,12 @@ object DataModule4: TDataModule4
   end
   object kartastw: TFDQuery
     Connection = FDConnection1
-    Left = 32
+    Left = 8
     Top = 272
   end
   object kartastwdl: TFDQuery
     Connection = FDConnection1
-    Left = 96
+    Left = 72
     Top = 272
   end
   object tipprodstva: TFDTable
@@ -92,62 +92,12 @@ object DataModule4: TDataModule4
     Connection = FDConnection1
     UpdateOptions.UpdateTableName = 'asu.fam'
     TableName = 'asu.fam'
-    Left = 168
-    Top = 272
+    Left = 184
+    Top = 288
   end
   object tiprodstvaSource: TDataSource
     DataSet = tipprodstva
-    Left = 240
-    Top = 280
-  end
-  object Querysp_uchp: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      'select * From spec')
-    Left = 528
-    Top = 32
-  end
-  object DataSourcesp_ucsp: TDataSource
-    DataSet = Querysp_uchp
-    Left = 632
-    Top = 32
-  end
-  object Querydsp_uchp: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      '')
-    Left = 520
-    Top = 88
-  end
-  object DataSourcedsp: TDataSource
-    DataSet = Querydsp_uchp
-    Left = 624
-    Top = 88
-  end
-  object Querydspm_uchp: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      '')
-    Left = 536
-    Top = 144
-  end
-  object DataSourcedspm_uchp: TDataSource
-    DataSet = Querydspm_uchp
-    Left = 648
-    Top = 144
-  end
-  object Queryinsdsp_ucp: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      '')
-    Left = 536
-    Top = 192
-  end
-  object Query_inst_mod_uchp: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      '')
-    Left = 648
-    Top = 192
+    Left = 256
+    Top = 288
   end
 end
