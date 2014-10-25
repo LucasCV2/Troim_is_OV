@@ -20,18 +20,14 @@ type
     Label3: TLabel;
     Edit2: TEdit;
     Label4: TLabel;
-    Label5: TLabel;
     DateTimePicker1: TDateTimePicker;
-    DateTimePicker2: TDateTimePicker;
     Button1: TButton;
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
-    Label13: TLabel;
     Edit3: TEdit;
     Edit4: TEdit;
     DateTimePicker3: TDateTimePicker;
-    DateTimePicker4: TDateTimePicker;
     Button2: TButton;
     Button3: TButton;
     GroupBox4: TGroupBox;
@@ -45,6 +41,8 @@ type
     Button5: TButton;
     Button6: TButton;
     DBGrid2: TDBGrid;
+    CheckBox1: TCheckBox;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,5 +55,12 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Unit4;
+
+procedure Tuchplanst.FormCreate(Sender: TObject);
+begin
+datamodule4.Querysp_uchp.Active:=true;
+end;
 
 end.

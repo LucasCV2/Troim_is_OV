@@ -79,12 +79,12 @@ object DataModule4: TDataModule4
   end
   object kartastw: TFDQuery
     Connection = FDConnection1
-    Left = 8
+    Left = 32
     Top = 272
   end
   object kartastwdl: TFDQuery
     Connection = FDConnection1
-    Left = 72
+    Left = 96
     Top = 272
   end
   object tipprodstva: TFDTable
@@ -99,5 +99,17 @@ object DataModule4: TDataModule4
     DataSet = tipprodstva
     Left = 256
     Top = 288
+  end
+  object Querysp_uchp: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * From spec')
+    Left = 528
+    Top = 32
+  end
+  object DataSourcesp_ucsp: TDataSource
+    DataSet = Querysp_uchp
+    Left = 632
+    Top = 32
   end
 end

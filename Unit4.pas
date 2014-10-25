@@ -27,6 +27,8 @@ type
     kartastwdl: TFDQuery;
     tipprodstva: TFDTable;
     tiprodstvaSource: TDataSource;
+    Querysp_uchp: TFDQuery;
+    DataSourcesp_ucsp: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
 
   private
