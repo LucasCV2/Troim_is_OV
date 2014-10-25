@@ -42431,30 +42431,6 @@ object main: Tmain
     ExplicitWidth = 2592
     ExplicitHeight = 1944
   end
-  object Button1: TButton
-    Left = 400
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 0
-  end
-  object Button2: TButton
-    Left = 160
-    Top = 168
-    Width = 75
-    Height = 25
-    Caption = 'Button2'
-    TabOrder = 1
-  end
-  object Button3: TButton
-    Left = 432
-    Top = 80
-    Width = 75
-    Height = 25
-    Caption = 'Button3'
-    TabOrder = 2
-  end
   object MainMenu1: TMainMenu
     Left = 824
     Top = 528

@@ -15,7 +15,6 @@ object main: Tmain
   OldCreateOrder = False
   Position = poDesktopCenter
   Visible = True
-  WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 19
   object Image1: TImage
@@ -42470,27 +42469,23 @@ object main: Tmain
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
       object N8: TMenuItem
         Caption = #1043#1088#1091#1087#1087#1099
-        OnClick = N8Click
       end
       object N9: TMenuItem
         Caption = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1080
-        OnClick = N9Click
       end
       object Nb1: TMenuItem
         Caption = #1058#1080#1087' '#1086#1094#1077#1085#1086#1082
-        OnClick = Nb1Click
       end
       object N12: TMenuItem
         Caption = #1044#1086#1083#1078#1085#1086#1089#1090#1080' '#1089#1090#1091#1076#1077#1085#1090#1086#1074
-        OnClick = N12Click
       end
       object N13: TMenuItem
         Caption = #1050#1072#1090#1077#1075#1086#1088#1080#1080' '#1088#1086#1076#1089#1090#1074#1077#1085#1080#1082#1086#1074
-        OnClick = N13Click
       end
       object N19: TMenuItem
-        Caption = #1059#1095#1077#1073#1085#1099#1081' '#1087#1083#1072#1085
-        OnClick = N19Click
+        Caption = #1044#1080#1089#1094#1080#1087#1083#1080#1085#1099
+      end
+      object N20: TMenuItem
       end
     end
     object N5: TMenuItem
