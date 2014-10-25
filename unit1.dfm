@@ -45,7 +45,7 @@ object spstuds: Tspstuds
       Caption = #1055#1086#1080#1089#1082':'
     end
     object DBLookupComboBox1: TDBLookupComboBox
-      Left = 8
+      Left = 16
       Top = 32
       Width = 225
       Height = 27
@@ -63,6 +63,7 @@ object spstuds: Tspstuds
       Width = 225
       Height = 27
       TabOrder = 1
+      OnClick = DBLookupComboBox2Click
     end
     object Edit1: TEdit
       Left = 552
@@ -199,7 +200,7 @@ object spstuds: Tspstuds
     end
   end
   object DataSource1: TDataSource
-    DataSet = FDQuery1
+    DataSet = FDQuery2
     Left = 480
     Top = 313
   end

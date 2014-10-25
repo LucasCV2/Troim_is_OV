@@ -50,6 +50,7 @@ type
     procedure N9Click(Sender: TObject);
     procedure N12Click(Sender: TObject);
     procedure DBLookupComboBox1Click(Sender: TObject);
+    procedure DBLookupComboBox2Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -96,14 +97,29 @@ procedure Tspstuds.DBLookupComboBox1Click(Sender: TObject);
 begin
 
 FDquery1.SQL.Clear;
-FDquery1.SQL.Add ('select * from groups WHERE sp_id= :in2 ');
+FDquery1.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name from studs,groups WHERE groups.id=studs.gp_id and groups.sp_id=:in2 ');
 FDQuery1.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
+FDQuery1.open;
+DataModule4.spstudsDataSource.DataSet:=FDQuery1;
+FDquery2.SQL.Clear;
+FDquery2.SQL.Add ('select * from groups WHERE sp_id= :in2 ');
+FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
+FDQuery2.open;
+DBLookupComboBox2.ListSource:= DataSource1;
+DBLookupComboBox2.ListField:='name';
+DBLookupComboBox2.KeyField:='id';
+end;
+
+procedure Tspstuds.DBLookupComboBox2Click(Sender: TObject);
+begin
+FDquery1.SQL.Clear;
+FDquery1.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name from studs,groups WHERE groups.id=studs.gp_id and studs.gp_id=:in2');
+FDQuery1.ParamByName('in2').AsString:=DBLookupComboBox2.KeyValue;
 FDQuery1.open;
 DBLookupComboBox2.ListSource:= DataSource1;
 DBLookupComboBox2.ListField:='name';
 DBLookupComboBox2.KeyField:='id';
 DataModule4.spstudsDataSource.DataSet:=FDQuery1;
-
 end;
 
 procedure Tspstuds.N12Click(Sender: TObject);
