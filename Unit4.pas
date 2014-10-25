@@ -35,6 +35,7 @@ type
     DataSourcedspm_uchp: TDataSource;
     Queryinsdsp_ucp: TFDQuery;
     Query_inst_mod_uchp: TFDQuery;
+    Queryarhiv: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
 
   private
