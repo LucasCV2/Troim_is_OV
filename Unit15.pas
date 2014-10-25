@@ -93,6 +93,8 @@ DataModule4.Queryinsdsp_ucp.ParamByName('sp_id').AsString:=DBLookupComboBox1.Key
 DataModule4.Queryinsdsp_ucp.ParamByName('id').AsString:=DBGrid1.Fields[0].AsString;
 DataModule4.Queryinsdsp_ucp.ExecSQL;
 DataModule4.Querydsp_uchp.Refresh;
+name_pr_red.Clear;
+chasi_red.Clear;
 end;
 
 procedure Tuchplanst.Button3Click(Sender: TObject);
@@ -103,6 +105,8 @@ DataModule4.Queryinsdsp_ucp.ParamByName('id').AsString:=DBGrid1.Fields[0].AsStri
 DataModule4.Queryinsdsp_ucp.ExecSQL;
 DataModule4.DataSourcedspm_uchp.Enabled:=false;
 DataModule4.Querydsp_uchp.Refresh;
+name_pr_red.Clear;
+chasi_red.Clear;
 end;
 
 procedure Tuchplanst.Button4Click(Sender: TObject);

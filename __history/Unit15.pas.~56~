@@ -98,9 +98,10 @@ end;
 procedure Tuchplanst.Button3Click(Sender: TObject);
 begin
 DataModule4.Queryinsdsp_ucp.SQL.Clear;
-DataModule4.Queryinsdsp_ucp.SQL.Add ('DELETE FROM asu.predmeti,asu.modul  WHERE predmeti.id=:id and modul.pr_id=:id');
+DataModule4.Queryinsdsp_ucp.SQL.Add ('DELETE predmeti,modul FROM predmeti left JOIN modul on modul.pr_id=predmeti.id  WHERE predmeti.id=:id');
 DataModule4.Queryinsdsp_ucp.ParamByName('id').AsString:=DBGrid1.Fields[0].AsString;
 DataModule4.Queryinsdsp_ucp.ExecSQL;
+DataModule4.DataSourcedspm_uchp.Enabled:=false;
 DataModule4.Querydsp_uchp.Refresh;
 end;
 
