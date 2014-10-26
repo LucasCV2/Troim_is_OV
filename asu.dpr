@@ -16,7 +16,8 @@ uses
   Unit12 in 'Unit12.pas' {Tip_ocenok},
   Unit14 in 'Unit14.pas' {dolgnost},
   Unit13 in 'Unit13.pas' {group},
-  Unit15 in 'Unit15.pas' {uchplanst};
+  Unit15 in 'Unit15.pas' {uchplanst},
+  Unit16 in 'Unit16.pas' {fam_card};
 
 {$R *.res}
 
@@ -38,5 +39,6 @@ begin
   Application.CreateForm(Tdolgnost, dolgnost);
   Application.CreateForm(Tgroup, group);
   Application.CreateForm(Tuchplanst, uchplanst);
+  Application.CreateForm(Tfam_card, fam_card);
   Application.Run;
 end.

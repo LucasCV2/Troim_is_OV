@@ -172,6 +172,10 @@
             <Form>uchplanst</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Unit16.pas">
+            <Form>fam_card</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

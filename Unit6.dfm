@@ -34,7 +34,6 @@ object kartastud: Tkartastud
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ExplicitTop = 2
       object Label2: TLabel
         Left = 96
         Top = 64
@@ -208,7 +207,19 @@ object kartastud: Tkartastud
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ExplicitTop = 5
+      object DBGrid1: TDBGrid
+        Left = 24
+        Top = 40
+        Width = 881
+        Height = 209
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -16
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        OnDblClick = DBGrid1DblClick
+      end
     end
   end
 end
