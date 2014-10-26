@@ -4,7 +4,7 @@ object spstuds: Tspstuds
   Hint = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1100
   BorderStyle = bsDialog
   Caption = #1057#1087#1080#1089#1086#1082' '#1089#1090#1091#1076#1077#1085#1090#1086#1074
-  ClientHeight = 390
+  ClientHeight = 391
   ClientWidth = 792
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -93,15 +93,17 @@ object spstuds: Tspstuds
     Left = 0
     Top = 65
     Width = 792
-    Height = 325
+    Height = 326
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
+    ExplicitHeight = 325
     object DBGrid1: TDBGrid
-      Left = 1
-      Top = 1
-      Width = 790
-      Height = 323
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 784
+      Height = 318
       Align = alClient
       Color = clBtnFace
       DataSource = DataModule4.spstudsDataSource
