@@ -37,8 +37,8 @@ object fam_card: Tfam_card
     Connection = DataModule4.FDConnection1
     SQL.Strings = (
       
-        'SELECT fio.personal_r, mesto_rab.personal_r, tel_dom.personal_r,' +
-        ' tel_rab.personal_r, adress.personal_r, dolgnost.personal_r FROM' +
+        'SELECT personal_r.fio, personal_r.mesto_rab, personal_r.tel_dom,' +
+        ' personal_r.tel_rab, personal_r.adress, personal_r.dolgnost FROM' +
         ' asu.personal_r;')
     Left = 304
     Top = 208

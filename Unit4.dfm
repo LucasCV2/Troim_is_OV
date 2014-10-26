@@ -157,4 +157,16 @@ object DataModule4: TDataModule4
     Left = 536
     Top = 248
   end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 544
+    Top = 384
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT personal_r.fio FROM asu.personal_r;')
+    Left = 464
+    Top = 384
+  end
 end

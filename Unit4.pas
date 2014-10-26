@@ -36,6 +36,8 @@ type
     Queryinsdsp_ucp: TFDQuery;
     Query_inst_mod_uchp: TFDQuery;
     Queryarhiv: TFDQuery;
+    DataSource1: TDataSource;
+    FDQuery1: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
 
   private
@@ -66,6 +68,7 @@ fdquery15.Active:=True;
 specFDTable.Active:=True;
 dolFDTable1.Active:=True;
 tipprodstva.Active:=True;
+FDQuery1.Active:=True;
 end;
 
 

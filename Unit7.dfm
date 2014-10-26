@@ -2,7 +2,7 @@ object newlkst: Tnewlkst
   Left = 0
   Top = 0
   Caption = #1057#1086#1079#1076#1072#1085#1080#1077' '#1083#1080#1095#1085#1086#1081' '#1082#1072#1088#1090#1099' '#1089#1090#1091#1076#1077#1085#1090#1072
-  ClientHeight = 353
+  ClientHeight = 249
   ClientWidth = 697
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,7 +11,6 @@ object newlkst: Tnewlkst
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 19
   object Label1: TLabel
@@ -159,43 +158,16 @@ object newlkst: Tnewlkst
   end
   object Button1: TButton
     Left = 570
-    Top = 315
+    Top = 211
     Width = 111
     Height = 25
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
     TabOrder = 7
     OnClick = Button1Click
   end
-  object DBGrid1: TDBGrid
-    AlignWithMargins = True
-    Left = 24
-    Top = 208
-    Width = 657
-    Height = 81
-    DataSource = DataSource1
-    TabOrder = 8
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -16
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    OnDblClick = DBGrid1DblClick
-  end
   object FDQuery: TFDQuery
     Connection = DataModule4.FDConnection1
     Left = 728
     Top = 416
-  end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 304
-    Top = 312
-  end
-  object FDQuery1: TFDQuery
-    Connection = DataModule4.FDConnection1
-    SQL.Strings = (
-      'SELECT personal_r.fio FROM asu.personal_r;')
-    Left = 368
-    Top = 312
   end
 end
