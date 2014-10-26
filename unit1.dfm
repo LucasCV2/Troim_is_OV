@@ -67,7 +67,7 @@ object spstuds: Tspstuds
     end
     object Edit1: TEdit
       Left = 552
-      Top = 5
+      Top = 3
       Width = 233
       Height = 24
       Font.Charset = DEFAULT_CHARSET
@@ -86,6 +86,7 @@ object spstuds: Tspstuds
       Height = 27
       Caption = #1055#1086#1080#1089#1082
       TabOrder = 3
+      OnClick = Button1Click
     end
   end
   object Panel2: TPanel
@@ -212,6 +213,11 @@ object spstuds: Tspstuds
   object FDQuery2: TFDQuery
     Connection = DataModule4.FDConnection1
     Left = 624
+    Top = 313
+  end
+  object FDQuery3: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 680
     Top = 313
   end
 end
