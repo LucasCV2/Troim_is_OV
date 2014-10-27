@@ -207,20 +207,44 @@ object kartastud: Tkartastud
       Font.Style = []
       ParentFont = False
       TabOrder = 0
+      DesignSize = (
+        770
+        237)
       object DBGrid1: TDBGrid
         AlignWithMargins = True
         Left = 3
         Top = 19
-        Width = 758
+        Width = 764
         Height = 209
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Color = clBtnFace
         DataSource = DataModule4.DataSource1
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        ReadOnly = True
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -16
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        Touch.ParentTabletOptions = False
+        Touch.TabletOptions = [toPressAndHold]
         OnDblClick = DBGrid1DblClick
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'id'
+            Title.Caption = #8470
+            Width = 50
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'fio'
+            Title.Caption = #1060#1040#1052#1048#1051#1048#1071' '#1048#1052#1071' '#1054#1058#1063#1045#1057#1058#1042#1054
+            Width = 300
+            Visible = True
+          end>
       end
     end
   end
