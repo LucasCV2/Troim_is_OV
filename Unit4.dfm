@@ -169,4 +169,11 @@ object DataModule4: TDataModule4
     Left = 464
     Top = 384
   end
+  object FDQuery2: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM asu.personal_r;')
+    Left = 464
+    Top = 328
+  end
 end

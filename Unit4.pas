@@ -38,6 +38,7 @@ type
     Queryarhiv: TFDQuery;
     DataSource1: TDataSource;
     FDQuery1: TFDQuery;
+    FDQuery2: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
 
   private
@@ -69,6 +70,7 @@ specFDTable.Active:=True;
 dolFDTable1.Active:=True;
 tipprodstva.Active:=True;
 FDQuery1.Active:=True;
+FDQuery2.Active:=True;
 end;
 
 

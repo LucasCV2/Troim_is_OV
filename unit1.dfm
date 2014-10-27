@@ -97,7 +97,6 @@ object spstuds: Tspstuds
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
-    ExplicitHeight = 325
     object DBGrid1: TDBGrid
       AlignWithMargins = True
       Left = 4

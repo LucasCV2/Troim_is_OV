@@ -7,15 +7,26 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls;
 
 type
   Tfam_card = class(TForm)
-    DataSource1: TDataSource;
-    DBGrid1: TDBGrid;
-    FDQuery1: TFDQuery;
-    procedure FormCreate(Sender: TObject);
-  private
+    GroupBox2: TGroupBox;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    fio: TLabel;
+    id: TLabel;
+    adress: TLabel;
+    tell_dom: TLabel;
+    mesto_rab: TLabel;
+    dolgnost: TLabel;
+    tell_rab: TLabel;
     { Private declarations }
   public
     { Public declarations }
@@ -27,10 +38,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure Tfam_card.FormCreate(Sender: TObject);
-begin
-FDQuery1.Active:=true;
-end;
 
 end.

@@ -2,8 +2,8 @@ object kartastud: Tkartastud
   Left = 0
   Top = 0
   Caption = #1051#1080#1095#1085#1072#1103' '#1082#1072#1088#1090#1072' '#1089#1090#1091#1076#1077#1085#1090#1072
-  ClientHeight = 731
-  ClientWidth = 931
+  ClientHeight = 528
+  ClientWidth = 772
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,14 +16,15 @@ object kartastud: Tkartastud
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 931
+    Width = 772
     Height = 289
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 931
     object GroupBox2: TGroupBox
       Left = 1
       Top = 1
-      Width = 929
+      Width = 770
       Height = 287
       Align = alClient
       Caption = #1057#1090#1091#1076#1077#1085#1090':'
@@ -34,8 +35,7 @@ object kartastud: Tkartastud
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ExplicitLeft = 2
-      ExplicitTop = 25
+      ExplicitHeight = 224
       object Label2: TLabel
         Left = 96
         Top = 64
@@ -191,16 +191,17 @@ object kartastud: Tkartastud
   object Panel2: TPanel
     Left = 0
     Top = 289
-    Width = 931
-    Height = 442
+    Width = 772
+    Height = 239
     Align = alClient
     TabOrder = 1
-    ExplicitHeight = 420
+    ExplicitWidth = 931
+    ExplicitHeight = 442
     object GroupBox1: TGroupBox
       Left = 1
       Top = 1
-      Width = 929
-      Height = 440
+      Width = 770
+      Height = 237
       Align = alClient
       Caption = #1056#1086#1076#1080#1090#1077#1083#1080':'
       Font.Charset = DEFAULT_CHARSET
@@ -210,13 +211,13 @@ object kartastud: Tkartastud
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ExplicitLeft = 153
-      ExplicitTop = 57
+      ExplicitWidth = 929
+      ExplicitHeight = 440
       object DBGrid1: TDBGrid
         AlignWithMargins = True
-        Left = 24
-        Top = 40
-        Width = 881
+        Left = 3
+        Top = 19
+        Width = 758
         Height = 209
         DataSource = DataModule4.DataSource1
         TabOrder = 0
