@@ -165,7 +165,7 @@ object DataModule4: TDataModule4
   object FDQuery1: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'SELECT personal_r.fio FROM asu.personal_r;')
+      'SELECT personal_r.id,personal_r.fio FROM asu.personal_r;')
     Left = 464
     Top = 384
   end
