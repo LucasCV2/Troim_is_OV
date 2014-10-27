@@ -20,7 +20,6 @@ object kartastud: Tkartastud
     Height = 289
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 931
     object GroupBox2: TGroupBox
       Left = 1
       Top = 1
@@ -35,7 +34,6 @@ object kartastud: Tkartastud
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ExplicitHeight = 224
       object Label2: TLabel
         Left = 96
         Top = 64
@@ -195,8 +193,6 @@ object kartastud: Tkartastud
     Height = 239
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 931
-    ExplicitHeight = 442
     object GroupBox1: TGroupBox
       Left = 1
       Top = 1
@@ -211,8 +207,6 @@ object kartastud: Tkartastud
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      ExplicitWidth = 929
-      ExplicitHeight = 440
       object DBGrid1: TDBGrid
         AlignWithMargins = True
         Left = 3

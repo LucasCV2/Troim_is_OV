@@ -52,7 +52,7 @@ procedure Tkartastud.DBGrid1DblClick(Sender: TObject);
 begin
 fam_card.show;
 fam_card.id.Caption:=DataModule4.FDQuery2.Fields[0].AsString;
-fam_card.fio.Caption:=DataModule4.FDQuery2.Fields[1].AsString;
+fam_card.fio.Caption:=DataModule4.FDQuery2.Fields[3].AsString;
 fam_card.mesto_rab.Caption:=DataModule4.FDQuery2.Fields[4].AsString;
 fam_card.tell_dom.Caption:=DataModule4.FDQuery2.Fields[5].AsString;
 fam_card.tell_rab.Caption:=DataModule4.FDQuery2.Fields[6].AsString;
