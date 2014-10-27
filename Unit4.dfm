@@ -165,14 +165,19 @@ object DataModule4: TDataModule4
   object FDQuery1: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'SELECT personal_r.id,personal_r.fio FROM asu.personal_r;')
+      
+        'SELECT personal_r.id,personal_r.fio FROM asu.personal_r WHERE st' +
+        '_id=:id')
     Left = 464
     Top = 384
+    ParamData = <
+      item
+        Name = 'ID'
+        ParamType = ptInput
+      end>
   end
   object FDQuery2: TFDQuery
     Connection = FDConnection1
-    SQL.Strings = (
-      'SELECT * FROM asu.personal_r;')
     Left = 464
     Top = 328
   end

@@ -78,6 +78,8 @@ FDQuery3.open;
 DataModule4.spstudsDataSource.DataSet:=FDQuery3;
 end;
 
+
+
 procedure Tspstuds.DBGrid1DblClick(Sender: TObject);
 var
 spid,gpid:integer;
@@ -182,6 +184,10 @@ DataModule4.kartastwdl.SQL.Add ('select name from dolgnost WHERE id= :in7 ');
 DataModule4.kartastwdl.ParamByName('in7').AsString:=dl;
 DataModule4.kartastwdl.open;
 kartastud.dolgnost.Caption:=DataModule4.kartastwdl.fields[0].asstring;
+DataModule4.FDQuery1.SQL.Clear;
+DataModule4.FDQuery1.SQL.Add ('SELECT personal_r.id,personal_r.fio FROM asu.personal_r WHERE st_id=:id');
+DataModule4.FDQuery1.ParamByName('id').AsString:=spstuds.DBGrid1.Fields[0].AsString;
+DataModule4.FDQuery1.open;
 end;
 
 procedure Tspstuds.N6Click(Sender: TObject);

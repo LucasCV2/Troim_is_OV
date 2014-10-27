@@ -50,6 +50,11 @@ uses Unit16, Unit4, Unit1;
 
 procedure Tkartastud.DBGrid1DblClick(Sender: TObject);
 begin
+
+DataModule4.FDQuery2.SQL.Clear;
+DataModule4.FDQuery2.SQL.Add ('SELECT * FROM personal_r WHERE id= :in6 ');
+DataModule4.FDQuery2.ParamByName('in6').AsString:=DBGrid1.Fields[0].AsString;
+DataModule4.FDQuery2.Open;
 fam_card.show;
 fam_card.fio.Caption:=DataModule4.FDQuery2.Fields[3].AsString;
 fam_card.id.Caption:=DataModule4.FDQuery2.Fields[0].AsString;
@@ -58,10 +63,6 @@ fam_card.tell_dom.Caption:=DataModule4.FDQuery2.Fields[5].AsString;
 fam_card.tell_rab.Caption:=DataModule4.FDQuery2.Fields[6].AsString;
 fam_card.dolgnost.Caption:=DataModule4.FDQuery2.Fields[7].AsString;
 fam_card.adress.Caption:=DataModule4.FDQuery2.Fields[8].AsString;
-DataModule4.FDQuery2.SQL.Clear;
-DataModule4.FDQuery2.SQL.Add ('SELECT id FROM personal_r WHERE id= :in6 ');
-DataModule4.FDQuery2.ParamByName('in6').AsString:=DBGrid1.Fields[0].AsString;
-DataModule4.FDQuery2.Open;
 end;
 
 end.

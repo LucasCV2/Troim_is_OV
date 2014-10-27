@@ -69,8 +69,6 @@ fdquery15.Active:=True;
 specFDTable.Active:=True;
 dolFDTable1.Active:=True;
 tipprodstva.Active:=True;
-FDQuery1.Active:=True;
-FDQuery2.Active:=True;
 end;
 
 
