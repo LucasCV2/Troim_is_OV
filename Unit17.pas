@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, Unit1;
 
 type
   Tred_ks = class(TForm)
@@ -52,15 +52,15 @@ implementation
 procedure Tred_ks.Button1Click(Sender: TObject);
 begin
 FDquery1.SQL.Clear;
-FDquery1.SQL.Add ('UPDATE personal SET adress=:adress, tell=:tell, dater=:dater, pass=:pass,vidan=:vidan, inn=:inn WHERE id=:id');
-FDquery1.ParamByName('id').AsString:=nomer2.Caption;
+FDquery1.SQL.Add ('UPDATE personal SET adress=:adress, tell=:tell, dater=:dater, pass=:pass,vidan=:vidan, inn=:inn WHERE st_id=:id');
+FDquery1.ParamByName('id').AsString:=spstuds.DBGrid1.Fields[0].AsString;
 FDQuery1.ParamByName('adress').AsString:=adress2.Text;
 FDQuery1.ParamByName('tell').AsString:=tell2.Text;
 FDQuery1.ParamByName('dater').AsDate:=dater2.Date;
 FDQuery1.ParamByName('pass').AsString:=pass2.Text;
 FDQuery1.ParamByName('vidan').AsString:=vidan2.Text;
 FDQuery1.ParamByName('inn').AsString:=inn2.Text;
-FDQuery1.ParamByName('dolgnost').AsString:=dolgnost2.KeyValue;;
+FDQuery1.ParamByName('name').AsString:=dolgnost2.KeyValue;;
 FDQuery1.ExecSQL;
 end;
 

@@ -46,8 +46,8 @@ object DataModule4: TDataModule4
   end
   object redstform: TFDQuery
     Connection = FDConnection1
-    Left = 8
-    Top = 128
+    Left = 32
+    Top = 184
   end
   object redstfirds: TDataSource
     DataSet = redstform2
@@ -97,8 +97,8 @@ object DataModule4: TDataModule4
   end
   object tiprodstvaSource: TDataSource
     DataSet = tipprodstva
-    Left = 240
-    Top = 280
+    Left = 256
+    Top = 272
   end
   object Querysp_uchp: TFDQuery
     Connection = FDConnection1
@@ -180,5 +180,10 @@ object DataModule4: TDataModule4
     Connection = FDConnection1
     Left = 464
     Top = 328
+  end
+  object FDQuery3: TFDQuery
+    Connection = FDConnection1
+    Left = 625
+    Top = 321
   end
 end

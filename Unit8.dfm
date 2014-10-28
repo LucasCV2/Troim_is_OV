@@ -65,11 +65,11 @@ object newlkrod: Tnewlkrod
     Caption = #1057#1090#1077#1087#1077#1085#1100' '#1088#1086#1076#1089#1090#1074#1072':'
   end
   object Label8: TLabel
-    Left = 24
+    Left = 16
     Top = 8
-    Width = 66
+    Width = 75
     Height = 19
-    Caption = #1057#1090#1091#1076#1077#1085#1090':'
+    Caption = #1056#1086#1076#1080#1090#1077#1083#1100':'
   end
   object Label9: TLabel
     Left = 368

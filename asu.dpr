@@ -18,7 +18,8 @@ uses
   Unit13 in 'Unit13.pas' {group},
   Unit15 in 'Unit15.pas' {uchplanst},
   Unit16 in 'Unit16.pas' {fam_card},
-  Unit17 in 'Unit17.pas' {red_ks};
+  Unit17 in 'Unit17.pas' {red_ks},
+  Unit18 in 'Unit18.pas' {Redak_2};
 
 {$R *.res}
 
@@ -42,5 +43,6 @@ begin
   Application.CreateForm(Tuchplanst, uchplanst);
   Application.CreateForm(Tfam_card, fam_card);
   Application.CreateForm(Tred_ks, red_ks);
+  Application.CreateForm(TRedak_2, Redak_2);
   Application.Run;
 end.

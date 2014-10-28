@@ -4,8 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids,Vcl.DBGrids,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   Tkartastud = class(TForm)
@@ -32,7 +35,10 @@ type
     inn: TLabel;
     dater: TLabel;
     DBGrid1: TDBGrid;
+    Button1: TButton;
+    FDQuery1: TFDQuery;
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,7 +52,32 @@ implementation
 
 {$R *.dfm}
 
-uses Unit16, Unit4, Unit1;
+uses Unit16, Unit4, Unit1, Unit18;
+
+procedure Tkartastud.Button1Click(Sender: TObject);
+var
+sr:string;
+begin
+Redak_2.fiol.Caption:=DBGrid1.Fields[1].AsString;
+Redak_2.nomer.Caption:=DBGrid1.Fields[0].AsString;
+Redak_2.show;
+FDQuery1.SQL.Clear;
+FDQuery1.SQL.Add ('select * from personal_r WHERE id= :in6 ');
+FDQuery1.ParamByName('in6').AsString:=DBGrid1.Fields[0].AsString;
+FDQuery1.open;
+Redak_2.edit1.Text:=FDQuery1.Fields[5].AsString;
+Redak_2.edit2.Text:=FDQuery1.Fields[3].AsString;
+Redak_2.edit3.Text:=FDQuery1.Fields[4].AsString;
+Redak_2.edit4.Text:=FDQuery1.Fields[7].AsString;
+Redak_2.edit5.Text:=FDQuery1.Fields[8].AsString;
+Redak_2.edit6.Text:=FDQuery1.Fields[6].AsString;
+DataModule4.FDQuery3.SQL.Clear;
+DataModule4.FDQuery3.SQL.Add ('select name from fam WHERE id=:in7 ');
+sr:=Datamodule4.FDQuery3.Fields[1].Asstring;
+DataModule4.FDQuery3.ParamByName('in7').AsString:=sr;
+DataModule4.FDQuery3.open;
+Redak_2.fam_id.KeyValue:=DataModule4.FDQuery3.fields[1].asstring;
+end;
 
 procedure Tkartastud.DBGrid1DblClick(Sender: TObject);
 begin

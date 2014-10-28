@@ -175,22 +175,40 @@ object red_ks: Tred_ks
   object adress2: TEdit
     Left = 80
     Top = 51
-    Width = 266
-    Height = 21
+    Width = 273
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object tell2: TEdit
     Left = 101
-    Top = 78
+    Top = 84
     Width = 252
-    Height = 21
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
   end
   object inn2: TEdit
     Left = 424
     Top = 88
     Width = 263
-    Height = 21
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
   end
   object dater2: TDateTimePicker
@@ -212,14 +230,26 @@ object red_ks: Tred_ks
     Left = 207
     Top = 125
     Width = 146
-    Height = 21
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 5
   end
   object vidan2: TEdit
     Left = 114
     Top = 165
     Width = 573
-    Height = 21
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 6
   end
   object Button1: TButton
@@ -249,9 +279,7 @@ object red_ks: Tred_ks
   end
   object FDQuery3: TFDQuery
     Connection = DataModule4.FDConnection1
-    SQL.Strings = (
-      '')
-    Left = 232
+    Left = 408
     Top = 208
   end
 end
