@@ -42,6 +42,7 @@ type
     FDQuery1: TFDQuery;
     FDQuery2: TFDQuery;
     FDQuery3: TFDQuery;
+    FDQuery4: TFDQuery;
   
     procedure DBGrid1DblClick(Sender: TObject);
     procedure N6Click(Sender: TObject);
@@ -167,23 +168,23 @@ var
 dl2:string;
 begin
 red_ks.show;
-red_ks.FDQuery3.SQL.Clear;
-red_ks.FDQuery3.SQL.Add ('select * from personal WHERE st_id= :in6 ');
-red_ks.FDQuery3.ParamByName('in6').AsString:=DBGrid1.Fields[0].AsString;
-red_ks.FDQuery3.open;
-red_ks.nomer2.text:=red_ks.FDQuery3.Fields[0].AsString;
-red_ks.adress2.text:=red_ks.FDQuery3.Fields[2].AsString;
-red_ks.tell2.text:=red_ks.FDQuery3.Fields[3].AsString;
-red_ks.dater2.text:=red_ks.FDQuery3.Fields[4].AsString;
-red_ks.pass2.text:=red_ks.FDQuery3.Fields[5].AsString;
-red_ks.vidan2.text:=red_ks.FDQuery3.Fields[6].AsString;
-red_ks.inn2.text:=red_ks.FDQuery3.Fields[7].AsString;
-dl2:=red_ks.FDQuery3.Fields[8].Asstring;
+FDQuery4.SQL.Clear;
+FDQuery4.SQL.Add ('select * from personal WHERE st_id= :in6 ');
+FDQuery4.ParamByName('in6').AsString:=DBGrid1.Fields[0].AsString;
+FDQuery4.open;
+red_ks.nomer2.Caption:=FDQuery4.Fields[0].AsString;
+red_ks.adress2.text:=FDQuery4.Fields[2].AsString;
+red_ks.tell2.Text:=FDQuery4.Fields[3].AsString;
+red_ks.dater2.date:=FDQuery4.Fields[4].AsDateTime;
+red_ks.pass2.Text:=FDQuery4.Fields[5].AsString;
+red_ks.vidan2.Text:=FDQuery4.Fields[6].AsString;
+red_ks.inn2.Text:=FDQuery4.Fields[7].AsString;
+dl2:=FDQuery4.Fields[8].Asstring;
 DataModule4.kartastwdl.SQL.Clear;
 DataModule4.kartastwdl.SQL.Add ('select name from dolgnost WHERE id= :in7 ');
 DataModule4.kartastwdl.ParamByName('in7').AsString:=dl2;
 DataModule4.kartastwdl.open;
-red_ks.dolgnost2.Caption:=DataModule4.kartastwdl.fields[0].asstring;
+red_ks.dolgnost2.KeyValue:=DataModule4.kartastwdl.fields[0].asstring;
 red_ks.FDQuery2.SQL.Clear;
 red_ks.FDQuery2.SQL.Add ('SELECT personal_r.id,personal_r.fio FROM asu.personal_r WHERE st_id=:id');
 red_ks.FDQuery2.ParamByName('id').AsString:=spstuds.DBGrid1.Fields[0].AsString;
