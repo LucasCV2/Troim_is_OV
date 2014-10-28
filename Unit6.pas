@@ -50,7 +50,6 @@ uses Unit16, Unit4, Unit1;
 
 procedure Tkartastud.DBGrid1DblClick(Sender: TObject);
 begin
-
 DataModule4.FDQuery2.SQL.Clear;
 DataModule4.FDQuery2.SQL.Add ('SELECT * FROM personal_r WHERE id= :in6 ');
 DataModule4.FDQuery2.ParamByName('in6').AsString:=DBGrid1.Fields[0].AsString;

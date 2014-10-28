@@ -179,6 +179,7 @@ object spstuds: Tspstuds
         Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100
         object N10: TMenuItem
           Caption = #1057#1090#1091#1076#1077#1085#1090
+          OnClick = N10Click
         end
         object N11: TMenuItem
           Caption = #1056#1086#1076#1080#1090#1077#1083#1080

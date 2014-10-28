@@ -1,0 +1,44 @@
+unit Unit17;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.DBCtrls;
+
+type
+  TForm17 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    fio: TLabel;
+    nomer: TLabel;
+    dolgnost: TDBLookupComboBox;
+    adress: TEdit;
+    tell: TEdit;
+    inn: TEdit;
+    dater: TDateTimePicker;
+    pass: TEdit;
+    vidan: TEdit;
+    Button1: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form17: TForm17;
+
+implementation
+
+{$R *.dfm}
+
+
+end.
