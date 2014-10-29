@@ -222,8 +222,8 @@ object Redak_2: TRedak_2
     TabOrder = 4
   end
   object Button2: TButton
-    Left = 591
-    Top = 275
+    Left = 584
+    Top = 272
     Width = 97
     Height = 29
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
@@ -237,7 +237,7 @@ object Redak_2: TRedak_2
     OnClick = Button2Click
   end
   object fam_id: TDBLookupComboBox
-    Left = 519
+    Left = 512
     Top = 134
     Width = 169
     Height = 27
