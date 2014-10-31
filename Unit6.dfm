@@ -213,7 +213,7 @@ object kartastud: Tkartastud
       object DBGrid1: TDBGrid
         AlignWithMargins = True
         Left = 3
-        Top = 19
+        Top = 25
         Width = 518
         Height = 209
         Anchors = [akLeft, akTop, akRight, akBottom]

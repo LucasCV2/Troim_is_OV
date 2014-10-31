@@ -253,7 +253,7 @@ object red_ks: Tred_ks
     TabOrder = 6
   end
   object Button1: TButton
-    Left = 576
+    Left = 577
     Top = 216
     Width = 111
     Height = 25

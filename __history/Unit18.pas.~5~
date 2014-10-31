@@ -46,8 +46,6 @@ implementation
 
 {$R *.dfm}
 
-uses Unit4;
-
 
 
 

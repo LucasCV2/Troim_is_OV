@@ -46,15 +46,13 @@ implementation
 
 {$R *.dfm}
 
-uses Unit4;
-
 
 
 
 procedure TRedak_2.Button2Click(Sender: TObject);
 begin
 FDquery1.SQL.Clear;
-FDquery1.SQL.Add ('UPDATE personal_r SET adress=:adress, fio=:fio, mesto_rab=:mesto_rab, tel_dom=:tel_dom,tel_rab=:tel_rab, dolgnost=:dolgnost, fam_id=:fam_id WHERE id=:id');
+FDquery1.SQL.Add ('UPDATE personal_r SET adress=:adress, fio=:fio, mesto_rab=:mesto_rab, tel_dom=:tel_dom,tel_rab=:tel_rab, dolgnost=:dolgnost, fam_id:=fam_id WHERE id=:id');
 FDquery1.ParamByName('id').AsString:=nomer.Caption;
 FDQuery1.ParamByName('fio').AsString:=Edit2.Text;
 FDQuery1.ParamByName('mesto_rab').AsString:=Edit3.Text;
@@ -64,7 +62,6 @@ FDQuery1.ParamByName('adress').AsString:=Edit5.Text;
 FDQuery1.ParamByName('dolgnost').AsString:=Edit4.Text;
 FDQuery1.ParamByName('fam_id').AsString:=fam_id.KeyValue;
 FDQuery1.ExecSQL;
-datamodule4.FDQuery1.Refresh;
 Close;
 end;
 

@@ -46,8 +46,6 @@ implementation
 
 {$R *.dfm}
 
-uses Unit4;
-
 
 
 
@@ -64,7 +62,6 @@ FDQuery1.ParamByName('adress').AsString:=Edit5.Text;
 FDQuery1.ParamByName('dolgnost').AsString:=Edit4.Text;
 FDQuery1.ParamByName('fam_id').AsString:=fam_id.KeyValue;
 FDQuery1.ExecSQL;
-datamodule4.FDQuery1.Refresh;
 Close;
 end;
 

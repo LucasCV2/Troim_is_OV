@@ -62,7 +62,6 @@ FDQuery1.ParamByName('vidan').AsString:=vidan2.Text;
 FDQuery1.ParamByName('inn').AsString:=inn2.Text;
 FDQuery1.ParamByName('dolgnost').AsString:=dolgnost2.KeyValue;
 FDQuery1.ExecSQL;
-red_ks.Close;
 end;
 
 end.
