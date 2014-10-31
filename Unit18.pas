@@ -61,6 +61,7 @@ FDQuery1.ParamByName('tel_rab').AsString:=Edit6.Text;
 FDQuery1.ParamByName('adress').AsString:=Edit5.Text;
 FDQuery1.ParamByName('dolgnost').AsString:=Edit4.Text;
 FDQuery1.ExecSQL;
+Close;
 end;
 
 end.

@@ -40,6 +40,7 @@ type
     FDQuery1: TFDQuery;
     FDQuery2: TFDQuery;
     FDQuery3: TFDQuery;
+    FDQuery4: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
 
   private

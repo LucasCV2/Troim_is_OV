@@ -52,7 +52,7 @@ implementation
 procedure Tred_ks.Button1Click(Sender: TObject);
 begin
 FDquery1.SQL.Clear;
-FDquery1.SQL.Add ('UPDATE personal SET adress=:adress, tell=:tell, dater=:dater, pass=:pass,vidan=:vidan, inn=:inn WHERE st_id=:id');
+FDquery1.SQL.Add ('UPDATE personal, dolgnost SET dolgnost.name=:name, personal.adress=:adress, personal.tell=:tell, personal.dater=:dater, personal.pass=:pass,personal.vidan=:vidan,personal.inn=:inn WHERE dolgnost.id=personal.st_id and personal.st_id=:in2');
 FDquery1.ParamByName('id').AsString:=spstuds.DBGrid1.Fields[0].AsString;
 FDQuery1.ParamByName('adress').AsString:=adress2.Text;
 FDQuery1.ParamByName('tell').AsString:=tell2.Text;

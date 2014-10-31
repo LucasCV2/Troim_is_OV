@@ -179,11 +179,11 @@ red_ks.pass2.Text:=FDQuery4.Fields[5].AsString;
 red_ks.vidan2.Text:=FDQuery4.Fields[6].AsString;
 red_ks.inn2.Text:=FDQuery4.Fields[7].AsString;
 dl:=FDQuery4.Fields[8].Asstring;
-{DataModule4.kartastwdl.SQL.Clear;
-DataModule4.kartastwdl.SQL.Add ('select name from dolgnost WHERE id= :in7 ');
-DataModule4.kartastwdl.ParamByName('in7').AsString:=dl;
-DataModule4.kartastwdl.open;}
-//red_ks.dolgnost2.KeyValue:=DataModule4.kartastwdl.fields[0].asstring;
+DataModule4.FDQuery4.SQL.Clear;
+DataModule4.FDQuery4.SQL.Add ('select * from dolgnost WHERE id= :in7 ');
+DataModule4.FDQuery4.ParamByName('in7').AsString:=dl;
+DataModule4.FDQuery4.open;
+red_ks.dolgnost2.KeyValue:=DataModule4.FDQuery4.fields[0].asstring;
 red_ks.dolgnost2.KeyValue:=FDQuery4.Fields[8].Asstring;
 end;
 

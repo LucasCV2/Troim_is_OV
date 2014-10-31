@@ -1,0 +1,66 @@
+unit Unit18;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Unit6, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Vcl.DBCtrls, Vcl.StdCtrls, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TRedak_2 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Label7: TLabel;
+    mestorab: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    fiol: TLabel;
+    nomer: TLabel;
+    FDQuery1: TFDQuery;
+    Button2: TButton;
+    fam_id: TDBLookupComboBox;
+    Edit6: TEdit;
+    procedure Button2Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Redak_2: TRedak_2;
+
+implementation
+
+{$R *.dfm}
+
+
+
+
+procedure TRedak_2.Button2Click(Sender: TObject);
+begin
+FDquery1.SQL.Clear;
+FDquery1.SQL.Add ('UPDATE personal_r SET adress=:adress, fio=:fio, mesto_rab=:mesto_rab, tel_dom=:tel_dom,tel_rab=:tel_rab, dolgnost=:dolgnost WHERE id=:id');
+FDquery1.ParamByName('id').AsString:=kartastud.DBGrid1.Fields[0].AsString;
+FDQuery1.ParamByName('fio').AsString:=Edit2.Text;
+FDQuery1.ParamByName('mesto_rab').AsString:=Edit3.Text;
+FDQuery1.ParamByName('tel_dom').AsString:=Edit1.Text;
+FDQuery1.ParamByName('tel_rab').AsString:=Edit6.Text;
+FDQuery1.ParamByName('adress').AsString:=Edit5.Text;
+FDQuery1.ParamByName('dolgnost').AsString:=Edit4.Text;
+FDQuery1.ExecSQL;
+end;
+
+end.
