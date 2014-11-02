@@ -12,14 +12,9 @@ uses
   Unit8 in 'Unit8.pas' {newlkrod},
   Unit9 in 'Unit9.pas' {Specialnost},
   Unit10 in 'Unit10.pas' {Redak},
-  Unit11 in 'Unit11.pas' {kat_rod},
-  Unit12 in 'Unit12.pas' {Tip_ocenok},
-  Unit14 in 'Unit14.pas' {dolgnost},
-  Unit13 in 'Unit13.pas' {group},
-  Unit15 in 'Unit15.pas' {uchplanst},
-  Unit16 in 'Unit16.pas' {fam_card},
-  Unit17 in 'Unit17.pas' {red_ks},
-  Unit18 in 'Unit18.pas' {Redak_2};
+  Unit11 in 'Unit11.pas' {Form11},
+  Unit12 in 'Unit12.pas' {Form13},
+  Unit14 in 'Unit14.pas' {Form14};
 
 {$R *.res}
 
@@ -36,13 +31,8 @@ begin
   Application.CreateForm(Tnewlkrod, newlkrod);
   Application.CreateForm(TSpecialnost, Specialnost);
   Application.CreateForm(TRedak, Redak);
-  Application.CreateForm(Tkat_rod, kat_rod);
-  Application.CreateForm(TTip_ocenok, Tip_ocenok);
-  Application.CreateForm(Tdolgnost, dolgnost);
-  Application.CreateForm(Tgroup, group);
-  Application.CreateForm(Tuchplanst, uchplanst);
-  Application.CreateForm(Tfam_card, fam_card);
-  Application.CreateForm(Tred_ks, red_ks);
-  Application.CreateForm(TRedak_2, Redak_2);
+  Application.CreateForm(TForm11, Form11);
+  Application.CreateForm(TForm13, Form13);
+  Application.CreateForm(TForm14, Form14);
   Application.Run;
 end.
