@@ -3,7 +3,7 @@ object Form19: TForm19
   Top = 0
   Caption = #1054#1094#1077#1085#1082#1080
   ClientHeight = 514
-  ClientWidth = 740
+  ClientWidth = 688
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -68,9 +68,9 @@ object Form19: TForm19
   object Label5: TLabel
     Left = 335
     Top = 182
-    Width = 165
+    Width = 135
     Height = 19
-    Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1090#1080#1087' '#1086#1094#1077#1085#1082#1080':'
+    Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1084#1086#1076#1091#1083#1100':'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -80,23 +80,10 @@ object Form19: TForm19
   end
   object Label6: TLabel
     Left = 335
-    Top = 352
+    Top = 280
     Width = 60
     Height = 19
     Caption = #1054#1094#1077#1085#1082#1072':'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label7: TLabel
-    Left = 335
-    Top = 246
-    Width = 319
-    Height = 19
-    Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1084#1086#1076#1091#1083#1100'('#1077#1089#1083#1080' '#1086#1094#1077#1085#1082#1072' '#1084#1086#1076#1091#1083#1100#1085#1072#1103'):'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -157,7 +144,7 @@ object Form19: TForm19
   end
   object DBLookupComboBox4: TDBLookupComboBox
     Left = 335
-    Top = 213
+    Top = 207
     Width = 346
     Height = 27
     Font.Charset = DEFAULT_CHARSET
@@ -170,7 +157,7 @@ object Form19: TForm19
   end
   object CheckBox1: TCheckBox
     Left = 335
-    Top = 320
+    Top = 248
     Width = 346
     Height = 17
     Caption = #1055#1086' '#1087#1103#1090#1080#1073#1072#1083#1100#1085#1086#1081' '#1089#1080#1089#1090#1077#1084#1077' '#1086#1094#1077#1085#1080#1074#1072#1085#1080#1103
@@ -184,7 +171,7 @@ object Form19: TForm19
   end
   object DBLookupComboBox5: TDBLookupComboBox
     Left = 335
-    Top = 377
+    Top = 305
     Width = 60
     Height = 27
     Font.Charset = DEFAULT_CHARSET
@@ -196,8 +183,8 @@ object Form19: TForm19
     TabOrder = 6
   end
   object Button1: TButton
-    Left = 335
-    Top = 425
+    Left = 584
+    Top = 481
     Width = 96
     Height = 25
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
@@ -208,46 +195,5 @@ object Form19: TForm19
     Font.Style = []
     ParentFont = False
     TabOrder = 7
-  end
-  object DBLookupComboBox6: TDBLookupComboBox
-    Left = 335
-    Top = 271
-    Width = 346
-    Height = 27
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 8
-  end
-  object Button2: TButton
-    Left = 446
-    Top = 425
-    Width = 123
-    Height = 25
-    Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 9
-  end
-  object Button3: TButton
-    Left = 600
-    Top = 425
-    Width = 96
-    Height = 25
-    Caption = #1059#1076#1072#1083#1080#1090#1100
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 10
   end
 end

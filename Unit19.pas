@@ -23,10 +23,6 @@ type
     Label6: TLabel;
     DBLookupComboBox5: TDBLookupComboBox;
     Button1: TButton;
-    Label7: TLabel;
-    DBLookupComboBox6: TDBLookupComboBox;
-    Button2: TButton;
-    Button3: TButton;
   private
     { Private declarations }
   public
