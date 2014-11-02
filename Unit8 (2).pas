@@ -33,6 +33,7 @@ type
     fiol: TLabel;
     nomer: TLabel;
     procedure Button1Click(Sender: TObject);
+
   private
     { Private declarations }
   public
