@@ -23,7 +23,7 @@ type
     Label5: TLabel;
     DBLookupComboBox4: TDBLookupComboBox;
     Label6: TLabel;
-    CheckBox1: TCheckBox;
+    sistem: TCheckBox;
     DBLookupComboBox5: TDBLookupComboBox;
     Button1: TButton;
     Button2: TButton;
@@ -33,9 +33,14 @@ type
     DataSource1: TDataSource;
     DataSource2: TDataSource;
     FDQuery3: TFDQuery;
+    Label7: TLabel;
+    DBLookupComboBox6: TDBLookupComboBox;
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure DBLookupComboBox3Click(Sender: TObject);
+    procedure DBLookupComboBox6Click(Sender: TObject);
+    procedure sistemClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,6 +68,12 @@ FDQuery3.open;
 DBLookupComboBox2.ListSource:=DataSource2;
 DBLookupComboBox2.ListField:='name';
 DBLookupComboBox2.KeyField:='id';
+DataModule4.Querydsp_uchp.SQL.Clear;
+DataModule4.Querydsp_uchp.SQL.Add ('select id,name from predmeti WHERE sp_id= :in3');
+DataModule4.Querydsp_uchp.ParamByName('in3').AsString:=DBLookupComboBox1.KeyValue;
+DataModule4.Querydsp_uchp.open;
+DataModule4.DataSourcedsp.DataSet:=DataModule4.Querydsp_uchp;
+
 end;
 
 procedure TOcenivanie.DBLookupComboBox2Click(Sender: TObject);
@@ -77,9 +88,81 @@ DBLookupComboBox2.KeyField:='id';
 DataSource1.DataSet:=FDQuery2;
 end;
 
+procedure TOcenivanie.DBLookupComboBox3Click(Sender: TObject);
+begin
+if(DBLookupComboBox6.KeyValue=1) then
+begin
+DataModule4.Querydspm_uchp.SQL.Clear;
+DataModule4.Querydspm_uchp.SQL.Add ('select id,name from modul WHERE pr_id= :in3');
+DataModule4.Querydspm_uchp.ParamByName('in3').AsString:=DBLookupComboBox3.KeyValue;
+DataModule4.Querydspm_uchp.open;
+DataModule4.DataSourcedspm_uchp.Enabled:=true;
+DataModule4.DataSourcedspm_uchp.DataSet:=DataModule4.Querydspm_uchp;
+end
+else
+begin
+DataModule4.DataSourcedspm_uchp.Enabled:=false;
+end;
+
+end;
+
+procedure TOcenivanie.DBLookupComboBox6Click(Sender: TObject);
+begin
+if(DBLookupComboBox6.KeyValue=1) then
+begin
+DataModule4.Querydspm_uchp.SQL.Clear;
+DataModule4.Querydspm_uchp.SQL.Add ('select id,name from modul WHERE pr_id= :in3');
+DataModule4.Querydspm_uchp.ParamByName('in3').AsString:=DBLookupComboBox3.KeyValue;
+DataModule4.Querydspm_uchp.open;
+DataModule4.DataSourcedspm_uchp.Enabled:=true;
+DataModule4.DataSourcedspm_uchp.DataSet:=DataModule4.Querydspm_uchp;
+end
+else
+begin
+DataModule4.DataSourcedspm_uchp.Enabled:=false;
+end;
+end;
+
 procedure TOcenivanie.FormCreate(Sender: TObject);
 begin
 FDQuery1.Active:=True;
+if(sistem.Checked=true) then
+begin
+DataModule4.Querysitoceok.SQL.Clear;
+DataModule4.Querysitoceok.SQL.Add ('select id,name from sist_ocenok WHERE sistem = 1');
+DataModule4.Querysitoceok.open;
+DataModule4.Sourcesitoceok.Enabled:=true;
+DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
+end
+else
+begin
+DataModule4.Querysitoceok.SQL.Clear;
+DataModule4.Querysitoceok.SQL.Add ('select id,name from sist_ocenok WHERE sistem = 0');
+DataModule4.Querysitoceok.open;
+DataModule4.Sourcesitoceok.Enabled:=true;
+DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
+end;
+
+end;
+
+procedure TOcenivanie.sistemClick(Sender: TObject);
+begin
+if(sistem.Checked=true) then
+begin
+DataModule4.Querysitoceok.SQL.Clear;
+DataModule4.Querysitoceok.SQL.Add ('select id,name from sist_ocenok WHERE sistem = 1');
+DataModule4.Querysitoceok.open;
+DataModule4.Sourcesitoceok.Enabled:=true;
+DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
+end
+else
+begin
+DataModule4.Querysitoceok.SQL.Clear;
+DataModule4.Querysitoceok.SQL.Add ('select id,name from sist_ocenok WHERE sistem = 0');
+DataModule4.Querysitoceok.open;
+DataModule4.Sourcesitoceok.Enabled:=true;
+DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
+end;
 end;
 
 end.

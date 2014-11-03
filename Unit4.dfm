@@ -1,8 +1,8 @@
 object DataModule4: TDataModule4
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 441
-  Width = 796
+  Height = 594
+  Width = 841
   object FDConnection1: TFDConnection
     Params.Strings = (
       'CharacterSet=cp1251'
@@ -159,8 +159,8 @@ object DataModule4: TDataModule4
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 544
-    Top = 384
+    Left = 536
+    Top = 304
   end
   object FDQuery1: TFDQuery
     Connection = FDConnection1
@@ -168,8 +168,8 @@ object DataModule4: TDataModule4
       
         'SELECT personal_r.id,personal_r.fio FROM asu.personal_r WHERE st' +
         '_id=:id')
-    Left = 464
-    Top = 384
+    Left = 480
+    Top = 304
     ParamData = <
       item
         Name = 'ID'
@@ -178,17 +178,41 @@ object DataModule4: TDataModule4
   end
   object FDQuery2: TFDQuery
     Connection = FDConnection1
-    Left = 464
-    Top = 328
+    Left = 424
+    Top = 304
   end
   object FDQuery3: TFDQuery
     Connection = FDConnection1
-    Left = 625
-    Top = 321
+    Left = 593
+    Top = 305
   end
   object FDQuery4: TFDQuery
     Connection = FDConnection1
-    Left = 192
-    Top = 376
+    Left = 656
+    Top = 304
+  end
+  object Querytipocenki: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from tip_ocenki')
+    Left = 488
+    Top = 392
+  end
+  object Sourcetipocenki: TDataSource
+    DataSet = Querytipocenki
+    Left = 568
+    Top = 392
+  end
+  object Querysitoceok: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from tip_ocenki')
+    Left = 480
+    Top = 472
+  end
+  object Sourcesitoceok: TDataSource
+    DataSet = Querysitoceok
+    Left = 568
+    Top = 464
   end
 end

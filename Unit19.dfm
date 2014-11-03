@@ -7,13 +7,13 @@ object Ocenivanie: TOcenivanie
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -16
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 19
   object Label1: TLabel
     Left = 8
     Top = 8
@@ -67,8 +67,8 @@ object Ocenivanie: TOcenivanie
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 408
-    Top = 182
+    Left = 409
+    Top = 254
     Width = 324
     Height = 19
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1084#1086#1076#1091#1083#1100' ('#1077#1089#1083#1080' '#1086#1094#1077#1085#1082#1072' '#1084#1086#1076#1091#1083#1100#1085#1072#1103'):'
@@ -81,7 +81,7 @@ object Ocenivanie: TOcenivanie
   end
   object Label6: TLabel
     Left = 408
-    Top = 271
+    Top = 343
     Width = 133
     Height = 19
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1086#1094#1077#1085#1082#1091':'
@@ -91,6 +91,13 @@ object Ocenivanie: TOcenivanie
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 409
+    Top = 182
+    Width = 99
+    Height = 19
+    Caption = #1058#1080#1087' '#1086#1094#1077#1085#1082#1090#1080':'
   end
   object DBLookupComboBox1: TDBLookupComboBox
     Left = 8
@@ -134,7 +141,7 @@ object Ocenivanie: TOcenivanie
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
+    TitleFont.Height = -16
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     Columns = <
@@ -175,7 +182,7 @@ object Ocenivanie: TOcenivanie
       end>
   end
   object DBLookupComboBox3: TDBLookupComboBox
-    Left = 408
+    Left = 409
     Top = 149
     Width = 369
     Height = 27
@@ -184,12 +191,16 @@ object Ocenivanie: TOcenivanie
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    KeyField = 'id'
+    ListField = 'name'
+    ListSource = DataModule4.DataSourcedsp
     ParentFont = False
     TabOrder = 3
+    OnClick = DBLookupComboBox3Click
   end
   object DBLookupComboBox4: TDBLookupComboBox
     Left = 408
-    Top = 207
+    Top = 279
     Width = 370
     Height = 27
     Font.Charset = DEFAULT_CHARSET
@@ -197,26 +208,32 @@ object Ocenivanie: TOcenivanie
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    KeyField = 'id'
+    ListField = 'name'
+    ListSource = DataModule4.DataSourcedspm_uchp
     ParentFont = False
     TabOrder = 4
   end
-  object CheckBox1: TCheckBox
+  object sistem: TCheckBox
     Left = 408
-    Top = 248
+    Top = 320
     Width = 370
     Height = 17
     Caption = #1055#1086' '#1087#1103#1090#1080#1073#1072#1083#1100#1085#1086#1081' '#1089#1080#1089#1090#1077#1084#1077' '#1086#1094#1077#1085#1080#1074#1072#1085#1080#1103
+    Checked = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    State = cbChecked
     TabOrder = 5
+    OnClick = sistemClick
   end
   object DBLookupComboBox5: TDBLookupComboBox
     Left = 408
-    Top = 296
+    Top = 368
     Width = 65
     Height = 27
     Font.Charset = DEFAULT_CHARSET
@@ -224,6 +241,9 @@ object Ocenivanie: TOcenivanie
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    KeyField = 'id'
+    ListField = 'name'
+    ListSource = DataModule4.Sourcesitoceok
     ParentFont = False
     TabOrder = 6
   end
@@ -268,6 +288,17 @@ object Ocenivanie: TOcenivanie
     Font.Style = []
     ParentFont = False
     TabOrder = 9
+  end
+  object DBLookupComboBox6: TDBLookupComboBox
+    Left = 409
+    Top = 207
+    Width = 192
+    Height = 27
+    KeyField = 'id'
+    ListField = 'name'
+    ListSource = DataModule4.Sourcetipocenki
+    TabOrder = 10
+    OnClick = DBLookupComboBox6Click
   end
   object FDQuery1: TFDQuery
     Connection = DataModule4.FDConnection1
