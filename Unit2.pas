@@ -43,6 +43,7 @@ type
     procedure N12Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
     procedure N19Click(Sender: TObject);
+    procedure N16Click(Sender: TObject);
  
     { Private declarations }
   public
@@ -56,7 +57,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit12, Unit11,Unit14,Unit13,Unit15;
+uses Unit1, Unit12, Unit11,Unit14,Unit13,Unit15,Unit19;
 
 
 
@@ -68,6 +69,11 @@ end;
 procedure Tmain.N13Click(Sender: TObject);
 begin
 kat_rod.show;
+end;
+
+procedure Tmain.N16Click(Sender: TObject);
+begin
+Ocenivanie.show;
 end;
 
 procedure Tmain.N19Click(Sender: TObject);

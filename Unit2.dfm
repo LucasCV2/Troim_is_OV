@@ -42458,6 +42458,7 @@ object main: Tmain
       end
       object N16: TMenuItem
         Caption = #1054#1094#1077#1085#1082#1080
+        OnClick = N16Click
       end
       object N17: TMenuItem
         Caption = #1055#1088#1086#1087#1091#1089#1082#1080
