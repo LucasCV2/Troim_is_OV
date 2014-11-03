@@ -218,7 +218,7 @@ object spstuds: Tspstuds
   end
   object FDQuery4: TFDQuery
     Connection = DataModule4.FDConnection1
-    Left = 736
-    Top = 281
+    Left = 408
+    Top = 313
   end
 end
