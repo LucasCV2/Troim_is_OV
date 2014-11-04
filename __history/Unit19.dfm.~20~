@@ -2,7 +2,7 @@ object Ocenivanie: TOcenivanie
   Left = 0
   Top = 0
   Caption = #1054#1094#1077#1085#1080#1074#1072#1085#1080#1077
-  ClientHeight = 491
+  ClientHeight = 497
   ClientWidth = 786
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -214,19 +214,22 @@ object Ocenivanie: TOcenivanie
     ParentFont = False
     TabOrder = 4
   end
-  object CheckBox1: TCheckBox
+  object sistem: TCheckBox
     Left = 408
     Top = 320
     Width = 370
     Height = 17
     Caption = #1055#1086' '#1087#1103#1090#1080#1073#1072#1083#1100#1085#1086#1081' '#1089#1080#1089#1090#1077#1084#1077' '#1086#1094#1077#1085#1080#1074#1072#1085#1080#1103
+    Checked = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    State = cbChecked
     TabOrder = 5
+    OnClick = sistemClick
   end
   object DBLookupComboBox5: TDBLookupComboBox
     Left = 408
@@ -238,6 +241,9 @@ object Ocenivanie: TOcenivanie
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    KeyField = 'id'
+    ListField = 'name'
+    ListSource = DataModule4.Sourcesitoceok
     ParentFont = False
     TabOrder = 6
   end
@@ -282,13 +288,18 @@ object Ocenivanie: TOcenivanie
     Font.Style = []
     ParentFont = False
     TabOrder = 9
+    OnClick = Button3Click
   end
   object DBLookupComboBox6: TDBLookupComboBox
     Left = 409
     Top = 207
     Width = 192
     Height = 27
+    KeyField = 'id'
+    ListField = 'name'
+    ListSource = DataModule4.Sourcetipocenki
     TabOrder = 10
+    OnClick = DBLookupComboBox6Click
   end
   object FDQuery1: TFDQuery
     Connection = DataModule4.FDConnection1
@@ -318,5 +329,10 @@ object Ocenivanie: TOcenivanie
     Connection = DataModule4.FDConnection1
     Left = 272
     Top = 512
+  end
+  object FDQuery4: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 408
+    Top = 520
   end
 end

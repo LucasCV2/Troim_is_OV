@@ -7,6 +7,9 @@ object DataModule4: TDataModule4
     Params.Strings = (
       'CharacterSet=cp1251'
       'Server=localhost'
+      'Password=1234567890'
+      'User_Name=root'
+      'Database=asu'
       'DriverID=MySQL')
     LoginPrompt = False
     Left = 28
