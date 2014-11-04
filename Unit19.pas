@@ -73,7 +73,7 @@ end;
 procedure TOcenivanie.DBLookupComboBox1Click(Sender: TObject);
 begin
 FDquery2.SQL.Clear;
-FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name from studs,groups WHERE groups.id=studs.gp_id and groups.sp_id=:in2 ');
+FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,groups,ocenka WHERE groups.id=studs.gp_id and ocenka.st_id=studs.id and groups.sp_id=:in2 ');
 FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
 FDQuery2.open;
 DataSource1.DataSet:=FDQuery2;
@@ -95,7 +95,7 @@ end;
 procedure TOcenivanie.DBLookupComboBox2Click(Sender: TObject);
 begin
 FDquery2.SQL.Clear;
-FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name from studs,groups WHERE groups.id=studs.gp_id and studs.gp_id=:in2');
+FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and ocenka.st_id=studs.id and studs.gp_id=:in2');
 FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox2.KeyValue;
 FDQuery2.open;
 DBLookupComboBox2.ListSource:= DataSource2;
@@ -118,6 +118,7 @@ end
 else
 begin
 DataModule4.DataSourcedspm_uchp.Enabled:=false;
+
 end;
 
 end;

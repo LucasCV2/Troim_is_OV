@@ -196,7 +196,7 @@ object Ocenivanie: TOcenivanie
         Expanded = False
         FieldName = 'fam'
         Title.Caption = #1060#1040#1052#1048#1051#1048#1071
-        Width = 70
+        Width = 112
         Visible = True
       end
       item
@@ -210,14 +210,14 @@ object Ocenivanie: TOcenivanie
         Expanded = False
         FieldName = 'otch'
         Title.Caption = #1054#1058#1063#1045#1057#1058#1042#1054
-        Width = 90
+        Width = 121
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'name'
-        Title.Caption = #1043#1056#1059#1055#1055#1040
-        Width = 70
+        FieldName = 'name_1'
+        Title.Caption = #1054#1062#1045#1053#1050#1040
+        Width = 99
         Visible = True
       end>
   end
@@ -377,8 +377,8 @@ object Ocenivanie: TOcenivanie
     Connection = DataModule4.FDConnection1
     SQL.Strings = (
       
-        'SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name fro' +
-        'm studs,groups WHERE groups.id=studs.gp_id')
+        'SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,oce' +
+        'nka.name from studs,groups,ocenka WHERE groups.id=studs.gp_id')
     Left = 96
     Top = 512
   end
