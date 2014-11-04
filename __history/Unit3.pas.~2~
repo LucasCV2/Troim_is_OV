@@ -55,7 +55,7 @@ FDquery.SQL.Clear;
 FDquery.SQL.Add ('INSERT INTO studs (fam, imya, otch,gp_id) VALUES (:fam, :imya, :otch, :gp_id)');
 FDQuery.ParamByName('fam').AsString:=Edit1.Text;
 FDQuery.ParamByName('imya').AsString:=Edit2.Text;
-FDQuery.ParamByName('otch').AsString:=Edit3.Text;
+FDQuery.ParamByName('otch').AsString:=Edit2.Text;
 FDQuery.ParamByName('gp_id').AsString:=gpComboBox2.KeyValue;
 FDQuery.ExecSQL;
 Edit1.Clear;
