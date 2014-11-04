@@ -125,8 +125,8 @@ object group: Tgroup
     TabOrder = 3
   end
   object addsp: TButton
-    Left = 585
-    Top = 129
+    Left = 584
+    Top = 123
     Width = 81
     Height = 31
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100

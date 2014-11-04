@@ -35,12 +35,14 @@ type
     FDQuery3: TFDQuery;
     Label7: TLabel;
     DBLookupComboBox6: TDBLookupComboBox;
+    FDQuery4: TFDQuery;
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure DBLookupComboBox3Click(Sender: TObject);
     procedure DBLookupComboBox6Click(Sender: TObject);
     procedure sistemClick(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +55,20 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TOcenivanie.Button3Click(Sender: TObject);
+begin
+FDQuery4.SQL.Clear;
+FDQuery4.SQL.Add ('INSERT INTO ocenka (name,pr_id,mod_id,st_id,tp_id) VALUES (:name,:pr_id,:mod_id,:st_id,:tp_id)');
+FDQuery4.ParamByName('name').AsString:=DBLookupComboBox5.Text;
+FDQuery4.ParamByName('pr_id').AsString:=DBLookupComboBox3.KeyValue;
+FDQuery4.ParamByName('mod_id').AsString:=DBLookupComboBox4.KeyValue;
+FDQuery4.ParamByName('st_id').AsString:=DBGrid1.Fields[0].AsString;
+FDQuery4.ParamByName('tp_id').AsString:=DBLookupComboBox6.KeyValue;
+FDQuery4.ExecSQL;
+FDQuery1.Refresh;
+
+end;
 
 procedure TOcenivanie.DBLookupComboBox1Click(Sender: TObject);
 begin

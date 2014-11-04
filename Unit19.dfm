@@ -2,7 +2,7 @@ object Ocenivanie: TOcenivanie
   Left = 0
   Top = 0
   Caption = #1054#1094#1077#1085#1080#1074#1072#1085#1080#1077
-  ClientHeight = 491
+  ClientHeight = 497
   ClientWidth = 786
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -288,6 +288,7 @@ object Ocenivanie: TOcenivanie
     Font.Style = []
     ParentFont = False
     TabOrder = 9
+    OnClick = Button3Click
   end
   object DBLookupComboBox6: TDBLookupComboBox
     Left = 409
@@ -328,5 +329,10 @@ object Ocenivanie: TOcenivanie
     Connection = DataModule4.FDConnection1
     Left = 272
     Top = 512
+  end
+  object FDQuery4: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 408
+    Top = 520
   end
 end
