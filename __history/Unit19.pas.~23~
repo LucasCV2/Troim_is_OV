@@ -35,11 +35,14 @@ type
     FDQuery3: TFDQuery;
     Label7: TLabel;
     DBLookupComboBox6: TDBLookupComboBox;
+    FDQuery4: TFDQuery;
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure DBLookupComboBox3Click(Sender: TObject);
     procedure DBLookupComboBox6Click(Sender: TObject);
+    procedure sistemClick(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,15 +51,40 @@ type
 
 var
   Ocenivanie: TOcenivanie;
+  xi: string;
 
 implementation
 
 {$R *.dfm}
 
+procedure TOcenivanie.Button3Click(Sender: TObject);
+begin
+FDQuery4.SQL.Clear;
+FDQuery4.SQL.Add ('INSERT INTO ocenka (name,pr_id,mod_id,st_id,tp_id) VALUES (:name,:pr_id,:mod_id,:st_id,:tp_id)');
+FDQuery4.ParamByName('name').AsString:=DBLookupComboBox5.Text;
+FDQuery4.ParamByName('pr_id').AsString:=DBLookupComboBox3.KeyValue;
+FDQuery4.ParamByName('tp_id').AsString:=DBLookupComboBox6.KeyValue;
+if (DBLookupComboBox6.KeyValue>1) then
+begin
+FDQuery4.ParamByName('mod_id').AsInteger:=0;
+FDQuery4.ParamByName('st_id').AsString:=DBGrid1.Fields[0].AsString;
+FDQuery4.ExecSQL;
+FDQuery1.Refresh;
+end
+else
+begin
+FDQuery4.ParamByName('mod_id').AsString:=DBLookupComboBox4.KeyValue;
+FDQuery4.ParamByName('st_id').AsString:=DBGrid1.Fields[0].AsString;
+FDQuery4.ExecSQL;
+FDQuery1.Refresh;
+end;
+
+end;
+
 procedure TOcenivanie.DBLookupComboBox1Click(Sender: TObject);
 begin
 FDquery2.SQL.Clear;
-FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name from studs,groups WHERE groups.id=studs.gp_id and groups.sp_id=:in2 ');
+FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,groups,ocenka WHERE groups.id=studs.gp_id and ocenka.st_id=studs.id and groups.sp_id=:in2 ');
 FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
 FDQuery2.open;
 DataSource1.DataSet:=FDQuery2;
@@ -78,7 +106,7 @@ end;
 procedure TOcenivanie.DBLookupComboBox2Click(Sender: TObject);
 begin
 FDquery2.SQL.Clear;
-FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name from studs,groups WHERE groups.id=studs.gp_id and studs.gp_id=:in2');
+FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and ocenka.st_id=studs.id and studs.gp_id=:in2');
 FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox2.KeyValue;
 FDQuery2.open;
 DBLookupComboBox2.ListSource:= DataSource2;
@@ -101,9 +129,11 @@ end
 else
 begin
 DataModule4.DataSourcedspm_uchp.Enabled:=false;
+
 end;
 
 end;
+
 
 procedure TOcenivanie.DBLookupComboBox6Click(Sender: TObject);
 begin
@@ -142,6 +172,26 @@ DataModule4.Sourcesitoceok.Enabled:=true;
 DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
 end;
 
+end;
+
+procedure TOcenivanie.sistemClick(Sender: TObject);
+begin
+if(sistem.Checked=true) then
+begin
+DataModule4.Querysitoceok.SQL.Clear;
+DataModule4.Querysitoceok.SQL.Add ('select id,name from sist_ocenok WHERE sistem = 1');
+DataModule4.Querysitoceok.open;
+DataModule4.Sourcesitoceok.Enabled:=true;
+DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
+end
+else
+begin
+DataModule4.Querysitoceok.SQL.Clear;
+DataModule4.Querysitoceok.SQL.Add ('select id,name from sist_ocenok WHERE sistem = 0');
+DataModule4.Querysitoceok.open;
+DataModule4.Sourcesitoceok.Enabled:=true;
+DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
+end;
 end;
 
 end.

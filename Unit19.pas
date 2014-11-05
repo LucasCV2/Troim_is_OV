@@ -51,6 +51,7 @@ type
 
 var
   Ocenivanie: TOcenivanie;
+  xi: string;
 
 implementation
 
@@ -62,12 +63,21 @@ FDQuery4.SQL.Clear;
 FDQuery4.SQL.Add ('INSERT INTO ocenka (name,pr_id,mod_id,st_id,tp_id) VALUES (:name,:pr_id,:mod_id,:st_id,:tp_id)');
 FDQuery4.ParamByName('name').AsString:=DBLookupComboBox5.Text;
 FDQuery4.ParamByName('pr_id').AsString:=DBLookupComboBox3.KeyValue;
-FDQuery4.ParamByName('mod_id').AsString:=DBLookupComboBox4.KeyValue;
-FDQuery4.ParamByName('st_id').AsString:=DBGrid1.Fields[0].AsString;
 FDQuery4.ParamByName('tp_id').AsString:=DBLookupComboBox6.KeyValue;
+if (DBLookupComboBox6.KeyValue>1) then
+begin
+FDQuery4.ParamByName('mod_id').AsInteger:=0;
+FDQuery4.ParamByName('st_id').AsString:=DBGrid1.Fields[0].AsString;
 FDQuery4.ExecSQL;
 FDQuery1.Refresh;
-
+end
+else
+begin
+FDQuery4.ParamByName('mod_id').AsString:=DBLookupComboBox4.KeyValue;
+FDQuery4.ParamByName('st_id').AsString:=DBGrid1.Fields[0].AsString;
+FDQuery4.ExecSQL;
+FDQuery1.Refresh;
+end;
 end;
 
 procedure TOcenivanie.DBLookupComboBox1Click(Sender: TObject);
@@ -122,6 +132,7 @@ DataModule4.DataSourcedspm_uchp.Enabled:=false;
 end;
 
 end;
+
 
 procedure TOcenivanie.DBLookupComboBox6Click(Sender: TObject);
 begin

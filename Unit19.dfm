@@ -200,7 +200,7 @@ object Ocenivanie: TOcenivanie
   end
   object DBLookupComboBox4: TDBLookupComboBox
     Left = 408
-    Top = 279
+    Top = 281
     Width = 370
     Height = 29
     Font.Charset = DEFAULT_CHARSET
@@ -334,6 +334,6 @@ object Ocenivanie: TOcenivanie
   object FDQuery4: TFDQuery
     Connection = DataModule4.FDConnection1
     Left = 408
-    Top = 520
+    Top = 512
   end
 end
