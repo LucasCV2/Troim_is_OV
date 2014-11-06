@@ -29,6 +29,7 @@ type
     spComboBox1: TDBLookupComboBox;
     FDQuery: TFDQuery;
     FDQuery13: TFDQuery;
+    FDQuery1: TFDQuery;
     procedure Button1Click(Sender: TObject);
     procedure spComboBox1Click(Sender: TObject);
 
@@ -52,15 +53,19 @@ uses Unit1 ;
 procedure Taddstuds.Button1Click(Sender: TObject);
 begin
 FDquery.SQL.Clear;
+FDquery1.SQL.Clear;
 FDquery.SQL.Add ('INSERT INTO studs (fam, imya, otch,gp_id) VALUES (:fam, :imya, :otch, :gp_id)');
+FDquery1.SQL.Add ('INSERT INTO ocenka (st_id) SELECT MAX(studs.id) AS st_id FROM studs,ocenka');
 FDQuery.ParamByName('fam').AsString:=Edit1.Text;
 FDQuery.ParamByName('imya').AsString:=Edit2.Text;
 FDQuery.ParamByName('otch').AsString:=Edit3.Text;
 FDQuery.ParamByName('gp_id').AsString:=gpComboBox2.KeyValue;
 FDQuery.ExecSQL;
+FDQuery1.ExecSQL;
 Edit1.Clear;
 Edit2.Clear;
 Edit3.Clear;
+
 DataModule4.FDQuery15.Refresh;
 
 end;

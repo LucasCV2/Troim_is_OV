@@ -408,8 +408,8 @@ object Ocenivanie: TOcenivanie
   object FDQuery3: TFDQuery
     IndexesActive = False
     Connection = DataModule4.FDConnection1
-    Left = 272
-    Top = 520
+    Left = 280
+    Top = 512
   end
   object FDQuery4: TFDQuery
     Connection = DataModule4.FDConnection1
