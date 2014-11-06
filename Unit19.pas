@@ -43,6 +43,7 @@ type
     procedure DBLookupComboBox6Click(Sender: TObject);
     procedure sistemClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure DBLookupComboBox4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -145,6 +146,12 @@ end;
 
 procedure TOcenivanie.DBLookupComboBox3Click(Sender: TObject);
 begin
+FDquery2.SQL.Clear; //  очищаем — ёЋ№ второго ‘ƒ вери
+FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and ocenka.st_id=studs.id and ocenka.pr_id=:in2');
+// выбираем нужные данные из таблиц
+FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox3.KeyValue;
+// показываем их в комбике
+FDQuery2.open;
 if(DBLookupComboBox6.KeyValue=1) then
 begin
 if (DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
@@ -169,9 +176,26 @@ end;
 
 
 
+procedure TOcenivanie.DBLookupComboBox4Click(Sender: TObject);
+begin
+FDquery2.SQL.Clear; //  очищаем — ёЋ№ второго ‘ƒ вери
+FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and groups.id=:in9 and ocenka.st_id=studs.id and ocenka.mod_id=:in2');
+// выбираем нужные данные из таблиц
+FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox4.KeyValue;
+FDQuery2.ParamByName('in9').AsString:=DBLookupComboBox2.KeyValue;
+// показываем их в комбике
+FDQuery2.open;
+end;
+
 procedure TOcenivanie.DBLookupComboBox6Click(Sender: TObject);
 begin
 //
+FDquery2.SQL.Clear; //  очищаем — ёЋ№ второго ‘ƒ вери
+FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and ocenka.st_id=studs.id and ocenka.tp_id=:in2');
+// выбираем нужные данные из таблиц
+FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox6.KeyValue;
+// показываем их в комбике
+FDQuery2.open;
 if (DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
 and (DBLookupComboBox3.KeyValue>0) and (DBLookupComboBox6.KeyValue>0)
 then
