@@ -3,7 +3,7 @@ object Ocenivanie: TOcenivanie
   Left = 0
   Top = 0
   Caption = #1054#1094#1077#1085#1080#1074#1072#1085#1080#1077
-  ClientHeight = 548
+  ClientHeight = 575
   ClientWidth = 993
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -188,7 +188,6 @@ object Ocenivanie: TOcenivanie
     TitleFont.Height = -20
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    Visible = False
     Columns = <
       item
         Expanded = False
@@ -207,15 +206,15 @@ object Ocenivanie: TOcenivanie
       item
         Expanded = False
         FieldName = 'imya'
-        Title.Caption = #1048#1052#1071
-        Width = 70
+        Title.Caption = #1048'.'
+        Width = 42
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'otch'
-        Title.Caption = #1054#1058#1063#1045#1057#1058#1042#1054
-        Width = 121
+        Title.Caption = #1054'.'
+        Width = 44
         Visible = True
       end
       item
@@ -329,22 +328,23 @@ object Ocenivanie: TOcenivanie
     TabOrder = 7
   end
   object Button2: TButton
-    Left = 174
-    Top = 490
+    Left = 771
+    Top = 445
     Width = 166
-    Height = 42
+    Height = 35
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
-    Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100
+    Caption = #1055#1086#1089#1090#1072#1074#1080#1090#1100' '#1086#1094#1077#1085#1082#1091
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
     TabOrder = 8
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 347
@@ -363,7 +363,6 @@ object Ocenivanie: TOcenivanie
     Font.Style = []
     ParentFont = False
     TabOrder = 9
-    OnClick = Button3Click
   end
   object DBLookupComboBox6: TDBLookupComboBox
     Left = 519
@@ -416,5 +415,10 @@ object Ocenivanie: TOcenivanie
     Connection = DataModule4.FDConnection1
     Left = 408
     Top = 512
+  end
+  object FDQuery5: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 528
+    Top = 528
   end
 end

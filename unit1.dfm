@@ -4,52 +4,72 @@ object spstuds: Tspstuds
   Hint = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1100
   BorderStyle = bsDialog
   Caption = #1057#1087#1080#1089#1086#1082' '#1089#1090#1091#1076#1077#1085#1090#1086#1074
-  ClientHeight = 391
-  ClientWidth = 792
+  ClientHeight = 494
+  ClientWidth = 1000
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -16
+  Font.Height = -20
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
-  PixelsPerInch = 96
-  TextHeight = 19
+  PixelsPerInch = 120
+  TextHeight = 24
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 792
-    Height = 65
+    Width = 1000
+    Height = 82
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alTop
     TabOrder = 0
     object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 117
-      Height = 19
+      Left = 10
+      Top = 10
+      Width = 145
+      Height = 24
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = #1057#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1100':'
     end
     object Label2: TLabel
-      Left = 247
-      Top = 8
-      Width = 57
-      Height = 19
+      Left = 312
+      Top = 10
+      Width = 71
+      Height = 24
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = #1043#1088#1091#1087#1087#1072':'
     end
     object Label3: TLabel
-      Left = 496
-      Top = 8
-      Width = 50
-      Height = 19
+      Left = 627
+      Top = 10
+      Width = 62
+      Height = 24
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = #1055#1086#1080#1089#1082':'
     end
     object DBLookupComboBox1: TDBLookupComboBox
-      Left = 16
-      Top = 32
-      Width = 225
-      Height = 27
+      Left = 20
+      Top = 40
+      Width = 284
+      Height = 32
       Hint = #1042#1099#1073#1086#1088' '#1089#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1080
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       ImeName = 'name'
       KeyField = 'id'
       ListField = 'name'
@@ -58,21 +78,29 @@ object spstuds: Tspstuds
       OnClick = DBLookupComboBox1Click
     end
     object DBLookupComboBox2: TDBLookupComboBox
-      Left = 247
-      Top = 32
-      Width = 225
-      Height = 27
+      Left = 312
+      Top = 40
+      Width = 284
+      Height = 32
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       TabOrder = 1
       OnClick = DBLookupComboBox2Click
     end
     object Edit1: TEdit
-      Left = 552
-      Top = 3
-      Width = 233
-      Height = 24
+      Left = 697
+      Top = 4
+      Width = 295
+      Height = 29
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -17
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -80,10 +108,14 @@ object spstuds: Tspstuds
       TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1092#1072#1084#1080#1083#1080#1102', '#1080#1084#1103' '#1080#1083#1080' '#1086#1090#1095#1077#1089#1090#1074#1086
     end
     object Button1: TButton
-      Left = 696
-      Top = 33
-      Width = 89
-      Height = 27
+      Left = 879
+      Top = 42
+      Width = 113
+      Height = 34
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = #1055#1086#1080#1089#1082
       TabOrder = 3
       OnClick = Button1Click
@@ -91,18 +123,26 @@ object spstuds: Tspstuds
   end
   object Panel2: TPanel
     Left = 0
-    Top = 65
-    Width = 792
-    Height = 326
+    Top = 82
+    Width = 1000
+    Height = 412
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
     object DBGrid1: TDBGrid
       AlignWithMargins = True
-      Left = 4
-      Top = 4
-      Width = 784
-      Height = 318
+      Left = 5
+      Top = 5
+      Width = 990
+      Height = 402
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Align = alClient
       Color = clBtnFace
       DataSource = DataModule4.spstudsDataSource
@@ -111,7 +151,7 @@ object spstuds: Tspstuds
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
-      TitleFont.Height = -16
+      TitleFont.Height = -20
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
       Touch.ParentTabletOptions = False
