@@ -224,7 +224,7 @@ end;
 procedure Tspstuds.N7Click(Sender: TObject);
 begin
 DataModule4.del_stbutton.Close;
-DataModule4.del_stbutton.SQL.Text:= 'DELETE studs,personal,personal_r FROM studs left JOIN personal on personal.st_id=studs.id left JOIN personal_r on personal_r.st_id=studs.id WHERE studs.id='+DBGrid1.Fields[0].DisplayText+'';
+DataModule4.del_stbutton.SQL.Text:= 'DELETE studs,personal,personal_r FROM studs left JOIN personal ON personal.st_id=studs.id left JOIN personal_r on personal_r.st_id=studs.id WHERE studs.id='+DBGrid1.Fields[0].DisplayText+'';
 DataModule4.del_stbutton.ExecSQL;
 DataModule4.FDQuery15.Refresh;
 end;

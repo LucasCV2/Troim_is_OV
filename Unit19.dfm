@@ -120,13 +120,13 @@ object Ocenivanie: TOcenivanie
   object Label7: TLabel
     Left = 519
     Top = 230
-    Width = 121
+    Width = 112
     Height = 24
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
-    Caption = #1058#1080#1087' '#1086#1094#1077#1085#1082#1090#1080':'
+    Caption = #1058#1080#1087' '#1086#1094#1077#1085#1082#1080':'
   end
   object DBLookupComboBox1: TDBLookupComboBox
     Left = 519
@@ -363,6 +363,7 @@ object Ocenivanie: TOcenivanie
     Font.Style = []
     ParentFont = False
     TabOrder = 9
+    OnClick = Button3Click
   end
   object DBLookupComboBox6: TDBLookupComboBox
     Left = 519
@@ -418,7 +419,12 @@ object Ocenivanie: TOcenivanie
   end
   object FDQuery5: TFDQuery
     Connection = DataModule4.FDConnection1
-    Left = 528
-    Top = 528
+    Left = 544
+    Top = 504
+  end
+  object FDQuery6: TFDQuery
+    Connection = DataModule4.FDConnection1
+    Left = 608
+    Top = 504
   end
 end

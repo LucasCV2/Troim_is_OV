@@ -28,7 +28,7 @@ object DataModule4: TDataModule4
   end
   object spstudsDataSource: TDataSource
     DataSet = FDQuery15
-    Left = 184
+    Left = 200
     Top = 8
   end
   object sp_addDataSource: TDataSource
@@ -46,7 +46,7 @@ object DataModule4: TDataModule4
   end
   object del_stbutton: TFDQuery
     Connection = FDConnection1
-    Left = 16
+    Left = 24
     Top = 64
   end
   object redstform: TFDQuery
