@@ -184,6 +184,10 @@
             <Form>Redak_2</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Unit20.pas">
+            <Form>Form20</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <DCCReference Include="Unit19.pas">
             <Form>Ocenivanie</Form>
             <FormType>dfm</FormType>

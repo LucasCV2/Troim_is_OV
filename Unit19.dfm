@@ -16,8 +16,8 @@ object Ocenivanie: TOcenivanie
   PixelsPerInch = 120
   TextHeight = 24
   object Label1: TLabel
-    Left = 519
-    Top = 10
+    Left = 289
+    Top = 18
     Width = 262
     Height = 27
     Margins.Left = 4
@@ -33,8 +33,8 @@ object Ocenivanie: TOcenivanie
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 519
-    Top = 83
+    Left = 289
+    Top = 91
     Width = 337
     Height = 27
     Margins.Left = 4
@@ -67,8 +67,8 @@ object Ocenivanie: TOcenivanie
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 519
-    Top = 154
+    Left = 289
+    Top = 162
     Width = 197
     Height = 27
     Margins.Left = 4
@@ -84,8 +84,8 @@ object Ocenivanie: TOcenivanie
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 519
-    Top = 303
+    Left = 289
+    Top = 311
     Width = 448
     Height = 27
     Margins.Left = 4
@@ -101,8 +101,8 @@ object Ocenivanie: TOcenivanie
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 519
-    Top = 411
+    Left = 289
+    Top = 419
     Width = 184
     Height = 27
     Margins.Left = 4
@@ -118,8 +118,8 @@ object Ocenivanie: TOcenivanie
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 519
-    Top = 230
+    Left = 289
+    Top = 238
     Width = 112
     Height = 24
     Margins.Left = 4
@@ -129,8 +129,8 @@ object Ocenivanie: TOcenivanie
     Caption = #1058#1080#1087' '#1086#1094#1077#1085#1082#1080':'
   end
   object DBLookupComboBox1: TDBLookupComboBox
-    Left = 519
-    Top = 42
+    Left = 289
+    Top = 50
     Width = 466
     Height = 35
     Margins.Left = 4
@@ -151,8 +151,8 @@ object Ocenivanie: TOcenivanie
     OnClick = DBLookupComboBox1Click
   end
   object DBLookupComboBox2: TDBLookupComboBox
-    Left = 519
-    Top = 115
+    Left = 289
+    Top = 123
     Width = 243
     Height = 35
     Margins.Left = 4
@@ -173,7 +173,7 @@ object Ocenivanie: TOcenivanie
     AlignWithMargins = True
     Left = 9
     Top = 42
-    Width = 491
+    Width = 272
     Height = 419
     Margins.Left = 4
     Margins.Top = 4
@@ -200,34 +200,34 @@ object Ocenivanie: TOcenivanie
         Expanded = False
         FieldName = 'fam'
         Title.Caption = #1060#1040#1052#1048#1051#1048#1071
-        Width = 112
+        Width = 99
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'imya'
         Title.Caption = #1048'.'
-        Width = 42
+        Width = 21
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'otch'
         Title.Caption = #1054'.'
-        Width = 44
+        Width = 22
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'name_1'
         Title.Caption = #1054#1062#1045#1053#1050#1040
-        Width = 99
+        Width = 82
         Visible = True
       end>
   end
   object DBLookupComboBox3: TDBLookupComboBox
-    Left = 519
-    Top = 188
+    Left = 289
+    Top = 196
     Width = 466
     Height = 35
     Margins.Left = 4
@@ -248,8 +248,8 @@ object Ocenivanie: TOcenivanie
     OnClick = DBLookupComboBox3Click
   end
   object DBLookupComboBox4: TDBLookupComboBox
-    Left = 519
-    Top = 337
+    Left = 289
+    Top = 345
     Width = 468
     Height = 35
     Margins.Left = 4
@@ -269,8 +269,8 @@ object Ocenivanie: TOcenivanie
     OnClick = DBLookupComboBox4Click
   end
   object sistem: TCheckBox
-    Left = 519
-    Top = 381
+    Left = 289
+    Top = 389
     Width = 468
     Height = 22
     Margins.Left = 4
@@ -290,8 +290,8 @@ object Ocenivanie: TOcenivanie
     OnClick = sistemClick
   end
   object DBLookupComboBox5: TDBLookupComboBox
-    Left = 519
-    Top = 445
+    Left = 289
+    Top = 453
     Width = 244
     Height = 35
     Margins.Left = 4
@@ -328,8 +328,8 @@ object Ocenivanie: TOcenivanie
     TabOrder = 7
   end
   object Button2: TButton
-    Left = 771
-    Top = 445
+    Left = 541
+    Top = 453
     Width = 166
     Height = 35
     Margins.Left = 4
@@ -347,7 +347,7 @@ object Ocenivanie: TOcenivanie
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 347
+    Left = 171
     Top = 490
     Width = 153
     Height = 42
@@ -366,8 +366,8 @@ object Ocenivanie: TOcenivanie
     OnClick = Button3Click
   end
   object DBLookupComboBox6: TDBLookupComboBox
-    Left = 519
-    Top = 261
+    Left = 289
+    Top = 269
     Width = 243
     Height = 32
     Margins.Left = 4
@@ -380,6 +380,38 @@ object Ocenivanie: TOcenivanie
     ListSource = DataModule4.Sourcetipocenki
     TabOrder = 10
     OnClick = DBLookupComboBox6Click
+  end
+  object DBGrid2: TDBGrid
+    Left = 762
+    Top = 42
+    Width = 223
+    Height = 419
+    DataSource = DataSource3
+    TabOrder = 11
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -20
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'st_id'
+        Width = 43
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'fam'
+        Width = 110
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'name'
+        Width = 36
+        Visible = True
+      end>
   end
   object FDQuery1: TFDQuery
     Connection = DataModule4.FDConnection1
@@ -426,5 +458,19 @@ object Ocenivanie: TOcenivanie
     Connection = DataModule4.FDConnection1
     Left = 608
     Top = 504
+  end
+  object FDQuery7: TFDQuery
+    Connection = DataModule4.FDConnection1
+    SQL.Strings = (
+      
+        'SELECT studs.id, studs.fam, ocenkanew.name FROM ocenkanew,studs ' +
+        'WHERE name<>0 and ocenkanew.st_id=studs.id')
+    Left = 840
+    Top = 480
+  end
+  object DataSource3: TDataSource
+    DataSet = FDQuery7
+    Left = 776
+    Top = 480
   end
 end

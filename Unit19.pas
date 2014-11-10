@@ -38,6 +38,9 @@ type
     FDQuery4: TFDQuery;
     FDQuery5: TFDQuery;
     FDQuery6: TFDQuery;
+    FDQuery7: TFDQuery;
+    DataSource3: TDataSource;
+    DBGrid2: TDBGrid;
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -264,6 +267,8 @@ end;
 
 procedure TOcenivanie.FormCreate(Sender: TObject);
 begin
+FDQuery7.open;
+DBGrid2.DataSource:=DataSource3;
 
 if(sistem.Checked=true) then
 begin
@@ -282,6 +287,7 @@ DataModule4.Sourcesitoceok.Enabled:=true;
 DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
 end;
 end;
+
 
 
 
