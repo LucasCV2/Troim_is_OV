@@ -207,14 +207,14 @@ object Ocenivanie: TOcenivanie
         Expanded = False
         FieldName = 'imya'
         Title.Caption = #1048'.'
-        Width = 21
+        Width = 15
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'otch'
         Title.Caption = #1054'.'
-        Width = 22
+        Width = 17
         Visible = True
       end
       item
