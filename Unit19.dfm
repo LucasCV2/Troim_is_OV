@@ -356,6 +356,7 @@ object Ocenivanie: TOcenivanie
     Margins.Right = 4
     Margins.Bottom = 4
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -22
@@ -464,7 +465,7 @@ object Ocenivanie: TOcenivanie
     SQL.Strings = (
       
         'SELECT studs.id, studs.fam, ocenkanew.name FROM ocenkanew,studs ' +
-        'WHERE name<>0 and ocenkanew.st_id=studs.id')
+        'WHERE ocenkanew.st_id=studs.id')
     Left = 840
     Top = 480
   end
