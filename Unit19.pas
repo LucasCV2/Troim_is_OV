@@ -41,6 +41,9 @@ type
     FDQuery7: TFDQuery;
     DataSource3: TDataSource;
     DBGrid2: TDBGrid;
+    Button4: TButton;
+    Button5: TButton;
+    Label8: TLabel;
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -78,7 +81,7 @@ FDQuery4.SQL.Clear;
 FDQuery4.SQL.Add ('DELETE FROM ocenka WHERE name>1');
 FDQuery4.ExecSQL;
 FDQuery7.SQL.Clear;
-FDQuery7.SQL.Add ('SELECT studs.id, studs.fam, ocenkanew.name FROM ocenkanew,studs WHERE (ocenkanew.tp_id=:in9 OR ocenkanew.mod_id=:in1) and ocenkanew.st_id=studs.id and studs.gp_id=:in6 and ocenkanew.pr_id=:in8');
+FDQuery7.SQL.Add ('SELECT studs.id, studs.fam, studs.otch, studs.imya, ocenkanew.name FROM ocenkanew,studs WHERE (ocenkanew.tp_id=:in9 OR ocenkanew.mod_id=:in1) and ocenkanew.st_id=studs.id and studs.gp_id=:in6 and ocenkanew.pr_id=:in8');
 FDQuery7.ParamByName('in6').AsString:=DBLookupComboBox2.KeyValue;
 FDQuery7.ParamByName('in8').AsString:=DBLookupComboBox3.KeyValue;
 FDQuery7.ParamByName('in9').AsString:=DBLookupComboBox6.KeyValue;
