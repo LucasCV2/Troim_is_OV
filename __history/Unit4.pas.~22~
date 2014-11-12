@@ -7,7 +7,8 @@ uses
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
   Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
-  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,IniFiles;
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,IniFiles,
+  FireDAC.Phys.MySQLDef;
 
 type
   TDataModule4 = class(TDataModule)
@@ -39,6 +40,12 @@ type
     DataSource1: TDataSource;
     FDQuery1: TFDQuery;
     FDQuery2: TFDQuery;
+    FDQuery3: TFDQuery;
+    FDQuery4: TFDQuery;
+    Querytipocenki: TFDQuery;
+    Sourcetipocenki: TDataSource;
+    Querysitoceok: TFDQuery;
+    Sourcesitoceok: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
 
   private
@@ -69,6 +76,7 @@ fdquery15.Active:=True;
 specFDTable.Active:=True;
 dolFDTable1.Active:=True;
 tipprodstva.Active:=True;
+Querytipocenki.Active:=True;
 end;
 
 
