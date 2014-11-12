@@ -3,143 +3,111 @@ object Ocenivanie: TOcenivanie
   Left = 0
   Top = 0
   Caption = #1054#1094#1077#1085#1080#1074#1072#1085#1080#1077
-  ClientHeight = 575
-  ClientWidth = 993
+  ClientHeight = 455
+  ClientWidth = 794
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -20
+  Font.Height = -16
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 120
-  TextHeight = 24
+  PixelsPerInch = 96
+  TextHeight = 19
   object Label1: TLabel
-    Left = 289
-    Top = 18
-    Width = 262
-    Height = 27
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 14
+    Width = 205
+    Height = 21
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1089#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1100':'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 289
-    Top = 91
-    Width = 337
-    Height = 27
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 72
+    Width = 263
+    Height = 21
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1075#1088#1091#1087#1087#1091' '#1089#1087#1077#1094#1080#1072#1083#1100#1085#1086#1089#1090#1080':'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 10
-    Top = 8
-    Width = 280
-    Height = 27
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 8
+    Top = 6
+    Width = 217
+    Height = 21
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1089#1090#1091#1076#1077#1085#1090#1072' '#1075#1088#1091#1087#1087#1099':'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 289
-    Top = 162
-    Width = 197
-    Height = 27
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 128
+    Width = 152
+    Height = 21
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1087#1088#1077#1076#1084#1077#1090':'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 289
-    Top = 311
-    Width = 448
-    Height = 27
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 246
+    Width = 345
+    Height = 21
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1084#1086#1076#1091#1083#1100' ('#1077#1089#1083#1080' '#1086#1094#1077#1085#1082#1072' '#1084#1086#1076#1091#1083#1100#1085#1072#1103'):'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 289
-    Top = 419
-    Width = 184
-    Height = 27
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 332
+    Width = 141
+    Height = 21
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1086#1094#1077#1085#1082#1091':'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 289
-    Top = 238
-    Width = 112
-    Height = 24
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 188
+    Width = 91
+    Height = 19
     Caption = #1058#1080#1087' '#1086#1094#1077#1085#1082#1080':'
   end
   object DBLookupComboBox1: TDBLookupComboBox
-    Left = 289
-    Top = 50
-    Width = 466
-    Height = 35
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 40
+    Width = 369
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ImeName = 'name'
@@ -151,18 +119,14 @@ object Ocenivanie: TOcenivanie
     OnClick = DBLookupComboBox1Click
   end
   object DBLookupComboBox2: TDBLookupComboBox
-    Left = 289
-    Top = 123
-    Width = 243
-    Height = 35
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 97
+    Width = 192
+    Height = 29
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -171,23 +135,20 @@ object Ocenivanie: TOcenivanie
   end
   object DBGrid1: TDBGrid
     AlignWithMargins = True
-    Left = 9
-    Top = 42
-    Width = 272
-    Height = 419
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 7
+    Top = 33
+    Width = 215
+    Height = 332
     DataSource = DataSource1
     ParentShowHint = False
     ShowHint = True
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -20
+    TitleFont.Height = -16
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    Visible = False
     Columns = <
       item
         Expanded = False
@@ -200,7 +161,7 @@ object Ocenivanie: TOcenivanie
         Expanded = False
         FieldName = 'fam'
         Title.Caption = #1060#1040#1052#1048#1051#1048#1071
-        Width = 99
+        Width = 90
         Visible = True
       end
       item
@@ -221,23 +182,19 @@ object Ocenivanie: TOcenivanie
         Expanded = False
         FieldName = 'name_1'
         Title.Caption = #1054#1062#1045#1053#1050#1040
-        Width = 82
+        Width = 26
         Visible = True
       end>
   end
   object DBLookupComboBox3: TDBLookupComboBox
-    Left = 289
-    Top = 196
-    Width = 466
-    Height = 35
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 155
+    Width = 369
+    Height = 29
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     KeyField = 'id'
@@ -248,17 +205,13 @@ object Ocenivanie: TOcenivanie
     OnClick = DBLookupComboBox3Click
   end
   object DBLookupComboBox4: TDBLookupComboBox
-    Left = 289
-    Top = 345
-    Width = 468
-    Height = 35
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 273
+    Width = 370
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     KeyField = 'id'
@@ -269,19 +222,15 @@ object Ocenivanie: TOcenivanie
     OnClick = DBLookupComboBox4Click
   end
   object sistem: TCheckBox
-    Left = 289
-    Top = 389
-    Width = 468
-    Height = 22
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 308
+    Width = 370
+    Height = 17
     Caption = #1055#1086' '#1087#1103#1090#1080#1073#1072#1083#1100#1085#1086#1081' '#1089#1080#1089#1090#1077#1084#1077' '#1086#1094#1077#1085#1080#1074#1072#1085#1080#1103
     Checked = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -290,17 +239,13 @@ object Ocenivanie: TOcenivanie
     OnClick = sistemClick
   end
   object DBLookupComboBox5: TDBLookupComboBox
-    Left = 289
-    Top = 453
-    Width = 244
-    Height = 35
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 359
+    Width = 193
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     KeyField = 'id'
@@ -310,36 +255,28 @@ object Ocenivanie: TOcenivanie
     TabOrder = 6
   end
   object Button1: TButton
-    Left = 10
-    Top = 490
-    Width = 153
-    Height = 42
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 8
+    Top = 388
+    Width = 121
+    Height = 33
     Caption = #1059#1076#1072#1083#1080#1090#1100
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
     TabOrder = 7
   end
   object Button2: TButton
-    Left = 541
-    Top = 453
-    Width = 166
-    Height = 35
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 428
+    Top = 359
+    Width = 132
+    Height = 27
     Caption = #1055#1086#1089#1090#1072#1074#1080#1090#1100' '#1086#1094#1077#1085#1082#1091
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -17
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -347,19 +284,14 @@ object Ocenivanie: TOcenivanie
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 171
-    Top = 490
-    Width = 153
-    Height = 42
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 135
+    Top = 388
+    Width = 122
+    Height = 33
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -22
+    Font.Height = -17
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -367,14 +299,10 @@ object Ocenivanie: TOcenivanie
     OnClick = Button3Click
   end
   object DBLookupComboBox6: TDBLookupComboBox
-    Left = 289
-    Top = 269
-    Width = 243
-    Height = 32
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Left = 229
+    Top = 213
+    Width = 192
+    Height = 27
     Enabled = False
     KeyField = 'id'
     ListField = 'name'
@@ -383,17 +311,22 @@ object Ocenivanie: TOcenivanie
     OnClick = DBLookupComboBox6Click
   end
   object DBGrid2: TDBGrid
-    Left = 762
-    Top = 42
-    Width = 223
-    Height = 419
+    Left = 603
+    Top = 33
+    Width = 190
+    Height = 332
+    Margins.Left = 2
+    Margins.Top = 2
+    Margins.Right = 2
+    Margins.Bottom = 2
     DataSource = DataSource3
     TabOrder = 11
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -20
+    TitleFont.Height = -16
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    Visible = False
     Columns = <
       item
         Expanded = False
@@ -404,7 +337,7 @@ object Ocenivanie: TOcenivanie
       item
         Expanded = False
         FieldName = 'fam'
-        Width = 110
+        Width = 81
         Visible = True
       end
       item
