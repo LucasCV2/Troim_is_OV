@@ -39,6 +39,12 @@ type
     DataSource1: TDataSource;
     FDQuery1: TFDQuery;
     FDQuery2: TFDQuery;
+    FDQuery3: TFDQuery;
+    FDQuery4: TFDQuery;
+    Querytipocenki: TFDQuery;
+    Sourcetipocenki: TDataSource;
+    Querysitoceok: TFDQuery;
+    Sourcesitoceok: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
 
   private
@@ -69,6 +75,7 @@ fdquery15.Active:=True;
 specFDTable.Active:=True;
 dolFDTable1.Active:=True;
 tipprodstva.Active:=True;
+Querytipocenki.Active:=True;
 end;
 
 

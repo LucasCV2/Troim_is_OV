@@ -54,6 +54,8 @@ type
     procedure DBLookupComboBox4Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,6 +70,20 @@ implementation
 
 {$R *.dfm}
 
+//кнопка Удалить
+procedure TOcenivanie.Button1Click(Sender: TObject);
+begin
+FDQuery4.SQL.Clear;
+FDQuery4.SQL.Add ('DELETE FROM ocenkanew WHERE st_id='+DBGrid2.Fields[0].DisplayText+'');
+FDQuery4.ExecSQL;
+if (DBLookupComboBox6.KeyValue=1)
+then
+begin
+FDQuery7.Refresh;
+end
+else
+FDQuery8.Refresh;
+end;
 
 procedure TOcenivanie.Button2Click(Sender: TObject);  // ПОСТАВИТЬ ОЦЕНКУ
 begin
@@ -103,6 +119,21 @@ FDQuery6.ExecSQL;
 FDQuery2.Refresh;
 DBLookupComboBox1.Enabled:=true;
 
+end;
+
+//Кнопка Отменить
+procedure TOcenivanie.Button5Click(Sender: TObject);
+begin
+DBLookupComboBox1.Enabled:=false;
+DBLookupComboBox2.Enabled:=false;
+DBLookupComboBox3.Enabled:=false;
+DBLookupComboBox6.Enabled:=false;
+DBLookupComboBox4.Enabled:=false;
+FDQuery6.SQL.Clear;
+FDQuery6.SQL.Add ('DELETE FROM ocenka WHERE id<>0');
+FDQuery6.ExecSQL;
+FDQuery2.Refresh;
+DBLookupComboBox1.Enabled:=true;
 end;
 
 procedure TOcenivanie.DBLookupComboBox1Click(Sender: TObject);
