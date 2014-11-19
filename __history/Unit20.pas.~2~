@@ -1,0 +1,43 @@
+unit Unit20;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.ComCtrls;
+
+type
+  TPropuski = class(TForm)
+    DBGrid1: TDBGrid;
+    FDQuery1: TFDQuery;
+    DataSource1: TDataSource;
+    DateTimePicker1: TDateTimePicker;
+    Edit1: TEdit;
+    FDQuery2: TFDQuery;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Propuski: TPropuski;
+
+implementation
+
+{$R *.dfm}
+
+procedure TPropuski.FormCreate(Sender: TObject);
+begin
+FDQuery1.Active:=True;
+FDQuery1.Refresh;
+end;
+
+end.

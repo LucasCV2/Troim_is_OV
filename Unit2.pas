@@ -44,6 +44,7 @@ type
     procedure N8Click(Sender: TObject);
     procedure N19Click(Sender: TObject);
     procedure N16Click(Sender: TObject);
+    procedure N17Click(Sender: TObject);
  
     { Private declarations }
   public
@@ -57,7 +58,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit12, Unit11,Unit14,Unit13,Unit15,Unit19;
+uses Unit1, Unit12, Unit11,Unit14,Unit13,Unit15,Unit19,Unit20;
 
 
 
@@ -74,6 +75,11 @@ end;
 procedure Tmain.N16Click(Sender: TObject);
 begin
 Ocenivanie.show;
+end;
+
+procedure Tmain.N17Click(Sender: TObject);
+begin
+Propuski.show;
 end;
 
 procedure Tmain.N19Click(Sender: TObject);
