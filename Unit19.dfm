@@ -130,7 +130,6 @@ object Ocenivanie: TOcenivanie
     Top = 90
     Width = 192
     Height = 29
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -17
@@ -190,7 +189,6 @@ object Ocenivanie: TOcenivanie
     Top = 148
     Width = 409
     Height = 29
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -17
@@ -303,7 +301,6 @@ object Ocenivanie: TOcenivanie
     Top = 206
     Width = 192
     Height = 27
-    Enabled = False
     KeyField = 'id'
     ListField = 'name'
     ListSource = DataModule4.Sourcetipocenki

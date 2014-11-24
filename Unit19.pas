@@ -113,6 +113,14 @@ end;
 
 procedure TOcenivanie.Button3Click(Sender: TObject); // С О Х Р А Н И Т Ь
 begin
+DBLookupComboBox1.KeyValue:=-1;
+DBLookupComboBox2.KeyValue:=-1;
+DBLookupComboBox3.KeyValue:=-1;
+DBLookupComboBox6.KeyValue:=-1;
+DBLookupComboBox4.KeyValue:=-1;
+DBLookupComboBox5.KeyValue:=-1;
+DBGrid1.Visible:=False;
+DBGrid2.Visible:=False;
 FDQuery6.SQL.Clear;
 FDQuery6.SQL.Add ('DELETE FROM ocenka WHERE id<>0');
 FDQuery6.ExecSQL;
@@ -124,16 +132,17 @@ end;
 //Кнопка Отменить
 procedure TOcenivanie.Button5Click(Sender: TObject);
 begin
-DBLookupComboBox1.Enabled:=false;
-DBLookupComboBox2.Enabled:=false;
-DBLookupComboBox3.Enabled:=false;
-DBLookupComboBox6.Enabled:=false;
-DBLookupComboBox4.Enabled:=false;
+DBLookupComboBox1.KeyValue:=-1;
+DBLookupComboBox2.KeyValue:=-1;
+DBLookupComboBox3.KeyValue:=-1;
+DBLookupComboBox6.KeyValue:=-1;
+DBLookupComboBox4.KeyValue:=-1;
+DBLookupComboBox5.KeyValue:=-1;
 FDQuery6.SQL.Clear;
 FDQuery6.SQL.Add ('DELETE FROM ocenka WHERE id<>0');
 FDQuery6.ExecSQL;
 FDQuery2.Refresh;
-DBLookupComboBox1.Enabled:=true;
+//DBLookupComboBox1.Enabled:=true;
 end;
 
 procedure TOcenivanie.DBLookupComboBox1Click(Sender: TObject);
@@ -170,8 +179,8 @@ DataModule4.Querydsp_uchp.SQL.Add ('select id,name from predmeti WHERE sp_id= :i
 DataModule4.Querydsp_uchp.ParamByName('in3').AsString:=DBLookupComboBox1.KeyValue;
 DataModule4.Querydsp_uchp.open;
 DataModule4.DataSourcedsp.DataSet:=DataModule4.Querydsp_uchp;
-DBLookupComboBox2.Enabled:=true;
-DBLookupComboBox1.Enabled:=false;
+//DBLookupComboBox2.Enabled:=true;
+//DBLookupComboBox1.Enabled:=false;
 end;
 
 
@@ -204,8 +213,8 @@ FDquery5.SQL.Add ('INSERT INTO ocenka (st_id) SELECT id FROM studs WHERE studs.g
 // айдишники студентов в таблицу оценок
 FDQuery5.ParamByName('in2').AsString:=DBLookupComboBox2.KeyValue;
 FDQuery5.ExecSQL;
-DBLookupComboBox3.Enabled:=true;
-DBLookupComboBox2.Enabled:=false;
+//DBLookupComboBox3.Enabled:=true;
+//DBLookupComboBox2.Enabled:=false;
 end;
 
 
@@ -248,8 +257,8 @@ else
 begin
 DataModule4.DataSourcedspm_uchp.Enabled:=false;
 end;
-DBLookupComboBox6.Enabled:=true;
-DBLookupComboBox3.Enabled:=false;
+//DBLookupComboBox6.Enabled:=true;
+//DBLookupComboBox3.Enabled:=false;
 FDQuery2.Refresh;
 end;
 
@@ -284,7 +293,7 @@ FDQuery7.ParamByName('in1').AsString:=DBLookupComboBox4.KeyValue;
 FDQuery7.Open;
 DataSource3.DataSet:=FDQuery7; // выводим данные из Квери в DBGrid
 FDQuery2.Refresh;
-DBLookupComboBox4.Enabled:=false;
+//DBLookupComboBox4.Enabled:=false;
 end;
 
 
@@ -348,7 +357,7 @@ FDQuery8.ParamByName('in9').AsString:=DBLookupComboBox6.KeyValue;
 FDQuery8.Open;
 
 
-DBLookupComboBox6.Enabled:=false;
+//DBLookupComboBox6.Enabled:=false;
 end;
 end;
 
