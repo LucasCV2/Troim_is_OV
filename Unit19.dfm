@@ -422,13 +422,7 @@ object Ocenivanie: TOcenivanie
     Top = 469
   end
   object DataSource3: TDataSource
-    DataSet = FDQuery8
     Left = 680
     Top = 469
-  end
-  object FDQuery8: TFDQuery
-    Connection = DataModule4.FDConnection1
-    Left = 792
-    Top = 472
   end
 end

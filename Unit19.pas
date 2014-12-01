@@ -9,7 +9,6 @@ uses
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client;
-
 type
   TOcenivanie = class(TForm)
     Label1: TLabel;
@@ -44,7 +43,6 @@ type
     Button4: TButton;
     Button5: TButton;
     Label8: TLabel;
-    FDQuery8: TFDQuery;
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -56,10 +54,16 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure Selecte;
-    procedure Inserte;
-    procedure Update;
-    procedure Delete;
+    procedure Button4Click(Sender: TObject);
+    procedure ALL_DELETE;
+    procedure INSERTE;
+    procedure UPDATE_pr_id;
+    procedure UPDATE_tp_id;
+    procedure UPDATE_mod_id;
+    procedure FILTER;
+    procedure SELECTE;
+
+
   private
     { Private declarations }
   public
@@ -69,22 +73,22 @@ type
 var
   Ocenivanie: TOcenivanie;
   xi: string;
+  Again: string;
+
 
 implementation
 
 {$R *.dfm}
 
-Procedure TOcenivanie.Selecte;
+procedure TOcenivanie.ALL_DELETE;
 begin
-FDquery5.SQL.Clear;
-FDquery5.SQL.Add ('INSERT INTO ocenka (st_id) SELECT id FROM studs');
-// переменной ИН2 присваиваем значение из второго комбика и заливаем
-// айдишники студентов в таблицу оценок
-FDQuery5.ExecSQL;
+FDQuery6.SQL.Clear;
+FDQuery6.SQL.Add ('DELETE FROM ocenka WHERE id<>0');
+FDQuery6.ExecSQL;
 end;
 
 
-procedure TOcenivanie.Inserte;
+procedure TOcenivanie.INSERTE;
 begin
 FDquery5.SQL.Clear;
 FDquery5.SQL.Add ('INSERT INTO ocenka (st_id) SELECT id FROM studs WHERE studs.gp_id=:in2');
@@ -94,31 +98,117 @@ FDQuery5.ParamByName('in2').AsString:=DBLookupComboBox2.KeyValue;
 FDQuery5.ExecSQL;
 end;
 
-procedure TOcenivanie.Update;
+
+procedure TOcenivanie.UPDATE_pr_id;
 begin
 FDquery2.SQL.Clear; //  очищаем СКЮЛЬ второго ФДКвери
 FDquery2.SQL.Add ('UPDATE ocenka SET pr_id=:in5');
 FDQuery2.ParamByName('in5').AsString:=DBLookupComboBox3.KeyValue;
 FDQuery2.ExecSQL;
+end;
 
+
+procedure TOcenivanie.UPDATE_tp_id;
+begin
+if DBLookupComboBox6.KeyValue>0 then
+begin
+FDquery2.SQL.Clear;
+FDquery2.SQL.Add ('UPDATE ocenka SET tp_id=:id');
+FDQuery2.ParamByName('id').AsString:=DBLookupComboBox6.KeyValue;
+FDQuery2.ExecSQL;
+end;
+end;
+
+
+procedure TOcenivanie.UPDATE_mod_id;
+begin
+if DBLookupComboBox6.KeyValue=1 then
+begin
+if DBLookupComboBox4.KeyValue>0 then
+begin
 FDquery2.SQL.Clear;
 FDquery2.SQL.Add ('UPDATE ocenka SET mod_id=:m');
 FDQuery2.ParamByName('m').AsString:=DBLookupComboBox4.KeyValue;
 FDQuery2.ExecSQL;
-
-FDquery2.SQL.Clear; //  очищаем СКЮЛЬ второго ФДКвери
-FDquery2.SQL.Add ('UPDATE ocenka SET tp_id=:id');
-FDQuery2.ParamByName('id').AsString:=DBLookupComboBox6.KeyValue;
-// показываем их в комбике
+end;
+end
+else
+begin
+FDquery2.SQL.Clear;
+FDquery2.SQL.Add ('UPDATE ocenka SET mod_id = NULL');
 FDQuery2.ExecSQL;
 end;
+end;
 
-procedure TOcenivanie.Delete;
+
+procedure TOcenivanie.FILTER;
 begin
 FDQuery6.SQL.Clear;
-FDQuery6.SQL.Add ('DELETE ocenka.* FROM ocenka, ocenkanew  WHERE ocenka.st_id=ocenkanew.st_id and ocenka.pr_id=ocenkanew.pr_id and ocenka.tp_id=ocenkanew.tp_id OR ocenka.mod_id=ocenkanew.mod_id ');
+if DBLookupComboBox4.KeyValue>0 then
+begin
+FDQuery6.SQL.Clear;
+FDQuery6.SQL.Add ('DELETE ocenka.* FROM ocenka, ocenkanew  WHERE ocenka.st_id=ocenkanew.st_id and ocenka.pr_id=ocenkanew.pr_id and ocenka.tp_id=ocenkanew.tp_id and ocenka.mod_id=ocenkanew.mod_id');
+FDQuery6.ExecSQL;
+end
+else
+begin
+FDQuery6.SQL.Clear;
+FDQuery6.SQL.Add ('DELETE ocenka.* FROM ocenka, ocenkanew  WHERE ocenka.st_id=ocenkanew.st_id and ocenka.pr_id=ocenkanew.pr_id and ocenka.tp_id=ocenkanew.tp_id');
 FDQuery6.ExecSQL;
 // чистим табл от идентичных записей
+end;
+end;
+
+procedure TOcenivanie.SELECTE;
+begin
+if ((DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
+and (DBLookupComboBox3.KeyValue>0) and (DBLookupComboBox6.KeyValue>0))
+then
+begin
+if DBLookupComboBox4.KeyValue>0 then
+begin
+FDQuery7.SQL.Clear;
+FDQuery7.SQL.Add ('SELECT studs.id, studs.fam, studs.imya, studs.otch, ocenkanew.name FROM studs,ocenkanew WHERE ocenkanew.mod_id=:in1 and ocenkanew.tp_id=:in9 and ocenkanew.st_id=studs.id and studs.gp_id=:in6 and ocenkanew.pr_id=:in8');
+FDQuery7.ParamByName('in6').AsString:=DBLookupComboBox2.KeyValue;
+FDQuery7.ParamByName('in8').AsString:=DBLookupComboBox3.KeyValue;
+FDQuery7.ParamByName('in9').AsString:=DBLookupComboBox6.KeyValue;
+FDQuery7.ParamByName('in1').AsString:=DBLookupComboBox4.KeyValue;
+FDQuery7.Open;
+DataSource3.DataSet:=FDQuery7; // выводим данные из Квери в DBGrid
+
+DataSource1.DataSet:=FDQuery2;
+FDQuery2.SQL.Clear;
+FDQuery2.SQL.Add ('SELECT studs.id, studs.fam, studs.imya, studs.otch FROM studs, ocenka WHERE ocenka.tp_id=:in9 and studs.gp_id=:in6 and ocenka.pr_id=:in8 and ocenka.mod_id=:in1 and studs.id=ocenka.st_id');
+FDQuery2.ParamByName('in6').AsString:=DBLookupComboBox2.KeyValue;
+FDQuery2.ParamByName('in8').AsString:=DBLookupComboBox3.KeyValue;
+FDQuery2.ParamByName('in9').AsString:=DBLookupComboBox6.KeyValue;
+FDQuery2.ParamByName('in1').AsString:=DBLookupComboBox4.KeyValue;
+FDQuery2.Open;
+FDQuery2.Refresh;
+FDQuery7.Refresh;
+end
+
+else
+begin
+FDQuery7.SQL.Clear;
+FDQuery7.SQL.Add ('SELECT studs.id, studs.fam, studs.imya, studs.otch, ocenkanew.name FROM studs,ocenkanew WHERE ocenkanew.tp_id=:in9 and studs.gp_id=:in6 and ocenkanew.pr_id=:in8 and studs.id=ocenkanew.st_id');
+FDQuery7.ParamByName('in6').AsString:=DBLookupComboBox2.KeyValue;
+FDQuery7.ParamByName('in8').AsString:=DBLookupComboBox3.KeyValue;
+FDQuery7.ParamByName('in9').AsString:=DBLookupComboBox6.KeyValue;
+FDQuery7.Open;
+DataSource3.DataSet:=FDQuery7; // выводим данные из Квери в DBGrid
+
+DataSource1.DataSet:=FDQuery2;
+FDQuery2.SQL.Clear;
+FDQuery2.SQL.Add ('SELECT studs.id, studs.fam, studs.imya, studs.otch FROM studs, ocenka WHERE ocenka.tp_id=:in9 and studs.gp_id=:in6 and ocenka.pr_id=:in8 and studs.id=ocenka.st_id');
+FDQuery2.ParamByName('in6').AsString:=DBLookupComboBox2.KeyValue;
+FDQuery2.ParamByName('in8').AsString:=DBLookupComboBox3.KeyValue;
+FDQuery2.ParamByName('in9').AsString:=DBLookupComboBox6.KeyValue;
+FDQuery2.Open;
+end;
+FDQuery2.Refresh;
+FDQuery7.Refresh;
+end;
 end;
 
 
@@ -128,16 +218,12 @@ begin
 FDQuery4.SQL.Clear;
 FDQuery4.SQL.Add ('DELETE FROM ocenkanew WHERE st_id='+DBGrid2.Fields[0].DisplayText+'');
 FDQuery4.ExecSQL;
-if (DBLookupComboBox6.KeyValue=1)
-then
-begin
-FDQuery7.Refresh;
-end
-else
-FDQuery8.Refresh;
 end;
 
-procedure TOcenivanie.Button2Click(Sender: TObject);  // ПОСТАВИТЬ ОЦЕНКУ
+
+
+// ПОСТАВИТЬ ОЦЕНКУ
+procedure TOcenivanie.Button2Click(Sender: TObject);
 begin
 FDQuery4.SQL.Clear;
 FDQuery4.SQL.Add ('UPDATE ocenka SET name=:name WHERE st_id='+DBGrid1.Fields[0].DisplayText+'');
@@ -150,20 +236,12 @@ FDQuery4.SQL.Clear;
 FDQuery4.SQL.Add ('DELETE FROM ocenka WHERE name>1');
 FDQuery4.ExecSQL;
 FDQuery2.Refresh;
-if (DBLookupComboBox6.KeyValue=1)
-then
-begin
 FDQuery7.Refresh;
-end
-else
-FDQuery8.Refresh;
-
 end;
 
 
-
-
-procedure TOcenivanie.Button3Click(Sender: TObject); // С О Х Р А Н И Т Ь
+// С О Х Р А Н И Т Ь
+procedure TOcenivanie.Button3Click(Sender: TObject);
 begin
 DBLookupComboBox1.KeyValue:=-1;
 DBLookupComboBox2.KeyValue:=-1;
@@ -173,15 +251,17 @@ DBLookupComboBox4.KeyValue:=-1;
 DBLookupComboBox5.KeyValue:=-1;
 DBGrid1.Visible:=False;
 DBGrid2.Visible:=False;
-FDQuery6.SQL.Clear;
-FDQuery6.SQL.Add ('DELETE FROM ocenka WHERE id<>0');
-FDQuery6.ExecSQL;
-FDQuery2.Refresh;
-DBLookupComboBox1.Enabled:=true;
-
+ALL_DELETE;
 end;
 
-//Кнопка Отменить
+
+//КНОПКА ИЗМЕНИТЬ
+procedure TOcenivanie.Button4Click(Sender: TObject);
+begin
+end;
+
+
+//СБРОСИТЬ
 procedure TOcenivanie.Button5Click(Sender: TObject);
 begin
 DBLookupComboBox1.KeyValue:=-1;
@@ -190,29 +270,28 @@ DBLookupComboBox3.KeyValue:=-1;
 DBLookupComboBox6.KeyValue:=-1;
 DBLookupComboBox4.KeyValue:=-1;
 DBLookupComboBox5.KeyValue:=-1;
-FDQuery6.SQL.Clear;
-FDQuery6.SQL.Add ('DELETE FROM ocenka WHERE id<>0');
-FDQuery8.SQL.Add ('DELETE FROM ocenkanew WHERE id<>0');
-FDQuery6.ExecSQL;
-FDQuery2.Refresh;
-//DBLookupComboBox1.Enabled:=true;
+ALL_DELETE;
 end;
 
+
+//В Ы Б О Р   С П Е Ц И А Л Ь Н О С Т И
 procedure TOcenivanie.DBLookupComboBox1Click(Sender: TObject);
-// С П Е Ц И А Л Ь Н О С Т Ь
 begin
 if (DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
 and (DBLookupComboBox3.KeyValue>0) and (DBLookupComboBox6.KeyValue>0)
 then
 begin
-DBGrid1.Visible:=True;
-DBGrid2.Visible:=True;
+DBGrid1.Visible:=True; // ON таблицы
+DBGrid2.Visible:=True; // ON таблицы
+end
+else
+begin
+DBGrid1.Visible:=False; // OFF таблицы
+DBGrid2.Visible:=False; // OFF таблицы
 end;
 FDquery3.SQL.Clear; //
 FDquery3.SQL.Add ('select * from groups WHERE sp_id= :in2 ');
-//
 FDQuery3.ParamByName('in2').AsString:=DBLookupComboBox1.KeyValue;
-//
 FDQuery3.Open;
 DBLookupComboBox2.ListSource:=DataSource2;
 //данные для второго комбика брать из DataSource2
@@ -220,194 +299,146 @@ DBLookupComboBox2.ListField:='name';
 // показывать в комбике столбик name
 DBLookupComboBox2.KeyField:='id'; //ключевое поле
 DataModule4.Querydsp_uchp.SQL.Clear;
-DataModule4.Querydsp_uchp.SQL.Add ('select id,name from predmeti WHERE sp_id= :in3');
+DataModule4.Querydsp_uchp.SQL.Add ('select id,name from predmeti WHERE sp_id=:in3');
 DataModule4.Querydsp_uchp.ParamByName('in3').AsString:=DBLookupComboBox1.KeyValue;
 DataModule4.Querydsp_uchp.open;
 DataModule4.DataSourcedsp.DataSet:=DataModule4.Querydsp_uchp;
-//DBLookupComboBox2.Enabled:=true;
-//DBLookupComboBox1.Enabled:=false;
 end;
 
 
-
+//В Ы Б О Р    Г Р У П П Ы
 procedure TOcenivanie.DBLookupComboBox2Click(Sender: TObject);
-//Г Р У П П А
-
 begin
-Inserte;
-Update;
-Delete;
-Selecte;
+ALL_DELETE;
+INSERTE;
+if DBLookupComboBox3.KeyValue>0 then
+begin
+UPDATE_pr_id;
+end;
+if DBLookupComboBox6.KeyValue>0 then
+begin
+UPDATE_tp_id;
+UPDATE_mod_id;
+end;
+FILTER;
+SELECTE;
 if (DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
 and (DBLookupComboBox3.KeyValue>0) and (DBLookupComboBox6.KeyValue>0)
 then
 begin
 DBGrid1.Visible:=True;
 DBGrid2.Visible:=True;
+end
+else
+begin
+DBGrid1.Visible:=False; // OFF таблицы
+DBGrid2.Visible:=False; // OFF таблицы
 end;
-FDquery2.SQL.Clear; //  очищаем СКЮЛЬ второго ФДКвери
-FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and ocenka.st_id=studs.id and studs.gp_id=:in6');
-// выбираем нужные данные из таблиц
-FDQuery2.ParamByName('in6').AsString:=DBLookupComboBox2.KeyValue;
-//  переменной ИН2 присваиваем значение из комбика
-FDQuery2.Open;
-FDQuery2.Refresh;
 DataSource1.DataSet:=FDQuery2; // выводим данные из Квери в DBGrid
 DBLookupComboBox2.ListField:='name';
 // показывать в комбике столбик name
 DBLookupComboBox2.KeyField:='id'; //ключевое поле
-
-//DBLookupComboBox3.Enabled:=true;
-//DBLookupComboBox2.Enabled:=false;
 end;
 
 
-
+//В Ы Б О Р    П Р Е Д М Е Т А
 procedure TOcenivanie.DBLookupComboBox3Click(Sender: TObject);
-// П Р Е Д М Е Т
 begin
-Inserte;
-Update;
-Delete;
-Selecte;
+ALL_DELETE;
+INSERTE;
+UPDATE_pr_id;
+if DBLookupComboBox6.KeyValue>0 then
+begin
+UPDATE_tp_id;
+UPDATE_mod_id;
+end;
+FILTER;
+SELECTE;
+
 if (DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
 and (DBLookupComboBox3.KeyValue>0) and (DBLookupComboBox6.KeyValue>0)
 then
 begin
 DBGrid1.Visible:=True;
 DBGrid2.Visible:=True;
-end;
-
-
-FDquery2.SQL.Clear; //  очищаем СКЮЛЬ второго ФДКвери
-//  переменной ИН2 присваиваем значение из комбика
-FDquery2.SQL.Add ('SELECT  studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and ocenka.st_id=studs.id and ocenka.pr_id=:in5');
-FDQuery2.ParamByName('in5').AsString:=DBLookupComboBox3.KeyValue;
-// выбираем нужные данные из таблиц
-//  переменной ИН2 присваиваем значение из комбика
-FDQuery2.Open;
-DataSource1.DataSet:=FDQuery2; // выводим данные из Квери в DBGrid
-
-
-if(DBLookupComboBox6.KeyValue=1) then
-begin
-DataModule4.Querydspm_uchp.SQL.Clear;
-DataModule4.Querydspm_uchp.SQL.Add ('select id,name from modul WHERE pr_id= :in3');
-DataModule4.Querydspm_uchp.ParamByName('in3').AsString:=DBLookupComboBox3.KeyValue;
-DataModule4.Querydspm_uchp.open;
-DataModule4.DataSourcedspm_uchp.Enabled:=true;
-DataModule4.DataSourcedspm_uchp.DataSet:=DataModule4.Querydspm_uchp;
 end
 else
 begin
-DataModule4.DataSourcedspm_uchp.Enabled:=false;
+DBGrid1.Visible:=False; // OFF таблицы
+DBGrid2.Visible:=False; // OFF таблицы
 end;
-//DBLookupComboBox6.Enabled:=true;
-//DBLookupComboBox3.Enabled:=false;
-FDQuery2.Refresh;
 end;
 
 
 
+// В Ы Б О Р    М О Д У Л Я
 procedure TOcenivanie.DBLookupComboBox4Click(Sender: TObject);
-// В Ы Б Е Р И Т Е    М О Д У Л Ь
 begin
-Inserte;
-Update;
-Delete;
-Selecte;
+ALL_DELETE;
+INSERTE;
+UPDATE_pr_id;
+if DBLookupComboBox6.KeyValue>0 then
+begin
+UPDATE_tp_id;
+UPDATE_mod_id;
+end;
+FILTER;
+SELECTE;
 
-FDQuery6.SQL.Clear;
-FDQuery6.SQL.Add ('DELETE ocenka.* FROM ocenka, ocenkanew  WHERE ocenka.st_id=ocenkanew.st_id and ocenka.pr_id=ocenkanew.pr_id and (ocenka.tp_id=ocenkanew.tp_id OR ocenka.mod_id=ocenkanew.mod_id) ');
-FDQuery6.ExecSQL;
-
-FDquery2.SQL.Clear; //  очищаем СКЮЛЬ второго ФДКвери
-FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and groups.id=:in9 and ocenka.st_id=studs.id and ocenka.mod_id=:in2');
-// выбираем нужные данные из таблиц
-FDQuery2.ParamByName('in2').AsString:=DBLookupComboBox4.KeyValue;
-FDQuery2.ParamByName('in9').AsString:=DBLookupComboBox2.KeyValue;
-FDQuery2.open;
-
-FDQuery7.SQL.Clear;
-FDQuery7.SQL.Add ('SELECT studs.id, studs.fam, studs.imya, studs.otch, ocenkanew.name FROM studs,ocenkanew WHERE (ocenkanew.mod_id=:in1 OR ocenkanew.tp_id=:in9) and ocenkanew.st_id=studs.id and studs.gp_id=:in6 and ocenkanew.pr_id=:in8');
-FDQuery7.ParamByName('in6').AsString:=DBLookupComboBox2.KeyValue;
-FDQuery7.ParamByName('in8').AsString:=DBLookupComboBox3.KeyValue;
-FDQuery7.ParamByName('in9').AsString:=DBLookupComboBox6.KeyValue;
-FDQuery7.ParamByName('in1').AsString:=DBLookupComboBox4.KeyValue;
-FDQuery7.Open;
-DataSource3.DataSet:=FDQuery7; // выводим данные из Квери в DBGrid
+DBGrid1.Visible:=True;
+DBGrid2.Visible:=True;
 FDQuery2.Refresh;
-//DBLookupComboBox4.Enabled:=false;
+FDQuery7.Refresh;
 end;
 
 
-
-procedure TOcenivanie.DBLookupComboBox6Click(Sender: TObject);
-// Т И П   О Ц Е Н К И
+//В Ы Б О Р    Т И П А    О Ц Е Н К И
+ procedure TOcenivanie.DBLookupComboBox6Click(Sender: TObject);
 begin
-Inserte;
-Update;
-Delete;
-Selecte;
-if (DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
-and (DBLookupComboBox3.KeyValue>0) and (DBLookupComboBox6.KeyValue>0)
+if ((DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
+and (DBLookupComboBox3.KeyValue>0) and (DBLookupComboBox6.KeyValue>0))
 then
 begin
 DBGrid1.Visible:=True;
 DBGrid2.Visible:=True;
+end
+else
+begin
+DBGrid1.Visible:=False; // OFF таблицы
+DBGrid2.Visible:=False; // OFF таблицы
 end;
+
 if(DBLookupComboBox6.KeyValue=1) then
 begin
-
 DataModule4.Querydspm_uchp.SQL.Clear;
 DataModule4.Querydspm_uchp.SQL.Add ('select  id,name from modul WHERE pr_id= :in3');
 DataModule4.Querydspm_uchp.ParamByName('in3').AsString:=DBLookupComboBox3.KeyValue;
 DataModule4.Querydspm_uchp.open;
 DataModule4.DataSourcedspm_uchp.Enabled:=true;
 DataModule4.DataSourcedspm_uchp.DataSet:=DataModule4.Querydspm_uchp;
-//DBLookupComboBox6.Enabled:=false;
 DBLookupComboBox4.Enabled:=true;
 end
 else
 begin
-FDquery2.SQL.Clear;
-FDquery2.SQL.Add ('UPDATE ocenka SET mod_id = NULL');
-FDQuery2.ExecSQL;
-DataModule4.DataSourcedspm_uchp.Enabled:=false;
-
-
-
-
-
-FDquery2.SQL.Clear; //  очищаем СКЮЛЬ второго ФДКвери
-FDquery2.SQL.Add ('SELECT studs.id, studs.fam,studs.imya,studs.otch,groups.name,ocenka.name from studs,ocenka,groups WHERE groups.id=studs.gp_id and groups.id=:in9 and ocenka.st_id=studs.id and ocenka.tp_id=:in8');
-// выбираем нужные данные из таблиц
-FDQuery2.ParamByName('in8').AsString:=DBLookupComboBox6.KeyValue;
-FDQuery2.ParamByName('in9').AsString:=DBLookupComboBox2.KeyValue;
-//  переменной ИН2 присваиваем значение из комбика
-FDQuery2.open;
-DataSource1.DataSet:=FDQuery2; // выводим данные из Квери в DBGrid
-
-DataSource3.DataSet:=FDQuery8; // выводим данные из Квери в DBGrid
-FDQuery8.SQL.Clear;
-FDQuery8.SQL.Add ('SELECT studs.id, studs.fam, studs.imya, studs.otch, ocenkanew.name FROM studs,ocenkanew WHERE ocenkanew.tp_id=:in9 and ocenkanew.st_id=studs.id and studs.gp_id=:in6 and ocenkanew.pr_id=:in8');
-FDQuery8.ParamByName('in6').AsString:=DBLookupComboBox2.KeyValue;
-FDQuery8.ParamByName('in8').AsString:=DBLookupComboBox3.KeyValue;
-FDQuery8.ParamByName('in9').AsString:=DBLookupComboBox6.KeyValue;
-FDQuery8.Open;
-
-
-//DBLookupComboBox6.Enabled:=false;
+DBLookupComboBox4.KeyValue:=-1;
+ALL_DELETE;
+INSERTE;
+UPDATE_pr_id;
+if DBLookupComboBox6.KeyValue>0 then
+begin
+UPDATE_tp_id;
+UPDATE_mod_id;
+end;
+FILTER;
+SELECTE;
+FDQuery2.Refresh;
+FDQuery7.Refresh;
 end;
 end;
-
-
-
 
 
 procedure TOcenivanie.FormCreate(Sender: TObject);
 begin
-Selecte;
 if(sistem.Checked=true) then
 begin
 DataModule4.Querysitoceok.SQL.Clear;
@@ -425,13 +456,10 @@ DataModule4.Sourcesitoceok.Enabled:=true;
 DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
 end;
 end;
-
-
 
 
 procedure TOcenivanie.sistemClick(Sender: TObject);
 begin
-
 if(sistem.Checked=true) then
 begin
 DataModule4.Querysitoceok.SQL.Clear;
@@ -449,6 +477,5 @@ DataModule4.Sourcesitoceok.Enabled:=true;
 DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
 end;
 end;
-
-
 end.
+
