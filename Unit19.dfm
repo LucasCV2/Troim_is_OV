@@ -374,7 +374,7 @@ object Ocenivanie: TOcenivanie
         'nka.name From groups, studs LEft Join ocenka On studs.id=ocenka.' +
         'st_id WHERE groups.id=studs.gp_id')
     Left = 96
-    Top = 512
+    Top = 483
   end
   object FDQuery2: TFDQuery
     Connection = DataModule4.FDConnection1
@@ -384,7 +384,7 @@ object Ocenivanie: TOcenivanie
   object DataSource1: TDataSource
     DataSet = FDQuery1
     Left = 24
-    Top = 512
+    Top = 483
   end
   object DataSource2: TDataSource
     DataSet = FDQuery3
