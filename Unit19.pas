@@ -218,6 +218,18 @@ begin
 FDQuery4.SQL.Clear;
 FDQuery4.SQL.Add ('DELETE FROM ocenkanew WHERE st_id='+DBGrid2.Fields[0].DisplayText+'');
 FDQuery4.ExecSQL;
+ALL_DELETE;
+INSERTE;
+UPDATE_pr_id;
+if DBLookupComboBox6.KeyValue>0 then
+begin
+UPDATE_tp_id;
+UPDATE_mod_id;
+end;
+FILTER;
+SELECTE;
+FDQuery2.Refresh;
+FDQuery7.Refresh;
 end;
 
 
@@ -235,6 +247,7 @@ FDQuery4.ExecSQL;
 FDQuery4.SQL.Clear;
 FDQuery4.SQL.Add ('DELETE FROM ocenka WHERE name>1');
 FDQuery4.ExecSQL;
+DBLookupComboBox5.KeyValue:=-1;
 FDQuery2.Refresh;
 FDQuery7.Refresh;
 end;
