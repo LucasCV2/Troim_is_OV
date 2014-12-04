@@ -26,7 +26,6 @@ type
     DBLookupComboBox5: TDBLookupComboBox;
     Button1: TButton;
     Button2: TButton;
-    Button3: TButton;
     FDQuery1: TFDQuery;
     FDQuery2: TFDQuery;
     DataSource1: TDataSource;
@@ -41,7 +40,6 @@ type
     DataSource3: TDataSource;
     DBGrid2: TDBGrid;
     Button4: TButton;
-    Button5: TButton;
     Label8: TLabel;
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
@@ -51,8 +49,6 @@ type
     procedure sistemClick(Sender: TObject);
     procedure DBLookupComboBox4Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
-    procedure Button5Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure ALL_DELETE;
@@ -62,6 +58,7 @@ type
     procedure UPDATE_mod_id;
     procedure FILTER;
     procedure SELECTE;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
 
   private
@@ -253,43 +250,23 @@ FDQuery7.Refresh;
 end;
 
 
-// Ñ Î Õ Ð À Í È Ò Ü
-procedure TOcenivanie.Button3Click(Sender: TObject);
-begin
-DBLookupComboBox1.KeyValue:=-1;
-DBLookupComboBox2.KeyValue:=-1;
-DBLookupComboBox3.KeyValue:=-1;
-DBLookupComboBox6.KeyValue:=-1;
-DBLookupComboBox4.KeyValue:=-1;
-DBLookupComboBox5.KeyValue:=-1;
-DBGrid1.Visible:=False;
-DBGrid2.Visible:=False;
-ALL_DELETE;
-end;
-
 
 //ÊÍÎÏÊÀ ÈÇÌÅÍÈÒÜ
 procedure TOcenivanie.Button4Click(Sender: TObject);
 begin
+FDQuery4.SQL.Clear;
+FDQuery4.SQL.Add ('UPDATE ocenkanew SET name=:name WHERE st_id='+DBGrid2.Fields[0].DisplayText+'');
+FDQuery4.ParamByName('name').AsString:=DBLookupComboBox5.Text;
+FDQuery4.ExecSQL;
+FDQuery7.Refresh;
 end;
 
-
-//ÑÁÐÎÑÈÒÜ
-procedure TOcenivanie.Button5Click(Sender: TObject);
-begin
-DBLookupComboBox1.KeyValue:=-1;
-DBLookupComboBox2.KeyValue:=-1;
-DBLookupComboBox3.KeyValue:=-1;
-DBLookupComboBox6.KeyValue:=-1;
-DBLookupComboBox4.KeyValue:=-1;
-DBLookupComboBox5.KeyValue:=-1;
-ALL_DELETE;
-end;
 
 
 //Â Û Á Î Ð   Ñ Ï Å Ö È À Ë Ü Í Î Ñ Ò È
 procedure TOcenivanie.DBLookupComboBox1Click(Sender: TObject);
 begin
+DBLookupComboBox2.Enabled:=true;
 if (DBLookupComboBox1.KeyValue>0) and (DBLookupComboBox2.KeyValue>0)
 and (DBLookupComboBox3.KeyValue>0) and (DBLookupComboBox6.KeyValue>0)
 then
@@ -322,6 +299,7 @@ end;
 //Â Û Á Î Ð    Ã Ð Ó Ï Ï Û
 procedure TOcenivanie.DBLookupComboBox2Click(Sender: TObject);
 begin
+DBLookupComboBox3.Enabled:=true;
 ALL_DELETE;
 INSERTE;
 if DBLookupComboBox3.KeyValue>0 then
@@ -357,6 +335,7 @@ end;
 //Â Û Á Î Ð    Ï Ð Å Ä Ì Å Ò À
 procedure TOcenivanie.DBLookupComboBox3Click(Sender: TObject);
 begin
+DBLookupComboBox6.Enabled:=true;
 ALL_DELETE;
 INSERTE;
 UPDATE_pr_id;
@@ -433,6 +412,7 @@ DBLookupComboBox4.Enabled:=true;
 end
 else
 begin
+DBLookupComboBox4.Enabled:=false;
 DBLookupComboBox4.KeyValue:=-1;
 ALL_DELETE;
 INSERTE;
@@ -449,6 +429,21 @@ FDQuery7.Refresh;
 end;
 end;
 
+
+procedure TOcenivanie.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+DBLookupComboBox1.KeyValue:=-1;
+DBLookupComboBox2.KeyValue:=-1;
+DBLookupComboBox3.KeyValue:=-1;
+DBLookupComboBox4.KeyValue:=-1;
+DBLookupComboBox6.KeyValue:=-1;
+DBLookupComboBox2.Enabled:=false;
+DBLookupComboBox3.Enabled:=false;
+DBLookupComboBox4.Enabled:=false;
+DBLookupComboBox6.Enabled:=false;
+DBGrid1.Visible:=False; // OFF òàáëèöû
+DBGrid2.Visible:=False; // OFF òàáëèöû
+end;
 
 procedure TOcenivanie.FormCreate(Sender: TObject);
 begin
@@ -491,4 +486,3 @@ DataModule4.Sourcesitoceok.DataSet:=DataModule4.Querysitoceok;
 end;
 end;
 end.
-

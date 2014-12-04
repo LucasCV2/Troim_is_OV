@@ -131,9 +131,6 @@ Coordinates=10,486,144,36
 [DBLookupComboBox2]
 Coordinates=649,418,144,36
 
-[Button3]
-Coordinates=325,214,59,58
-
 [DataModule4.tiprodstvaSource]
 Coordinates=1336,78,191,58
 
@@ -174,5 +171,5 @@ Coordinates=73,418,165,58
 Coordinates=500,10,185,58
 
 []
-Coordinates=723,1,91,36
+Coordinates=325,214,59,58
 
